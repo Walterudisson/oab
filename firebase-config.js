@@ -1,8 +1,7 @@
-// Copie para cá exatamente o objeto mostrado em:
-// Firebase Console > Configurações do projeto > Seus apps > App da Web > Configuração do SDK
-//
-// A configuração web do Firebase é pública por design. A proteção real dos dados
-// deve ser feita com Authentication + Security Rules (+ App Check quando formos publicar).
+// Projeto Firebase: oabcaderno
+// Esta configuração identifica o app Web no Firebase.
+// Em aplicações Web, firebaseConfig é público por design; a proteção dos dados
+// deve ser feita com Firebase Authentication + Firestore Security Rules.
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD692T4-gKjtjHKzpFptPiiJjZeAx-VbJc",

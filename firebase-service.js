@@ -1,3 +1,4 @@
+// Firebase Web modular SDK via CDN oficial, adequado ao GitHub Pages sem bundler.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import {
   getAuth,

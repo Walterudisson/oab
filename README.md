@@ -1,53 +1,98 @@
-# Caderno OAB — Sprint 2.1 Firebase
+# Caderno OAB — Sprint 2.1 + Firebase
 
-Frontend estático para GitHub Pages + backend Firebase.
+Frontend estático para GitHub Pages com Firebase Authentication e Cloud Firestore.
 
-## O que foi adicionado
+## Projeto Firebase conectado
 
-- Firebase Authentication com e-mail e senha.
-- Cloud Firestore para sincronização do progresso.
-- `localStorage` mantido como cache/offline imediato.
-- Migração e mesclagem de progresso local e remoto ao entrar.
-- Indicador visual de sincronização.
-- `firestore.rules` com isolamento por usuário.
+- Project ID: `oabcaderno`
+- Auth domain: `oabcaderno.firebaseapp.com`
+- Configuração Web: `firebase-config.js`
 
-## Arquitetura
+O projeto usa o Firebase JS SDK modular via CDN oficial, portanto não precisa de npm, Vite ou outro bundler para rodar no GitHub Pages.
+
+## O que já funciona
+
+- Banco de 60 questões de demonstração.
+- Busca e filtros por status.
+- Tela de resolução.
+- Marcar como resolvida e para revisão.
+- Autoavaliação.
+- `localStorage` como cache local.
+- Cadastro com e-mail e senha.
+- Login/logout.
+- Sincronização do progresso no Firestore.
+- Mesclagem entre progresso local e remoto.
+
+## Ativação no Firebase Console
+
+### 1. Authentication
+
+Abra **Firebase Console > Authentication > Sign-in method** e habilite **Email/Password**.
+
+### 2. Firestore
+
+Abra **Firestore Database** e crie o banco de dados.
+
+Depois publique as regras presentes em `firestore.rules`.
+
+Os dados de cada estudante ficam em:
 
 ```text
-GitHub Pages
-  index.html / styles.css / app.js
-        |
-        +-- Firebase Authentication
-        |
-        +-- Cloud Firestore
-              users/{uid}/state/progress
+users/{uid}/state/progress
 ```
 
-As 60 questões continuam em `data/questoes.json`. Isso é intencional nesta etapa. No próximo passo podemos migrar o banco oficial de questões/espelhos para uma coleção Firestore administrada separadamente.
+As regras impedem que um usuário autenticado leia ou altere os dados de outro usuário.
 
-## Configuração no Firebase Console
+### 3. Domínio do GitHub Pages
 
-1. Crie um projeto no Firebase.
-2. Adicione um aplicativo Web.
-3. Copie o objeto `firebaseConfig` exibido pelo Firebase.
-4. Cole os valores em `firebase-config.js`.
-5. Em **Authentication > Sign-in method**, ative **Email/Password**.
-6. Em **Firestore Database**, crie o banco.
-7. Em **Firestore > Rules**, publique o conteúdo de `firestore.rules`.
-8. Publique os arquivos no GitHub Pages.
+Em **Authentication > Settings > Authorized domains**, adicione o domínio usado pelo site publicado, por exemplo:
 
-## Teste local
+```text
+seuusuario.github.io
+```
 
-Use um servidor HTTP local (Live Server, `python -m http.server`, etc.). Não abra apenas por `file://`, pois o projeto usa módulos JavaScript e `fetch()`.
+Use somente o hostname, sem `https://` e sem caminho do repositório.
 
-## Segurança
+Se testar em `localhost`, projetos Firebase recentes podem exigir que `localhost` também seja incluído manualmente na lista de domínios autorizados.
 
-A configuração web do Firebase não é uma senha. O controle de acesso é feito por Authentication e Firestore Security Rules. Não use regras abertas em produção.
+## Publicação no GitHub Pages
 
-## Próxima etapa sugerida
+Copie todo o conteúdo desta pasta para a raiz do repositório:
 
-- coleção `questions` com questões oficiais;
-- coleção/estrutura de espelhos FGV;
-- perfis e papel de administrador;
-- App Check;
-- posteriormente Cloud Storage para fotos das respostas manuscritas.
+```text
+index.html
+styles.css
+app.js
+firebase-config.js
+firebase-service.js
+firestore.rules
+data/
+assets/
+```
+
+O `index.html` carrega `app.js` como ES module e todos os caminhos são relativos, portanto a aplicação funciona também em URLs do tipo:
+
+```text
+https://usuario.github.io/caderno-oab/
+```
+
+## Teste mínimo
+
+1. Publique os arquivos.
+2. Abra o site.
+3. Clique em **Entrar**.
+4. Crie uma conta com e-mail e senha.
+5. Resolva ou marque uma questão para revisão.
+6. No Firebase Console, abra **Firestore > Data**.
+7. Confirme a criação de:
+
+```text
+users
+  └── <UID DO USUÁRIO>
+      └── state
+          └── progress
+```
+
+## Próxima etapa
+
+Migrar o banco estático de questões para coleções Firestore, mantendo o progresso individual separado do conteúdo oficial.
