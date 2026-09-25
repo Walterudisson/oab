@@ -1,3 +1,13 @@
+import {
+  observeAuth,
+  signInUser,
+  signUpUser,
+  signOutUser,
+  loadUserProgress,
+  saveUserProgress,
+  isFirebaseConfigured
+} from "./firebase-service.js";
+
 const STORAGE_KEY = "cadernoOabProgressV2";
 const LEGACY_STORAGE_KEY = "cadernoOabProgressV1";
 
@@ -23,6 +33,9 @@ let activeFilter = "all";
 let toastTimer;
 let timerSeconds = 0;
 let timerInterval = null;
+let currentUser = null;
+let remoteSyncTimer = null;
+let authResolved = false;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -86,6 +99,23 @@ const elements = {
   timerDisplay: $("#timerDisplay"),
   timerToggle: $("#timerToggle"),
   timerReset: $("#timerReset"),
+  accountButton: $("#accountButton"),
+  accountAvatar: $("#accountAvatar"),
+  accountName: $("#accountName"),
+  accountSubtitle: $("#accountSubtitle"),
+  syncState: $("#syncState"),
+  syncStateText: $("#syncStateText"),
+  authModal: $("#authModal"),
+  authSignedOut: $("#authSignedOut"),
+  authSignedIn: $("#authSignedIn"),
+  authEmail: $("#authEmail"),
+  authPassword: $("#authPassword"),
+  signInButton: $("#signInButton"),
+  signUpButton: $("#signUpButton"),
+  signOutButton: $("#signOutButton"),
+  authNote: $("#authNote"),
+  modalAvatar: $("#modalAvatar"),
+  modalEmail: $("#modalEmail"),
   toast: $("#toast")
 };
 
@@ -98,6 +128,7 @@ async function init() {
   migrateLegacyProgress();
   updateAccessStreak();
   renderAll();
+  initializeFirebaseSession();
 }
 
 function registerEvents() {
@@ -137,6 +168,12 @@ function registerEvents() {
   elements.nextQuestionButton.addEventListener("click", () => moveQuestion(1));
   elements.timerToggle.addEventListener("click", toggleTimer);
   elements.timerReset.addEventListener("click", resetTimer);
+  elements.accountButton.addEventListener("click", openAuthModal);
+  elements.signInButton.addEventListener("click", handleSignIn);
+  elements.signUpButton.addEventListener("click", handleSignUp);
+  elements.signOutButton.addEventListener("click", handleSignOut);
+  $$('[data-auth-close]').forEach((item) => item.addEventListener("click", closeAuthModal));
+  elements.authPassword.addEventListener("keydown", (event) => { if (event.key === "Enter") handleSignIn(); });
 
   document.addEventListener("click", (event) => {
     if (window.innerWidth > 820) return;
@@ -371,7 +408,8 @@ function getQuestionState(questionId) {
 }
 
 function setQuestionState(questionId, patch) {
-  progress.questionStates[questionId] = { ...getQuestionState(questionId), ...patch };
+  progress.questionStates[questionId] = { ...getQuestionState(questionId), ...patch, updatedAt: new Date().toISOString() };
+  progress.updatedAt = new Date().toISOString();
 }
 
 function toggleTimer() {
@@ -464,7 +502,188 @@ function migrateLegacyProgress() {
 }
 
 function saveProgress() {
+  progress.updatedAt = new Date().toISOString();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  scheduleRemoteSync();
+}
+
+async function initializeFirebaseSession() {
+  if (!isFirebaseConfigured()) {
+    setSyncState("local", "Firebase ainda não configurado");
+    elements.accountSubtitle.textContent = "configure o Firebase";
+    return;
+  }
+
+  setSyncState("syncing", "Conectando ao Firebase...");
+  observeAuth(async (user) => {
+    authResolved = true;
+    currentUser = user;
+    updateAccountUI();
+
+    if (!user) {
+      setSyncState("local", "Somente neste dispositivo");
+      return;
+    }
+
+    setSyncState("syncing", "Sincronizando progresso...");
+    try {
+      const remoteProgress = await loadUserProgress(user.uid);
+      if (remoteProgress) {
+        progress = mergeProgress(progress, remoteProgress);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+        renderAll();
+        renderTraining();
+      }
+      await saveUserProgress(user.uid, progress);
+      setSyncState("synced", "Progresso sincronizado");
+    } catch (error) {
+      console.error(error);
+      setSyncState("error", "Falha na sincronização");
+      showToast("Não foi possível sincronizar com o Firebase.");
+    }
+  });
+}
+
+function scheduleRemoteSync() {
+  if (!authResolved || !currentUser || !isFirebaseConfigured()) return;
+  window.clearTimeout(remoteSyncTimer);
+  setSyncState("syncing", "Salvando...");
+  remoteSyncTimer = window.setTimeout(async () => {
+    try {
+      await saveUserProgress(currentUser.uid, progress);
+      setSyncState("synced", "Progresso sincronizado");
+    } catch (error) {
+      console.error(error);
+      setSyncState("error", "Falha ao salvar");
+    }
+  }, 450);
+}
+
+function mergeProgress(localProgress, remoteProgress) {
+  const local = { ...defaultProgress, ...(localProgress || {}), questionStates: localProgress?.questionStates || {} };
+  const remote = { ...defaultProgress, ...(remoteProgress || {}), questionStates: remoteProgress?.questionStates || {} };
+  const questionIds = new Set([...Object.keys(local.questionStates), ...Object.keys(remote.questionStates)]);
+  const questionStates = {};
+
+  questionIds.forEach((questionId) => {
+    const localState = local.questionStates[questionId];
+    const remoteState = remote.questionStates[questionId];
+    if (!localState) questionStates[questionId] = remoteState;
+    else if (!remoteState) questionStates[questionId] = localState;
+    else {
+      const localTime = Date.parse(localState.updatedAt || localState.completedAt || 0) || 0;
+      const remoteTime = Date.parse(remoteState.updatedAt || remoteState.completedAt || 0) || 0;
+      questionStates[questionId] = localTime >= remoteTime ? localState : remoteState;
+    }
+  });
+
+  const localUpdated = Date.parse(local.updatedAt || 0) || 0;
+  const remoteUpdated = Date.parse(remote.updatedAt || 0) || 0;
+  const newest = localUpdated >= remoteUpdated ? local : remote;
+
+  return {
+    ...defaultProgress,
+    ...newest,
+    questionStates,
+    weeklyDone: Math.max(local.weeklyDone || 0, remote.weeklyDone || 0),
+    streak: Math.max(local.streak || 0, remote.streak || 0),
+    lastAccess: [local.lastAccess, remote.lastAccess].filter(Boolean).sort().at(-1) || null,
+    updatedAt: new Date().toISOString()
+  };
+}
+
+function openAuthModal() {
+  elements.authModal.classList.remove("hidden");
+  document.body.classList.add("modal-open");
+  updateAccountUI();
+  if (!currentUser) window.setTimeout(() => elements.authEmail.focus(), 30);
+}
+
+function closeAuthModal() {
+  elements.authModal.classList.add("hidden");
+  document.body.classList.remove("modal-open");
+  setAuthNote("Seu progresso continua disponível localmente mesmo sem login.", false);
+}
+
+async function handleSignIn() {
+  const email = elements.authEmail.value.trim();
+  const password = elements.authPassword.value;
+  if (!email || !password) return setAuthNote("Informe e-mail e senha.", true);
+  setAuthBusy(true);
+  try {
+    await signInUser(email, password);
+    setAuthNote("Login realizado. Sincronizando...", false);
+  } catch (error) {
+    setAuthNote(authErrorMessage(error), true);
+  } finally {
+    setAuthBusy(false);
+  }
+}
+
+async function handleSignUp() {
+  const email = elements.authEmail.value.trim();
+  const password = elements.authPassword.value;
+  if (!email || password.length < 6) return setAuthNote("Use um e-mail válido e senha com pelo menos 6 caracteres.", true);
+  setAuthBusy(true);
+  try {
+    await signUpUser(email, password);
+    setAuthNote("Conta criada. Seu progresso local será sincronizado.", false);
+  } catch (error) {
+    setAuthNote(authErrorMessage(error), true);
+  } finally {
+    setAuthBusy(false);
+  }
+}
+
+async function handleSignOut() {
+  setAuthBusy(true);
+  try {
+    await signOutUser();
+    closeAuthModal();
+    showToast("Você saiu. O progresso local continua neste navegador.");
+  } catch (error) {
+    setAuthNote("Não foi possível sair agora.", true);
+  } finally {
+    setAuthBusy(false);
+  }
+}
+
+function updateAccountUI() {
+  const email = currentUser?.email || "";
+  const initials = email ? email.slice(0, 2).toUpperCase() : "OA";
+  elements.accountAvatar.textContent = initials;
+  elements.modalAvatar.textContent = initials;
+  elements.accountName.textContent = currentUser ? email.split("@")[0] : "Entrar";
+  elements.accountSubtitle.textContent = currentUser ? "conta sincronizada" : (isFirebaseConfigured() ? "sincronizar progresso" : "configure o Firebase");
+  elements.modalEmail.textContent = email || "usuario@email.com";
+  elements.authSignedOut.classList.toggle("hidden", Boolean(currentUser));
+  elements.authSignedIn.classList.toggle("hidden", !currentUser);
+}
+
+function setSyncState(state, label) {
+  elements.syncState.dataset.state = state;
+  elements.syncStateText.textContent = label;
+}
+
+function setAuthBusy(isBusy) {
+  elements.signInButton.disabled = isBusy;
+  elements.signUpButton.disabled = isBusy;
+  elements.signOutButton.disabled = isBusy;
+}
+
+function setAuthNote(message, isError) {
+  elements.authNote.textContent = message;
+  elements.authNote.classList.toggle("error", Boolean(isError));
+}
+
+function authErrorMessage(error) {
+  const code = error?.code || "";
+  if (code.includes("invalid-credential") || code.includes("wrong-password") || code.includes("user-not-found")) return "E-mail ou senha incorretos.";
+  if (code.includes("email-already-in-use")) return "Já existe uma conta com este e-mail.";
+  if (code.includes("weak-password")) return "A senha precisa ter pelo menos 6 caracteres.";
+  if (code.includes("invalid-email")) return "Informe um e-mail válido.";
+  if (code.includes("too-many-requests")) return "Muitas tentativas. Tente novamente mais tarde.";
+  return "Não foi possível concluir a autenticação.";
 }
 
 function showToast(message) {

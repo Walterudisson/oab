@@ -1,40 +1,53 @@
-# Caderno OAB — Sprint 2
+# Caderno OAB — Sprint 2.1 Firebase
 
-Aplicação estática, mobile-first, para estudo da 2ª fase da OAB em Direito do Trabalho.
+Frontend estático para GitHub Pages + backend Firebase.
 
-## Entregas do Sprint 2
+## O que foi adicionado
 
-- Banco de 60 questões com busca por palavra-chave.
-- Filtros por status: Todas, Novas, Resolvidas e Revisar.
-- Tela completa de treino com enunciado, itens A/B e navegação entre questões.
-- Cronômetro opcional por sessão.
-- Marcação de questão resolvida e fila de revisão.
-- Autoavaliação simples: ainda não sei, parcial ou boa.
-- Dashboard calculado automaticamente a partir do status de cada questão.
-- Persistência no navegador com `localStorage`.
-- Migração automática do progresso simples do Sprint 1, quando existente.
-- Interface responsiva para desktop e mobile.
+- Firebase Authentication com e-mail e senha.
+- Cloud Firestore para sincronização do progresso.
+- `localStorage` mantido como cache/offline imediato.
+- Migração e mesclagem de progresso local e remoto ao entrar.
+- Indicador visual de sincronização.
+- `firestore.rules` com isolamento por usuário.
 
-## Importante sobre os enunciados
-
-O conteúdo incluído neste Sprint é um banco demonstrativo de treino, criado para validar a experiência do aplicativo. Ele não reproduz questões oficiais da FGV. O próximo passo de conteúdo pode substituir esses registros por dados oficiais/organizados, mantendo a mesma interface.
-
-## Publicar no GitHub Pages
-
-Coloque os arquivos na raiz do repositório e ative:
-
-`Settings → Pages → Deploy from a branch → main → / (root)`
-
-A estrutura deve ficar assim:
+## Arquitetura
 
 ```text
-/
-├── index.html
-├── styles.css
-├── app.js
-├── data/
-│   └── questoes.json
-└── README.md
+GitHub Pages
+  index.html / styles.css / app.js
+        |
+        +-- Firebase Authentication
+        |
+        +-- Cloud Firestore
+              users/{uid}/state/progress
 ```
 
-> Para testar localmente, prefira servir a pasta via HTTP (por exemplo, extensão Live Server), porque alguns navegadores bloqueiam `fetch()` de JSON ao abrir `index.html` diretamente por `file://`.
+As 60 questões continuam em `data/questoes.json`. Isso é intencional nesta etapa. No próximo passo podemos migrar o banco oficial de questões/espelhos para uma coleção Firestore administrada separadamente.
+
+## Configuração no Firebase Console
+
+1. Crie um projeto no Firebase.
+2. Adicione um aplicativo Web.
+3. Copie o objeto `firebaseConfig` exibido pelo Firebase.
+4. Cole os valores em `firebase-config.js`.
+5. Em **Authentication > Sign-in method**, ative **Email/Password**.
+6. Em **Firestore Database**, crie o banco.
+7. Em **Firestore > Rules**, publique o conteúdo de `firestore.rules`.
+8. Publique os arquivos no GitHub Pages.
+
+## Teste local
+
+Use um servidor HTTP local (Live Server, `python -m http.server`, etc.). Não abra apenas por `file://`, pois o projeto usa módulos JavaScript e `fetch()`.
+
+## Segurança
+
+A configuração web do Firebase não é uma senha. O controle de acesso é feito por Authentication e Firestore Security Rules. Não use regras abertas em produção.
+
+## Próxima etapa sugerida
+
+- coleção `questions` com questões oficiais;
+- coleção/estrutura de espelhos FGV;
+- perfis e papel de administrador;
+- App Check;
+- posteriormente Cloud Storage para fotos das respostas manuscritas.

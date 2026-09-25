@@ -32,7 +32,7 @@
           <div class="mini-progress-top"><span>Progresso geral</span><strong id="sidebarProgressText">0%</strong></div>
           <div class="progress-track" aria-label="Progresso geral"><div class="progress-bar" id="sidebarProgressBar"></div></div>
         </div>
-        <span class="version">Sprint 2 · GitHub Pages</span>
+        <span class="version">Sprint 2.1 · Firebase</span>
       </div>
     </aside>
 
@@ -40,7 +40,13 @@
       <header class="topbar">
         <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
         <div class="topbar-copy"><span class="eyebrow">Preparação OAB</span><h1 id="pageTitle">Visão geral</h1></div>
-        <div class="avatar" aria-label="Perfil do estudante">OA</div>
+        <div class="account-area">
+          <div class="sync-state" id="syncState" data-state="local"><span class="sync-dot"></span><span id="syncStateText">Somente neste dispositivo</span></div>
+          <button class="account-button" id="accountButton" type="button" aria-label="Conta do estudante">
+            <span class="avatar" id="accountAvatar">OA</span>
+            <span class="account-copy"><strong id="accountName">Entrar</strong><small id="accountSubtitle">sincronizar progresso</small></span>
+          </button>
+        </div>
       </header>
 
       <main class="main-content">
@@ -174,7 +180,32 @@
     </div>
   </div>
 
+  <div class="auth-modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="auth-backdrop" data-auth-close></div>
+    <section class="auth-card">
+      <button class="auth-close" type="button" data-auth-close aria-label="Fechar">×</button>
+      <span class="eyebrow">Conta do estudante</span>
+      <h2 id="authTitle">Sincronize seu Caderno OAB</h2>
+      <p id="authDescription">Entre para manter seu progresso salvo no Firebase e continuar em outros dispositivos.</p>
+
+      <div class="auth-signed-out" id="authSignedOut">
+        <label class="auth-field"><span>E-mail</span><input id="authEmail" type="email" autocomplete="email" placeholder="voce@email.com" /></label>
+        <label class="auth-field"><span>Senha</span><input id="authPassword" type="password" autocomplete="current-password" minlength="6" placeholder="mínimo de 6 caracteres" /></label>
+        <div class="auth-actions">
+          <button class="button button-primary" id="signInButton" type="button">Entrar</button>
+          <button class="button button-ghost" id="signUpButton" type="button">Criar conta</button>
+        </div>
+        <p class="auth-note" id="authNote">Seu progresso continua disponível localmente mesmo sem login.</p>
+      </div>
+
+      <div class="auth-signed-in hidden" id="authSignedIn">
+        <div class="account-detail"><span class="avatar large" id="modalAvatar">OA</span><div><strong id="modalEmail">usuario@email.com</strong><small>Progresso sincronizado com o Firebase</small></div></div>
+        <button class="button button-ghost full-width" id="signOutButton" type="button">Sair da conta</button>
+      </div>
+    </section>
+  </div>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="./app.js" defer></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
