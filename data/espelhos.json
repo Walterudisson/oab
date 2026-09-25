@@ -1,0 +1,2462 @@
+[
+  {
+    "id": "trabalho-32-q1",
+    "questionId": "trabalho-32-q1",
+    "exameNumero": 32,
+    "numero": 1,
+    "gabaritoComentado": "A) A empregada não tem razão, pois é direito do empregador retornar do trabalho realizado em domicílio para o presencial, sendo desnecessária a concordância do empregado para mudança do regime de teletrabalho para o presencial, conforme o Art. 75-C § 2º, da CLT. B) A tese a ser apresentada é a de que o teletrabalho não enseja pagamento de horas extras, estando excluído do regime de duração horária, na forma do Artigo 62, inciso III, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A empregada não tem razão, pois é direito do empregador retornar do trabalho realizado em domicílio para o presencial, sendo desnecessária a concordância do empregado para mudança do regime de teletrabalho para o presencial, conforme o Art. 75-C § 2º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "A tese a ser apresentada é a de que o teletrabalho não enseja pagamento de horas extras, estando excluído do regime de duração horária, na forma do Artigo 62, inciso III, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A empregada não tem razão, porque é direito do empregador retornar do trabalho em domicílio para presencial ou é desnecessária a concordância para mudança do regime de teletrabalho para o presencial (0,55). Indicação Art. 75-C, § 2º, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "O teletrabalho não gera horas extras ou está excluído do regime de duração horária (0,50). Indicação Art. 62, III, CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A empregada não tem razão, porque é direito do empregador retornar do trabalho em domicílio para presencial ou é desnecessária a concordância para mudança do regime de teletrabalho para o presencial (0,55). Indicação Art. 75-C, § 2º, CLT (0,10) 0,00/0,55/0,65 B. O teletrabalho não gera horas extras ou está excluído do regime de duração horária (0,50). Indicação Art. 62, III, CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 235,
+      "paginaFinalColetanea": 235,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-32-q2",
+    "questionId": "trabalho-32-q2",
+    "exameNumero": 32,
+    "numero": 2,
+    "gabaritoComentado": "A) A substituição ou apresentação do depósito recursal em dinheiro por fiança bancária ou seguro garantia judicial, na forma do Art. 899, § 11, da CLT. B) Nesse caso, a sociedade empresária ficaria isenta do depósito recursal, na forma do Art. 899, § 10, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A substituição ou apresentação do depósito recursal em dinheiro por fiança bancária ou seguro garantia judicial, na forma do Art. 899, § 11, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Nesse caso, a sociedade empresária ficaria isenta do depósito recursal, na forma do Art. 899, § 10, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A substituição do depósito recursal por fiança bancária OU seguro garantia judicial (0,55). Indicação Art. 899, § 11, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "A sociedade empresária seria isenta do depósito recursal (0,50). Indicação do Art. 899, § 10, da CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A substituição do depósito recursal por fiança bancária OU seguro garantia judicial (0,55). Indicação Art. 899, § 11, CLT (0,10) 0,00/0,55/0,65 B. A sociedade empresária seria isenta do depósito recursal (0,50). Indicação do Art. 899, § 10, da CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 236,
+      "paginaFinalColetanea": 236,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-32-q3",
+    "questionId": "trabalho-32-q3",
+    "exameNumero": 32,
+    "numero": 3,
+    "gabaritoComentado": "A. A tese a ser apresentada é a de que o intervalo para refeição devido, após o advento da Lei nº 13.467/17, tem natureza indenizatória e, assim, não gera reflexo em outros direitos, conforme prevê o Art. 71, § 4º, da CLT. B. Na defesa dos interesses da empresa, deverá ser suscitada preliminar de inépcia para extinção do processo sem resolução do mérito porque não houve indicação do valor na petição inicial, em desacordo com o que determina o Art. 840, §§ 1º ou 3º, da CLT, Art. 852-B, I ou § 1º, da CLT, Art. 330, I ou § 1º, I ou II, do CPC ou Art. 337, IV, do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A tese a ser apresentada é a de que o intervalo para refeição devido, após o advento da Lei nº 13.467/17, tem natureza indenizatória e, assim, não gera reflexo em outros direitos, conforme prevê o Art. 71, § 4º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Na defesa dos interesses da empresa, deverá ser suscitada preliminar de inépcia para extinção do processo sem resolução do mérito porque não houve indicação do valor na petição inicial, em desacordo com o que determina o Art. 840, §§ 1º ou 3º, da CLT, Art. 852-B, I ou § 1º, da CLT, Art. 330, I ou § 1º, I ou II, do CPC ou Art. 337, IV, do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O intervalo para refeição tem natureza indenizatória (0,55). Indicação Art. 71, § 4º, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Inépcia da petição inicial (0,50). Indicação Art. 840, §§ 1º ou 3º, CLT, Art. 852-B, I ou § 1º, CLT ou Art. 330, I ou § 1º, I ou II, CPC ou Art. 337, IV, CPC (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O intervalo para refeição tem natureza indenizatória (0,55). Indicação Art. 71, § 4º, CLT (0,10). 0,00/0,55/0,65 B. Inépcia da petição inicial (0,50). Indicação Art. 840, §§ 1º ou 3º, CLT, Art. 852-B, I ou § 1º, CLT ou Art. 330, I ou § 1º, I ou II, CPC ou Art. 337, IV, CPC (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 237,
+      "paginaFinalColetanea": 237,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-32-q4",
+    "questionId": "trabalho-32-q4",
+    "exameNumero": 32,
+    "numero": 4,
+    "gabaritoComentado": "A) A tese defensiva é a de que na extinção de contrato a termo, como é o caso do contrato de experiência, não é devido o pagamento do aviso prévio, conforme Art. 487 da CLT, pois o contrato foi encerrado no termo final previsto. B) Uma vez que o valor dos pedidos submete a causa ao procedimento sumaríssimo, a sociedade empresária poderia conduzir, no máximo, duas testemunhas, conforme o Art. 852-H, § 2º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A tese defensiva é a de que na extinção de contrato a termo, como é o caso do contrato de experiência, não é devido o pagamento do aviso prévio, conforme Art. 487 da CLT, pois o contrato foi encerrado no termo final previsto."
+      },
+      {
+        "letra": "B",
+        "texto": "Uma vez que o valor dos pedidos submete a causa ao procedimento sumaríssimo, a sociedade empresária poderia conduzir, no máximo, duas testemunhas, conforme o Art. 852-H, § 2º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "No contrato de experiência não é devido o aviso prévio OU indevido o aviso prévio porque o contrato encerrado no termo final previsto (0,55). Indicação Art. 487, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "No máximo, duas testemunhas (0,50). Indicação Art. 852-H, § 2º, CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. No contrato de experiência não é devido o aviso prévio OU indevido o aviso prévio porque o contrato encerrado no termo final previsto (0,55). Indicação Art. 487, CLT (0,10) 0,00/0,55/0,65 B. No máximo, duas testemunhas (0,50). Indicação Art. 852-H, § 2º, CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 238,
+      "paginaFinalColetanea": 238,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-33-q1",
+    "questionId": "trabalho-33-q1",
+    "exameNumero": 33,
+    "numero": 1,
+    "gabaritoComentado": "A) O argumento adequado é o de que a higienização de instalações sanitárias de uso público ou coletivo de grande circulação enseja o pagamento de adicional de insalubridade, na forma da Súmula 448, inciso II, do TST. B) Sim. A ação poderia ser ajuizada pelo sindicato de classe dos empregados como substituto processual, na forma da OJ 121 do TST, ou do Art. 8º, inciso III, da CRFB/88, ou Art. 513, alínea “a”, da CLT ou Art. 18 do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O argumento adequado é o de que a higienização de instalações sanitárias de uso público ou coletivo de grande circulação enseja o pagamento de adicional de insalubridade, na forma da Súmula 448, inciso II, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim. A ação poderia ser ajuizada pelo sindicato de classe dos empregados como substituto processual, na forma da OJ 121 do TST, ou do Art. 8º, inciso III, da CRFB/88, ou Art. 513, alínea “a”, da CLT ou Art. 18 do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que a higienização de instalações sanitárias de uso público ou coletivo de grande circulação gera pagamento de insalubridade (0,55). Indicação Súmula 448, II, TST (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Sim, o sindicato de classe dos empregados (0,50). Indicação OJ 121, TST, ou Art. 8º, III, CRFB/88, ou Art. 513, “a”, CLT ou Art. 18 CPC (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que a higienização de instalações sanitárias de uso público ou coletivo de grande circulação gera pagamento de insalubridade (0,55). Indicação Súmula 448, II, TST (0,10) 0,00/0,55/0,65 B. Sim, o sindicato de classe dos empregados (0,50). Indicação OJ 121, TST, ou Art. 8º, III, CRFB/88, ou Art. 513, “a”, CLT ou Art. 18 CPC (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 242,
+      "paginaFinalColetanea": 242,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-33-q2",
+    "questionId": "trabalho-33-q2",
+    "exameNumero": 33,
+    "numero": 2,
+    "gabaritoComentado": "A) Apesar de haver culpa do empregado, a possibilidade de desconto no seu salário por dano causado pelo empregado não foi acordada no contrato, daí não poderia ser efetuada, conforme o Art. 462, § 1º, da CLT. B) Nada deve ser feito a respeito, porque a realização do exame toxicológico para motoristas profissionais é prevista em Lei, sendo portanto legítimo que a empresa o exija, não caracterizando assim ato ilícito, conforme o Art. 168, § 6º, e o Art. 235-B, inciso VII, ambos da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Apesar de haver culpa do empregado, a possibilidade de desconto no seu salário por dano causado pelo empregado não foi acordada no contrato, daí não poderia ser efetuada, conforme o Art. 462, § 1º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Nada deve ser feito a respeito, porque a realização do exame toxicológico para motoristas profissionais é prevista em Lei, sendo portanto legítimo que a empresa o exija, não caracterizando assim ato ilícito, conforme o Art. 168, § 6º, e o Art. 235-B, inciso VII, ambos da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que a possibilidade de desconto não foi acordada (0,55). Indicação Art. 462, § 1º, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Nenhuma medida a ser adotada porque esse exame é previsto em Lei ou é legítima a sua exigência pela empresa (0,50). Indicação Art. 168, § 6º ou Art. 235-B, VII, ambos da CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que a possibilidade de desconto não foi acordada (0,55). Indicação Art. 462, § 1º, CLT (0,10) 0,00/0,55/0,65 B. Nenhuma medida a ser adotada porque esse exame é previsto em Lei ou é legítima a sua exigência pela empresa (0,50). Indicação Art. 168, § 6º ou Art. 235-B, VII, ambos da CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 243,
+      "paginaFinalColetanea": 243,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-33-q3",
+    "questionId": "trabalho-33-q3",
+    "exameNumero": 33,
+    "numero": 3,
+    "gabaritoComentado": "A) O enquadramento deve ser de improbidade, ato de desonestidade, conforme o Art. 482, alínea “a”, da CLT, ou ainda mau procedimento, conforme o Art. 482, alínea “b”, da CLT. B) Ajuizar ação de consignação em pagamento, conforme o Art. 539 do CPC ou o Art. 335, inciso I, do CCB.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O enquadramento deve ser de improbidade, ato de desonestidade, conforme o Art. 482, alínea “a”, da CLT, ou ainda mau procedimento, conforme o Art. 482, alínea “b”, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Ajuizar ação de consignação em pagamento, conforme o Art. 539 do CPC ou o Art. 335, inciso I, do CCB."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Ato de improbidade (0,55). Indicação Art. 482, “a”, CLT (0,10) OU Mau procedimento (0,55). Indicação Art. 482, “b”, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Ação de consignação em pagamento (0,50). Indicação Art. 539, CPC ou Art. 335, I, CCB (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Ato de improbidade (0,55). Indicação Art. 482, “a”, CLT (0,10) OU Mau procedimento (0,55). Indicação Art. 482, “b”, CLT (0,10) 0,00/0,55/0,65 B. Ação de consignação em pagamento (0,50). Indicação Art. 539, CPC ou Art. 335, I, CCB (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 244,
+      "paginaFinalColetanea": 244,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-33-q4",
+    "questionId": "trabalho-33-q4",
+    "exameNumero": 33,
+    "numero": 4,
+    "gabaritoComentado": "A) O pedido seria de complementação das custas no prazo de 5 dias, conforme OJ 140 do TST e o Art. 1.007, § 2º, do CPC. B) Interpor recurso de agravo de instrumento, previsto no Art. 897, alínea b, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O pedido seria de complementação das custas no prazo de 5 dias, conforme OJ 140 do TST e o Art. 1.007, § 2º, do CPC."
+      },
+      {
+        "letra": "B",
+        "texto": "Interpor recurso de agravo de instrumento, previsto no Art. 897, alínea b, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Complementação das custas (0,55). Indicação OJ 140 TST ou Art. 1.007, § 2º, CPC (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Agravo de instrumento (0,50). Indicação Art. 897, “b”, CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Complementação das custas (0,55). Indicação OJ 140 TST ou Art. 1.007, § 2º, CPC (0,10) 0,00/0,55/0,65 B. Agravo de instrumento (0,50). Indicação Art. 897, “b”, CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 245,
+      "paginaFinalColetanea": 245,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-34-q1",
+    "questionId": "trabalho-34-q1",
+    "exameNumero": 34,
+    "numero": 1,
+    "gabaritoComentado": "A) Deve ser requerida a representação do autor por outro empregado de mesma profissão ou pelo sindicato de classe, na forma do Art. 843, § 2º, da CLT. B) Deve ser sustentada a rescisão indireta por mora salarial e descumprimento contratual, na forma do Art. 483, alínea d, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deve ser requerida a representação do autor por outro empregado de mesma profissão ou pelo sindicato de classe, na forma do Art. 843, § 2º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deve ser sustentada a rescisão indireta por mora salarial e descumprimento contratual, na forma do Art. 483, alínea d, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Requerer a representação do autor por outro empregado de mesma profissão OU pelo sindicato de classe (0,55). Indicação Art. 843, § 2º, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "A rescisão indireta (0,50). Indicação Art. 483, “d”, CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Requerer a representação do autor por outro empregado de mesma profissão OU pelo sindicato de classe (0,55). Indicação Art. 843, § 2º, CLT (0,10) 0,00/0,55/0,65 B. A rescisão indireta (0,50). Indicação Art. 483, “d”, CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 249,
+      "paginaFinalColetanea": 249,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-34-q2",
+    "questionId": "trabalho-34-q2",
+    "exameNumero": 34,
+    "numero": 2,
+    "gabaritoComentado": "A) A sociedade empresária deve impetrar mandado de segurança porque a CLT prevê, expressamente, que não haverá antecipação de honorários periciais, conforme o Art. 790-B, § 3º, da CLT, OJ 98 da SDI-2 do TST ou Art. 5º, inciso LXIX, CF/88 ou Art. 1º da Lei 12.016/09. B) A tese a ser defendida é a de que o adicional de insalubridade deve ter como base de cálculo o salário-mínimo, e não o salário-base do empregado, na forma do Art. 192 da CLT ou Súmula Vinculante nº 4 do STF.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A sociedade empresária deve impetrar mandado de segurança porque a CLT prevê, expressamente, que não haverá antecipação de honorários periciais, conforme o Art. 790-B, § 3º, da CLT, OJ 98 da SDI-2 do TST ou Art. 5º, inciso LXIX, CF/88 ou Art. 1º da Lei 12.016/09."
+      },
+      {
+        "letra": "B",
+        "texto": "A tese a ser defendida é a de que o adicional de insalubridade deve ter como base de cálculo o salário-mínimo, e não o salário-base do empregado, na forma do Art. 192 da CLT ou Súmula Vinculante nº 4 do STF."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Impetrar mandado de segurança (0,55). Indicação Art. 790-B, § 3º, CLT, ou OJ 98 SDI-2 TST ou Art. 5º, LXIX, CF/88 ou Art. 1º Lei 12.016/09 (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que o adicional de insalubridade deve ser calculado sobre o salário-mínimo (0,50). Indicação Art. 192, CLT ou Súmula Vinculante 4 STF(0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Impetrar mandado de segurança (0,55). Indicação Art. 790-B, § 3º, CLT, ou OJ 98 SDI-2 TST ou Art. 5º, LXIX, CF/88 ou Art. 1º Lei 12.016/09 (0,10). 0,00/0,55/0,65 B. Que o adicional de insalubridade deve ser calculado sobre o salário-mínimo (0,50). Indicação Art. 192, CLT ou Súmula Vinculante 4 STF(0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 250,
+      "paginaFinalColetanea": 250,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-34-q3",
+    "questionId": "trabalho-34-q3",
+    "exameNumero": 34,
+    "numero": 3,
+    "gabaritoComentado": "A) A medida a ser adotada são os embargos de terceiro, conforme previsto no Art. 674 do CPC, utilizado, subsidiariamente, na seara trabalhista, por força do Art. 769 da CLT. B) Interpor recurso de agravo de petição, previsto no Art. 897, alínea a, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A medida a ser adotada são os embargos de terceiro, conforme previsto no Art. 674 do CPC, utilizado, subsidiariamente, na seara trabalhista, por força do Art. 769 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Interpor recurso de agravo de petição, previsto no Art. 897, alínea a, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Embargos de terceiro (0,55). Indicação Art. 674, CPC (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Agravo de petição (0,50). Indicação Art. 897, “a”, CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Embargos de terceiro (0,55). Indicação Art. 674, CPC (0,10) 0,00/0,55/0,65 B. Agravo de petição (0,50). Indicação Art. 897, “a”, CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 251,
+      "paginaFinalColetanea": 251,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-34-q4",
+    "questionId": "trabalho-34-q4",
+    "exameNumero": 34,
+    "numero": 4,
+    "gabaritoComentado": "A) Na defesa dos interesses do reclamante, o candidato deverá sustentar que não se aplica a tese de força maior porque não houve extinção do estabelecimento ou da empresa, como exige o Art. 502 da CLT. B) O ônus da prova será do empregado porque a reclamada contava com menos de 20 empregados, sendo, então, desnecessário que ela mantivesse controle escrito dos horários de entrada e saída deles, conforme o Art. 74, § 2º, da CLT. Considerando que a questão envolve direito intertemporal, se a resposta especificar que se refere ao período compreendido entre a admissão e a vigência da Lei 13.874/19 (19/09/2019), será aceito que o ônus da prova pertencerá ao empregador porque o estabelecimento tinha mais de 10 empregados, e à época esse quantitativo exigia a manutenção de controle de horário, conforme Art. 74, § 2º, CLT e Súmula 338, I, TST. Página 252 Prova Prático-Profissional – XXXIV Exame de Ordem Unificado",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Na defesa dos interesses do reclamante, o candidato deverá sustentar que não se aplica a tese de força maior porque não houve extinção do estabelecimento ou da empresa, como exige o Art. 502 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "O ônus da prova será do empregado porque a reclamada contava com menos de 20 empregados, sendo, então, desnecessário que ela mantivesse controle escrito dos horários de entrada e saída deles, conforme o Art. 74, § 2º, da CLT. Considerando que a questão envolve direito intertemporal, se a resposta especificar que se refere ao período compreendido entre a admissão e a vigência da Lei 13.874/19 (19/09/2019), será aceito que o ônus da prova pertencerá ao empregador porque o estabelecimento tinha mais de 10 empregados, e à época esse quantitativo exigia a manutenção de controle de horário, conforme Art. 74, § 2º, CLT e Súmula 338, I, TST. Página 252 Prova Prático-Profissional – XXXIV Exame de Ordem Unificado"
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que não houve extinção do(a) estabelecimento/empresa (0,55). Indicação Art. 502, CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Do empregado, porque o estabelecimento tinha menos de 20 empregados (0,50). Indicação Art. 74, § 2º ou Art. 818, I, ambos da CLT (0,10) OU Do empregador, até a vigência da Lei 13.874/19 (19/9/2019), porque o estabelecimento tinha mais de 10 empregados e, desta data em diante, do empregado porque o estabelecimento tinha menos de 20 empregados (0,50). Indicação Art. 74, § 2º, CLT ou Art. 818 da CLT ou Súmula 338, I, TST (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que não houve extinção do(a) estabelecimento/empresa (0,55). Indicação Art. 502, CLT (0,10) 0,00/0,55/0,65 B. Do empregado, porque o estabelecimento tinha menos de 20 empregados (0,50). Indicação Art. 74, § 2º ou Art. 818, I, ambos da CLT (0,10) OU Do empregador, até a vigência da Lei 13.874/19 (19/9/2019), porque o estabelecimento tinha mais de 10 empregados e, desta data em diante, do empregado porque o estabelecimento tinha menos de 20 empregados (0,50). Indicação Art. 74, § 2º, CLT ou Art. 818 da CLT ou Súmula 338, I, TST (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 252,
+      "paginaFinalColetanea": 253,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-35-q1",
+    "questionId": "trabalho-35-q1",
+    "exameNumero": 35,
+    "numero": 1,
+    "gabaritoComentado": "A) Que o período de garantia no emprego, que vigora por toda a gravidez e até 5 meses após o parto, já terminou, não havendo empecilho jurídico à dispensa sem justa causa, conforme Art. 10, inciso II, alínea b, do ADCT ou Art. 391-A da CLT. B) Impetraria mandado de segurança, conforme previsto na Súmula 414, inciso II, do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Que o período de garantia no emprego, que vigora por toda a gravidez e até 5 meses após o parto, já terminou, não havendo empecilho jurídico à dispensa sem justa causa, conforme Art. 10, inciso II, alínea b, do ADCT ou Art. 391-A da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Impetraria mandado de segurança, conforme previsto na Súmula 414, inciso II, do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O período de garantia no emprego, até 5 meses após o parto, já terminou (0,55). Indicação do Art. 10, inciso II, alinea b, do ADCT ou Art. 391-A da CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Impetrar mandado de segurança (0,50). Indicação da Súmula 414, inciso II, do TST (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O período de garantia no emprego, até 5 meses após o parto, já terminou (0,55). Indicação do Art. 10, inciso II, alinea b, do ADCT ou Art. 391-A da CLT (0,10) 0,00/0,55/0,65 B. Impetrar mandado de segurança (0,50). Indicação da Súmula 414, inciso II, do TST (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 257,
+      "paginaFinalColetanea": 257,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-35-q2",
+    "questionId": "trabalho-35-q2",
+    "exameNumero": 35,
+    "numero": 2,
+    "gabaritoComentado": "A) Para a defesa do reclamante em relação à preliminar de quitação, o examinando deverá sustentar que o plano não foi previsto em norma coletiva, motivo pelo qual não terá o efeito de liberação total do ex-empregador, na forma do Art. 477-B da CLT. B) Contra a tese de prescrição por ato único do empregador, o candidato deverá sustentar que a irredutibilidade salarial está assegurada por preceito de Lei, não cabendo, por isso, a tese de prescrição total, conforme o Art. 11, § 2º, da CLT e a Súmula 294 do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Para a defesa do reclamante em relação à preliminar de quitação, o examinando deverá sustentar que o plano não foi previsto em norma coletiva, motivo pelo qual não terá o efeito de liberação total do ex-empregador, na forma do Art. 477-B da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Contra a tese de prescrição por ato único do empregador, o candidato deverá sustentar que a irredutibilidade salarial está assegurada por preceito de Lei, não cabendo, por isso, a tese de prescrição total, conforme o Art. 11, § 2º, da CLT e a Súmula 294 do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O plano não foi previsto em norma coletiva (0,55). Indicação do Art. 477-B da CLT (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "A parcela está assegurada por preceito de Lei (0,50). Indicação do Art. 11, § 2º, da CLT ou Súmula 294 do TST (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O plano não foi previsto em norma coletiva (0,55). Indicação do Art. 477-B da CLT (0,10) 0,00/0,55/0,65 B. A parcela está assegurada por preceito de Lei (0,50). Indicação do Art. 11, § 2º, da CLT ou Súmula 294 do TST (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 258,
+      "paginaFinalColetanea": 258,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-35-q3",
+    "questionId": "trabalho-35-q3",
+    "exameNumero": 35,
+    "numero": 3,
+    "gabaritoComentado": "A) Na defesa dos interesses de Diego, o examinando deverá sustentar que entre a saída do ex-sócio e o ajuizamento da ação transcorreram mais de 2 anos, liberando-o de qualquer passivo, na forma do Art. 10-A da CLT e Art. 1003, parágrafo único, do CCB. B) Diante da decisão tomada já em sede de execução, o recurso cabível será o agravo de petição, na forma do Art. 897, alínea a, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Na defesa dos interesses de Diego, o examinando deverá sustentar que entre a saída do ex-sócio e o ajuizamento da ação transcorreram mais de 2 anos, liberando-o de qualquer passivo, na forma do Art. 10-A da CLT e Art. 1003, parágrafo único, do CCB."
+      },
+      {
+        "letra": "B",
+        "texto": "Diante da decisão tomada já em sede de execução, o recurso cabível será o agravo de petição, na forma do Art. 897, alínea a, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que entre a saída do ex-sócio e o ajuizamento da ação transcorreram mais de 2 anos (0,55). Indicação do Art. 10-A, da CLT ou do Art. 1003, parágrafo único, do CCB (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Interpor agravo de petição (0,50). Indicação do Art. 897, alínea a, da CLT (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que entre a saída do ex-sócio e o ajuizamento da ação transcorreram mais de 2 anos (0,55). Indicação do Art. 10-A, da CLT ou do Art. 1003, parágrafo único, do CCB (0,10) 0,00/0,55/0,65 B. Interpor agravo de petição (0,50). Indicação do Art. 897, alínea a, da CLT (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 259,
+      "paginaFinalColetanea": 259,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-35-q4",
+    "questionId": "trabalho-35-q4",
+    "exameNumero": 35,
+    "numero": 4,
+    "gabaritoComentado": "A) Na defesa de Ênio, a alegação será a de que, mesmo fora do prazo, a ciência ao empregador ocorreu na vigência do contrato de trabalho, garantindo, assim, a estabilidade do dirigente, na forma da Súmula 369, inciso I, do TST. B) Na defesa de Ênio, a alegação é que seria necessário instaurar inquérito (judicial ou para apuração de falta grave) prévio para ensejar, em caso de sucesso, a dispensa por justa causa do dirigente sindical, na forma do Art. 8º, inciso VIII, da CRFB/88, ou da Súmula 379 do TST, ou do Art. 543, § 3º, da CLT, ou do Art. 853 ou Art. 494, também da CLT ou ainda da Súmula 197 do STF.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Na defesa de Ênio, a alegação será a de que, mesmo fora do prazo, a ciência ao empregador ocorreu na vigência do contrato de trabalho, garantindo, assim, a estabilidade do dirigente, na forma da Súmula 369, inciso I, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Na defesa de Ênio, a alegação é que seria necessário instaurar inquérito (judicial ou para apuração de falta grave) prévio para ensejar, em caso de sucesso, a dispensa por justa causa do dirigente sindical, na forma do Art. 8º, inciso VIII, da CRFB/88, ou da Súmula 379 do TST, ou do Art. 543, § 3º, da CLT, ou do Art. 853 ou Art. 494, também da CLT ou ainda da Súmula 197 do STF."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que a ciência do empregador ocorreu na vigência do contrato de trabalho (0,55). Indicação da Súmula 369, inciso I, do TST (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que seria necessário inquérito (judicial ou para apuração de falta grave) (0,50). Indicação do Art. 8º, inciso VIII, da CRFB/88 ou Súmula 379 do TST ou Art. 543, § 3º, da CLT ou Art. 853 da CLT ou Art. 494 da CLT ou Súmula 197 do STF (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que a ciência do empregador ocorreu na vigência do contrato de trabalho (0,55). Indicação da Súmula 369, inciso I, do TST (0,10) 0,00/0,55/0,65 B. Que seria necessário inquérito (judicial ou para apuração de falta grave) (0,50). Indicação do Art. 8º, inciso VIII, da CRFB/88 ou Súmula 379 do TST ou Art. 543, § 3º, da CLT ou Art. 853 da CLT ou Art. 494 da CLT ou Súmula 197 do STF (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 260,
+      "paginaFinalColetanea": 260,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-36-q1",
+    "questionId": "trabalho-36-q1",
+    "exameNumero": 36,
+    "numero": 1,
+    "gabaritoComentado": "A) Estará caracterizada a pré-contratação de horas extras, logo, será nula. Indicação da Súmula 199, inciso I, do TST. B) Deverá sustentar que não há mais a exigência de o preposto ser empregado da ré, nos termos do Art. 843, § 3º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Estará caracterizada a pré-contratação de horas extras, logo, será nula. Indicação da Súmula 199, inciso I, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá sustentar que não há mais a exigência de o preposto ser empregado da ré, nos termos do Art. 843, § 3º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A pré-contratação de horas extras é nula (0,55). Indicação Súmula 199, inciso I, TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "O preposto não precisa ser empregado (0,50). Indicação Art. 843, § 3º, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A pré-contratação de horas extras é nula (0,55). Indicação Súmula 199, inciso I, TST (0,10). 0,00/0,55/0,65 B. O preposto não precisa ser empregado (0,50). Indicação Art. 843, § 3º, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 263,
+      "paginaFinalColetanea": 263,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-36-q2",
+    "questionId": "trabalho-36-q2",
+    "exameNumero": 36,
+    "numero": 2,
+    "gabaritoComentado": "A) Deverá ser sustentada a improcedência do pedido porque não houve substituição efetiva, mas sim vacância do cargo, não tendo ocorrido substituição interina, eventual ou temporária, na forma do Art. 450 da CLT ou da Súmula 159, inciso II, do TST. B) Deverá ser apresentada exceção de incompetência territorial, em até 05 dias, nos termos do Art. 800 da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentada a improcedência do pedido porque não houve substituição efetiva, mas sim vacância do cargo, não tendo ocorrido substituição interina, eventual ou temporária, na forma do Art. 450 da CLT ou da Súmula 159, inciso II, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser apresentada exceção de incompetência territorial, em até 05 dias, nos termos do Art. 800 da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não há diferença salarial por se tratar de cargo vago (0,55). Indicação Art. 450, CLT ou Súmula 159, II, TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Apresentar exceção de incompetência territorial (0,50). Indicação Art. 800, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não há diferença salarial por se tratar de cargo vago (0,55). Indicação Art. 450, CLT ou Súmula 159, II, TST (0,10). 0,00/0,55/0,65 B. Apresentar exceção de incompetência territorial (0,50). Indicação Art. 800, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 264,
+      "paginaFinalColetanea": 264,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-36-q3",
+    "questionId": "trabalho-36-q3",
+    "exameNumero": 36,
+    "numero": 3,
+    "gabaritoComentado": "A) Deverá ser sustentado que é lícita a inclusão de logomarcas no uniforme, ou não há violação do direito de imagem, dado que cabe ao empregador definir a vestimenta no trabalho, nos termos do Art. 456-A da CLT. B) Deverá ser interposto agravo de instrumento, na forma do Art. 897, alínea b, da CLT ou embargos de declaração, na forma do Art. 897-A da CLT, por manifesto equívoco no exame dos pressupostos extrínsecos do recurso.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentado que é lícita a inclusão de logomarcas no uniforme, ou não há violação do direito de imagem, dado que cabe ao empregador definir a vestimenta no trabalho, nos termos do Art. 456-A da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser interposto agravo de instrumento, na forma do Art. 897, alínea b, da CLT ou embargos de declaração, na forma do Art. 897-A da CLT, por manifesto equívoco no exame dos pressupostos extrínsecos do recurso."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O uso de logomarcas no uniforme é lícito ou não há violação do direito de imagem ou cabe ao empregador definir a vestimenta (0,55). Indicação Art. 456-A, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Deverá ser interposto agravo de instrumento (0,50). Indicação Art. 897, “b”, CLT (0,10). ou embargos de declaração (0,50). Indicação Art. 897-A, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O uso de logomarcas no uniforme é lícito ou não há violação do direito de imagem ou cabe ao empregador definir a vestimenta (0,55). Indicação Art. 456-A, CLT (0,10). 0,00/0,55/0,65 B. Deverá ser interposto agravo de instrumento (0,50). Indicação Art. 897, “b”, CLT (0,10). ou embargos de declaração (0,50). Indicação Art. 897-A, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 265,
+      "paginaFinalColetanea": 265,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-36-q4",
+    "questionId": "trabalho-36-q4",
+    "exameNumero": 36,
+    "numero": 4,
+    "gabaritoComentado": "A) Deverá ser aduzido que não é admitida a ultratividade da norma coletiva, na forma do Art. 614, § 3º, da CLT. B) Deverá ser interposto Recurso de Revista, com fulcro no Art. 896, alínea c, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser aduzido que não é admitida a ultratividade da norma coletiva, na forma do Art. 614, § 3º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser interposto Recurso de Revista, com fulcro no Art. 896, alínea c, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não há ultratividade da norma coletiva (0,55). Indicação Art. 614, § 3º, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Interpor Recurso de Revista (0,50). Indicação Art. 896, alínea c, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não há ultratividade da norma coletiva (0,55). Indicação Art. 614, § 3º, CLT (0,10). 0,00/0,55/0,65 B. Interpor Recurso de Revista (0,50). Indicação Art. 896, alínea c, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 266,
+      "paginaFinalColetanea": 266,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-37-q1",
+    "questionId": "trabalho-37-q1",
+    "exameNumero": 37,
+    "numero": 1,
+    "gabaritoComentado": "A) O fracionamento realizado é inválido porque a CLT determina que no caso de as férias serem aproveitadas em 3 períodos, 1 deles não pode ser inferior a 14 dias, conforme o Art. 134, § 1º, da CLT. B) Em defesa dos interesses da sociedade empresária, deverá ser suscitada a inépcia do pedido, já que não foi indicado o valor, não atendendo ao que prevê o Art. 840, §§ 1º ou 3º, da CLT, ou ainda do Art. 330, § 1º, II, do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O fracionamento realizado é inválido porque a CLT determina que no caso de as férias serem aproveitadas em 3 períodos, 1 deles não pode ser inferior a 14 dias, conforme o Art. 134, § 1º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Em defesa dos interesses da sociedade empresária, deverá ser suscitada a inépcia do pedido, já que não foi indicado o valor, não atendendo ao que prevê o Art. 840, §§ 1º ou 3º, da CLT, ou ainda do Art. 330, § 1º, II, do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "É inválido porque um dos períodos não pode ser inferior a 14 dias (0,55). Indicação Art. 134, § 1º, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Inépcia (0,50). Indicação Art. 840, § 1º ou § 3º, CLT OU Art. 330, § 1º, II, do CPC (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. É inválido porque um dos períodos não pode ser inferior a 14 dias (0,55). Indicação Art. 134, § 1º, CLT (0,10). 0,00/0,55/0,65 B. Inépcia (0,50). Indicação Art. 840, § 1º ou § 3º, CLT OU Art. 330, § 1º, II, do CPC (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 270,
+      "paginaFinalColetanea": 270,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-37-q2",
+    "questionId": "trabalho-37-q2",
+    "exameNumero": 37,
+    "numero": 2,
+    "gabaritoComentado": "A) Deverá ser instaurado dissídio coletivo dentro dos 60 dias que antecedem o termo final da norma em vigor, conforme os artigos 616, § 3º, da CLT e 114, § 2º, da CRFB/88. B) Nos termos dos artigos 611-B, inciso XI, da CLT e 7º, XVII da CRFB/898, deverá ser alegado que é vedado à norma coletiva dispor acerca da redução do número de dias de férias, tratando-se de direito indisponível.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser instaurado dissídio coletivo dentro dos 60 dias que antecedem o termo final da norma em vigor, conforme os artigos 616, § 3º, da CLT e 114, § 2º, da CRFB/88."
+      },
+      {
+        "letra": "B",
+        "texto": "Nos termos dos artigos 611-B, inciso XI, da CLT e 7º, XVII da CRFB/898, deverá ser alegado que é vedado à norma coletiva dispor acerca da redução do número de dias de férias, tratando-se de direito indisponível."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Instaurar dissídio coletivo (0,35) nos 60 dias anteriores ao término da vigência da norma/convenção coletiva (0,20). Indicação Art. 616, § 3º, CLT ou Art. 114, § 2º, CRFB/88 (0,10).",
+        "escala": "0,00/0,35/0,45/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que é vedado à norma/convenção coletiva reduzir a quantidade de férias ou ilegal porque se trata de direito indisponível (0,50). Indicação Art. 611-B, XI, CLT ou Art. 7º, XVII, CRFB/88 (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Instaurar dissídio coletivo (0,35) nos 60 dias anteriores ao término da vigência da norma/convenção coletiva (0,20). Indicação Art. 616, § 3º, CLT ou Art. 114, § 2º, CRFB/88 (0,10). 0,00/0,35/0,45/ 0,55/0,65 B. Que é vedado à norma/convenção coletiva reduzir a quantidade de férias ou ilegal porque se trata de direito indisponível (0,50). Indicação Art. 611-B, XI, CLT ou Art. 7º, XVII, CRFB/88 (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 271,
+      "paginaFinalColetanea": 271,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-37-q3",
+    "questionId": "trabalho-37-q3",
+    "exameNumero": 37,
+    "numero": 3,
+    "gabaritoComentado": "A) A sociedade empresária deverá dirigir requerimento de efeito suspensivo ao recurso ordinário, na forma da Súmula 414, inciso I, do TST. B) O prazo de contrarrazões é de 8 dias, na forma dos artigos 900 da CLT e 6º da Lei 5.584/70.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A sociedade empresária deverá dirigir requerimento de efeito suspensivo ao recurso ordinário, na forma da Súmula 414, inciso I, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "O prazo de contrarrazões é de 8 dias, na forma dos artigos 900 da CLT e 6º da Lei 5.584/70."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Requerimento de efeito suspensivo ao recurso ordinário (0,55). Indicação da Súmula 414, inciso I, do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "O prazo de contrarrazões é de 8 dias (0,50). Indicação do Art. 900 da CLT ou Art. 6º da Lei 5.584/70 (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Requerimento de efeito suspensivo ao recurso ordinário (0,55). Indicação da Súmula 414, inciso I, do TST (0,10). 0,00/0,55/0,65 B. O prazo de contrarrazões é de 8 dias (0,50). Indicação do Art. 900 da CLT ou Art. 6º da Lei 5.584/70 (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 272,
+      "paginaFinalColetanea": 272,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-37-q4",
+    "questionId": "trabalho-37-q4",
+    "exameNumero": 37,
+    "numero": 4,
+    "gabaritoComentado": "A) O recurso a ser interposto pelo exequente é o agravo de petição, porque a decisão foi tomada no bojo de uma execução, na forma do Art. 897, alínea a, da CLT. B) A tese a ser advogada é de que a prescrição intercorrente só fica caracterizada quando há paralisação do processo por 2 anos, conforme o Art. 11-A da CLT e o Art. 2º da Instrução Normativa 41/18 do TST, o que não foi o caso porque o feito permaneceu paralisado por 1 ano.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O recurso a ser interposto pelo exequente é o agravo de petição, porque a decisão foi tomada no bojo de uma execução, na forma do Art. 897, alínea a, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "A tese a ser advogada é de que a prescrição intercorrente só fica caracterizada quando há paralisação do processo por 2 anos, conforme o Art. 11-A da CLT e o Art. 2º da Instrução Normativa 41/18 do TST, o que não foi o caso porque o feito permaneceu paralisado por 1 ano."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Agravo de petição (0,55). Indicação Art. 897, “a”, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que a prescrição intercorrente exige que a execução fique paralisada por 2 anos (0,50). Indicação Art. 11-A, CLT ou Art. 2º, IN 41/18 TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Agravo de petição (0,55). Indicação Art. 897, “a”, CLT (0,10). 0,00/0,55/0,65 B. Que a prescrição intercorrente exige que a execução fique paralisada por 2 anos (0,50). Indicação Art. 11-A, CLT ou Art. 2º, IN 41/18 TST (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 273,
+      "paginaFinalColetanea": 273,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-38-q1",
+    "questionId": "trabalho-38-q1",
+    "exameNumero": 38,
+    "numero": 1,
+    "gabaritoComentado": "A) Deverá ser sustentado que o acordo homologado em juízo vale como decisão irrecorrível, fazendo coisa julgada material para as partes, na forma do Art. 831, parágrafo único, da CLT ou Súmula 259 ou Súmula 100, V, ambas do TST. B) Sim, por haver verba de natureza indenizatória indicada no acordo, a União deverá ser intimada, na forma do Art. 832, § 4º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentado que o acordo homologado em juízo vale como decisão irrecorrível, fazendo coisa julgada material para as partes, na forma do Art. 831, parágrafo único, da CLT ou Súmula 259 ou Súmula 100, V, ambas do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim, por haver verba de natureza indenizatória indicada no acordo, a União deverá ser intimada, na forma do Art. 832, § 4º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que o acordo homologado em juízo vale como decisão irrecorrível ou que faz coisa julgada material para as partes (0,55). Indicação do Art. 831, parágrafo único, da CLT, ou da Súmula 259, ou da Súmula 100, inciso V, ambas do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "A União (INSS) (0,30), por haver verba de natureza indenizatória (0,20). Indicação do Art. 832, § 4º, da CLT (0,10).",
+        "escala": "0,00/0,30/0,40/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que o acordo homologado em juízo vale como decisão irrecorrível ou que faz coisa julgada material para as partes (0,55). Indicação do Art. 831, parágrafo único, da CLT, ou da Súmula 259, ou da Súmula 100, inciso V, ambas do TST (0,10). 0,00/0,55/0,65 B. A União (INSS) (0,30), por haver verba de natureza indenizatória (0,20). Indicação do Art. 832, § 4º, da CLT (0,10). 0,00/0,30/0,40/ 0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 277,
+      "paginaFinalColetanea": 277,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-38-q2",
+    "questionId": "trabalho-38-q2",
+    "exameNumero": 38,
+    "numero": 2,
+    "gabaritoComentado": "A) Não, por se tratar de objeto ilícito, constituindo direito indisponível para efeito de negociação. Indicação Art. 611-B, IX, CLT ou Tema 1046, STF. B) A ação deve ser movida contra a sociedade empresária e os sindicatos de classe dos empregados e do empregador em litisconsórcio passivo necessário, conforme prevê o Art. 611-A, § 5º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Não, por se tratar de objeto ilícito, constituindo direito indisponível para efeito de negociação. Indicação Art. 611-B, IX, CLT ou Tema 1046, STF."
+      },
+      {
+        "letra": "B",
+        "texto": "A ação deve ser movida contra a sociedade empresária e os sindicatos de classe dos empregados e do empregador em litisconsórcio passivo necessário, conforme prevê o Art. 611-A, § 5º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não, por se tratar de objeto ilícito ou de direito indisponível / inegociável OU por vedação legal (0,55). Indicação do Art. 611-B, IX, da CLT ou Tema 1046, STF (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Contra a sociedade empresária e os sindicatos de classe dos empregados e do empregador/sindicatos subscritores (0,50). Indicação Art. 611-A, § 5º, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não, por se tratar de objeto ilícito ou de direito indisponível / inegociável OU por vedação legal (0,55). Indicação do Art. 611-B, IX, da CLT ou Tema 1046, STF (0,10). 0,00/0,55/0,65 B. Contra a sociedade empresária e os sindicatos de classe dos empregados e do empregador/sindicatos subscritores (0,50). Indicação Art. 611-A, § 5º, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 278,
+      "paginaFinalColetanea": 278,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-38-q3",
+    "questionId": "trabalho-38-q3",
+    "exameNumero": 38,
+    "numero": 3,
+    "gabaritoComentado": "A) Deverá ser sustentado que a União responde subsidiariamente, porque demonstrada a culpa in vigilando pela falta de fiscalização, conforme a Súmula 331, inciso V, do TST e Tema 246 da tabela de repercussão geral do STF. B) Deverá ser sustentado que, nas ações contra a Fazenda Pública, são devidos honorários advocatícios, na forma do Art. 791-A, § 1º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentado que a União responde subsidiariamente, porque demonstrada a culpa in vigilando pela falta de fiscalização, conforme a Súmula 331, inciso V, do TST e Tema 246 da tabela de repercussão geral do STF."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser sustentado que, nas ações contra a Fazenda Pública, são devidos honorários advocatícios, na forma do Art. 791-A, § 1º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A União responde subsidiariamente (0,35), porque demonstrada a culpa in vigilando/por falta de fiscalização (0,20). Indicação da Súmula 331, inciso V, do TST ou Tema 246 do STF (0,10).",
+        "escala": "0,00/0,20/0,30/0,35/0,45/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "São devidos honorários advocatícios nas ações contra a Fazenda Pública (União) (0,50). Indicação do Art. 791-A, § 1º, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A União responde subsidiariamente (0,35), porque demonstrada a culpa in vigilando/por falta de fiscalização (0,20). Indicação da Súmula 331, inciso V, do TST ou Tema 246 do STF (0,10). 0,00/0,20/0,30/0,35 0,45/0,55/0,65 B. São devidos honorários advocatícios nas ações contra a Fazenda Pública (União) (0,50). Indicação do Art. 791-A, § 1º, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 279,
+      "paginaFinalColetanea": 279,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-38-q4",
+    "questionId": "trabalho-38-q4",
+    "exameNumero": 38,
+    "numero": 4,
+    "gabaritoComentado": "A) Deverá ser alegado fato do príncipe (ato de Autoridade / ato de Governo), na forma do Art. 486 da CLT. B) Deverá ser interposto Recurso Adesivo ou Recurso Ordinário Adesivo, conforme o Art. 997, § 1º do CPC ou a Súmula 283 do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser alegado fato do príncipe (ato de Autoridade / ato de Governo), na forma do Art. 486 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser interposto Recurso Adesivo ou Recurso Ordinário Adesivo, conforme o Art. 997, § 1º do CPC ou a Súmula 283 do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Fato do príncipe / Ato de Autoridade / Governo (0,55). Indicação do Art. 486 da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Recurso Adesivo ou Recurso Ordinário Adesivo (0,50). Indicação do Art. 997, § 1º, do CPC ou da Súmula 283 do TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Fato do príncipe / Ato de Autoridade / Governo (0,55). Indicação do Art. 486 da CLT (0,10). 0,00/0,55/0,65 B. Recurso Adesivo ou Recurso Ordinário Adesivo (0,50). Indicação do Art. 997, § 1º, do CPC ou da Súmula 283 do TST (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 280,
+      "paginaFinalColetanea": 280,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-39-q1",
+    "questionId": "trabalho-39-q1",
+    "exameNumero": 39,
+    "numero": 1,
+    "gabaritoComentado": "A) Deverá ser suscitada a tese de prescrição bienal, em razão da mudança de regime celetista para estatutário, pois isto implica na extinção do contrato de trabalho, nos termos da Súmula 382 do TST, OU do Art. 11 da CLT, OU do Art. 7º, inciso XXIX, da CRFB/88. B) Deverá ser aduzido que foi obtido documento novo, a ser juntado com o recurso ordinário, na forma da Súmula 8 do TST OU Art. 435 do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser suscitada a tese de prescrição bienal, em razão da mudança de regime celetista para estatutário, pois isto implica na extinção do contrato de trabalho, nos termos da Súmula 382 do TST, OU do Art. 11 da CLT, OU do Art. 7º, inciso XXIX, da CRFB/88."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser aduzido que foi obtido documento novo, a ser juntado com o recurso ordinário, na forma da Súmula 8 do TST OU Art. 435 do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Prescrição bienal (0,30) porque o contrato de trabalho foi extinto pela mudança de regime jurídico (0,25), nos termos da Súmula 382 do TST, OU do Art. 11 da CLT, OU do Art. 7º, inciso XXIX, da CRFB/88 (0,10).",
+        "escala": "0,00/0,30/0,40/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Trata-se de documento novo (0,30) que pode ser juntado no recurso (0,20), nos termos da Súmula 8 do TST OU Art. 435 do CPC (0,10).",
+        "escala": "0,00/0,30/0,40/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Prescrição bienal (0,30) porque o contrato de trabalho foi extinto pela mudança de regime jurídico (0,25), nos termos da Súmula 382 do TST, OU do Art. 11 da CLT, OU do Art. 7º, inciso XXIX, da CRFB/88 (0,10). 0,00/0,30/0,40/ 0,55/0,65 B. Trata-se de documento novo (0,30) que pode ser juntado no recurso (0,20), nos termos da Súmula 8 do TST OU Art. 435 do CPC (0,10). 0,00/0,30/0,40/ 0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 284,
+      "paginaFinalColetanea": 284,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-39-q2",
+    "questionId": "trabalho-39-q2",
+    "exameNumero": 39,
+    "numero": 2,
+    "gabaritoComentado": "A) O contrato de trabalho de Cleonice será suspenso em razão da concessão do benefício previdenciário, conforme o Art. 475/475, caput, da CLT OU a Súmula 440 TST. B) Deverá ser ajuizada reclamação trabalhista com pedido de tutela provisória OU de urgência OU de evidência OU cautelar OU liminar, na forma do Art. 300 do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O contrato de trabalho de Cleonice será suspenso em razão da concessão do benefício previdenciário, conforme o Art. 475/475, caput, da CLT OU a Súmula 440 TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser ajuizada reclamação trabalhista com pedido de tutela provisória OU de urgência OU de evidência OU cautelar OU liminar, na forma do Art. 300 do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O contrato será suspenso (0,55), conforme o Art. 475/475, caput, da CLT OU a Súmula 440 TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Reclamação trabalhista com pedido de tutela provisória OU de urgência OU de evidência OU cautelar OU liminar (0,50), na forma do Art. 300 do CPC (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O contrato será suspenso (0,55), conforme o Art. 475/475, caput, da CLT OU a Súmula 440 TST (0,10). 0,00/0,55/0,65 B. Reclamação trabalhista com pedido de tutela provisória OU de urgência OU de evidência OU cautelar OU liminar (0,50), na forma do Art. 300 do CPC (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 285,
+      "paginaFinalColetanea": 285,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-39-q3",
+    "questionId": "trabalho-39-q3",
+    "exameNumero": 39,
+    "numero": 3,
+    "gabaritoComentado": "A) Uma vez que o empregado em questão possui estabilidade ou garantia no emprego, deverá ser ajuizado um inquérito para apuração de falta grave, conforme a Súmula 379 do TST ou o Art. 853 da CLT. B) Na hipótese não há estabilidade, porque o registro da candidatura ocorreu após a dispensa, pois já concedido o aviso prévio, conforme a Súmula 369, inciso V, do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Uma vez que o empregado em questão possui estabilidade ou garantia no emprego, deverá ser ajuizado um inquérito para apuração de falta grave, conforme a Súmula 379 do TST ou o Art. 853 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Na hipótese não há estabilidade, porque o registro da candidatura ocorreu após a dispensa, pois já concedido o aviso prévio, conforme a Súmula 369, inciso V, do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Ajuizar inquérito OU inquérito judicial OU inquérito para apuração de falta grave (0,30) porque ele tem estabilidade/garantia no emprego (0,25), conforme a Súmula 379 do TST OU Art. 853 da CLT (0,10). 0,65",
+        "escala": "0,00/0,30/0,40/0,55",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Não há estabilidade (0,30) porque o registro da candidatura foi realizado após a dispensa OU durante o aviso prévio (0,20), conforme Súmula 369, V, do TST (0,10). 0,60",
+        "escala": "0,00/0,30/0,40/0,50",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Ajuizar inquérito OU inquérito judicial OU inquérito para apuração de falta grave (0,30) porque ele tem estabilidade/garantia no emprego (0,25), conforme a Súmula 379 do TST OU Art. 853 da CLT (0,10). 0,00/0,30/0,40/0,55/ 0,65 B. Não há estabilidade (0,30) porque o registro da candidatura foi realizado após a dispensa OU durante o aviso prévio (0,20), conforme Súmula 369, V, do TST (0,10). 0,00/0,30/0,40/0,50/ 0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 286,
+      "paginaFinalColetanea": 286,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-39-q4",
+    "questionId": "trabalho-39-q4",
+    "exameNumero": 39,
+    "numero": 4,
+    "gabaritoComentado": "A) Deve ser aduzido que membro de conselho fiscal não goza da estabilidade de dirigente sindical, pois não atua diretamente na defesa dos interesses da categoria, tendo competência limitada à fiscalização da gestão financeira do sindicato, conforme entendimento da OJ 365 da SDI I do TST. B) Deverá ser impetrado mandado de segurança porque desta decisão não cabe recurso imediato OU próprio, na forma da Súmula 414, inciso II, do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deve ser aduzido que membro de conselho fiscal não goza da estabilidade de dirigente sindical, pois não atua diretamente na defesa dos interesses da categoria, tendo competência limitada à fiscalização da gestão financeira do sindicato, conforme entendimento da OJ 365 da SDI I do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser impetrado mandado de segurança porque desta decisão não cabe recurso imediato OU próprio, na forma da Súmula 414, inciso II, do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Membro de conselho fiscal não tem estabilidade (0,25) porque não atua na defesa dos interesses diretos da categoria OU porque tem competência limitada para a fiscalização da gestão financeira do sindicato (0,30), conforme entendimento da OJ 365 da SDI I do TST (0,10).",
+        "escala": "0,00/0,25/0,30/0,35/0,40/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Impetrar mandado de segurança (0,30) porque desta decisão não cabe recurso imediato OU próprio (0,20), na forma da Súmula 414, inciso II, do TST (0,10).",
+        "escala": "0,00/0,30/0,40/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Membro de conselho fiscal não tem estabilidade (0,25) porque não atua na defesa dos interesses diretos da categoria OU porque tem competência limitada para a fiscalização da gestão financeira do sindicato (0,30), conforme entendimento da OJ 365 da SDI I do TST (0,10). 0,00/0,25/0,30/ 0,35/0,40/ 0,55/0,65 B. Impetrar mandado de segurança (0,30) porque desta decisão não cabe recurso imediato OU próprio (0,20), na forma da Súmula 414, inciso II, do TST (0,10). 0,00/0,30/0,40/ 0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 287,
+      "paginaFinalColetanea": 287,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-40-q1",
+    "questionId": "trabalho-40-q1",
+    "exameNumero": 40,
+    "numero": 1,
+    "gabaritoComentado": "A) O candidato deve sustentar que é possível a instauração do incidente de desconsideração da personalidade jurídica (IDPJ) na fase de conhecimento/cognição, conforme o Art. 134 do CPC ou o Art. 855-A da CLT. B) Não caberá recurso imediato, conforme o Art. 855-A, § 1º, inciso I, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deve sustentar que é possível a instauração do incidente de desconsideração da personalidade jurídica (IDPJ) na fase de conhecimento/cognição, conforme o Art. 134 do CPC ou o Art. 855-A da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Não caberá recurso imediato, conforme o Art. 855-A, § 1º, inciso I, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "É possível a instauração do IDPJ na fase de conhecimento (0,55). Indicação do Art. 134 do CPC, ou do Art. 855-A da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Não caberá recurso imediato (0,50). Indicação do Art. 855-A, § 1º, inciso I, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. É possível a instauração do IDPJ na fase de conhecimento (0,55). Indicação do Art. 134 do CPC, ou do Art. 855-A da CLT (0,10). 0,00/0,55/0,65 B. Não caberá recurso imediato (0,50). Indicação do Art. 855-A, § 1º, inciso I, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 290,
+      "paginaFinalColetanea": 290,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-40-q2",
+    "questionId": "trabalho-40-q2",
+    "exameNumero": 40,
+    "numero": 2,
+    "gabaritoComentado": "A) Filomena tem direito a trinta dias, porque a empregada teve até cinco faltas injustificadas, na forma do Art. 473 ou do Art. 130, inciso I, ambos da CLT. B) Sim, pois o abono pecuniário deve ser requerido até 15 (quinze) dias antes do término do período aquisitivo, conforme o Art. 143, § 1º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Filomena tem direito a trinta dias, porque a empregada teve até cinco faltas injustificadas, na forma do Art. 473 ou do Art. 130, inciso I, ambos da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Sim, pois o abono pecuniário deve ser requerido até 15 (quinze) dias antes do término do período aquisitivo, conforme o Art. 143, § 1º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "30 dias, porque ela teve 5 faltas injustificadas (0,55). Indicação dos Arts. 473 ou 130, I, ambos da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Sim, pois deveria ser requerida até 15 dias antes do término do período aquisitivo ou foi requerida fora do prazo legal (0,50). Indicação do Art. 143, § 1º, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. 30 dias, porque ela teve 5 faltas injustificadas (0,55). Indicação dos Arts. 473 ou 130, I, ambos da CLT (0,10). 0,00/0,55/0,65 B. Sim, pois deveria ser requerida até 15 dias antes do término do período aquisitivo ou foi requerida fora do prazo legal (0,50). Indicação do Art. 143, § 1º, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 291,
+      "paginaFinalColetanea": 291,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-40-q3",
+    "questionId": "trabalho-40-q3",
+    "exameNumero": 40,
+    "numero": 3,
+    "gabaritoComentado": "A) Deverá ser sustentado que, de acordo com a Súmula 428, item I do TST, o fornecimento ou uso de telefone celular, instrumentos telemáticos ou informatizados, por si só, não caracteriza sobreaviso. B) Deverá ser sustentado que, sendo feriado local, deve ser concedido prazo de cinco dias para comprovação da tempestividade do recurso ordinário, conforme a Súmula 385, item I, do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentado que, de acordo com a Súmula 428, item I do TST, o fornecimento ou uso de telefone celular, instrumentos telemáticos ou informatizados, por si só, não caracteriza sobreaviso."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser sustentado que, sendo feriado local, deve ser concedido prazo de cinco dias para comprovação da tempestividade do recurso ordinário, conforme a Súmula 385, item I, do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O simples fornecimento/uso de telefone celular/instrumentos telemáticos ou informatizados não caracteriza sobreaviso (0,50). Indicação da Súmula 428, item I, do TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      },
+      {
+        "item": "B",
+        "descricao": "Que deveria ser concedido prazo para comprovar o feriado (0,55). Indicação da Súmula 385, item I, do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      }
+    ],
+    "espelhoTexto": "A. O simples fornecimento/uso de telefone celular/instrumentos telemáticos ou informatizados não caracteriza sobreaviso (0,50). Indicação da Súmula 428, item I, do TST (0,10). 0,00/0,50/0,60 B. Que deveria ser concedido prazo para comprovar o feriado (0,55). Indicação da Súmula 385, item I, do TST (0,10). 0,00/0,55/0,65",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 292,
+      "paginaFinalColetanea": 292,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-40-q4",
+    "questionId": "trabalho-40-q4",
+    "exameNumero": 40,
+    "numero": 4,
+    "gabaritoComentado": "A) Deverá ser ajuizada uma Ação de Cumprimento, nos termos do Art. 872 caput ou 872, parágrafo único, da CLT ou Art. 7º, § 6º, da Lei 7.701/88. B) Deverá ser alegado que o curso do prazo prescricional só tem início com o trânsito em julgado da sentença normativa, conforme a Súmula 350 do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser ajuizada uma Ação de Cumprimento, nos termos do Art. 872 caput ou 872, parágrafo único, da CLT ou Art. 7º, § 6º, da Lei 7.701/88."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser alegado que o curso do prazo prescricional só tem início com o trânsito em julgado da sentença normativa, conforme a Súmula 350 do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Ação de Cumprimento (0,55). Indicação do Art. 872 ou 872, parágrafo único, da CLT ou Art. 7º, § 6º, da Lei 7.701/88 (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que a prescrição só se inicia com o trânsito em julgado da sentença normativa (0,50). Indicação da Súmula 350 do TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Ação de Cumprimento (0,55). Indicação do Art. 872 ou 872, parágrafo único, da CLT ou Art. 7º, § 6º, da Lei 7.701/88 (0,10). 0,00/0,55/0,65 B. Que a prescrição só se inicia com o trânsito em julgado da sentença normativa (0,50). Indicação da Súmula 350 do TST (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 293,
+      "paginaFinalColetanea": 293,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-41-q1",
+    "questionId": "trabalho-41-q1",
+    "exameNumero": 41,
+    "numero": 1,
+    "gabaritoComentado": "A) Jandira teria direito porque ela é comissionista pura e, por isso, o repouso semanal remunerado não está embutido no seu salário, conforme o Art. 7º, § 2º, da Lei nº 605/1949 ou a Súmula 27 do TST. B) Diante deste fato, deve ser ajuizada reclamação trabalhista requerendo a resolução contratual/rescisão indireta/despedida indireta, na forma do Art. 483, alínea d, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Jandira teria direito porque ela é comissionista pura e, por isso, o repouso semanal remunerado não está embutido no seu salário, conforme o Art. 7º, § 2º, da Lei nº 605/1949 ou a Súmula 27 do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Diante deste fato, deve ser ajuizada reclamação trabalhista requerendo a resolução contratual/rescisão indireta/despedida indireta, na forma do Art. 483, alínea d, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Jandira porque, sendo comissionista, o repouso semanal remunerado não está embutido no seu salário (0,55). Indicação Art. 7º, § 2º, Lei 605/1949 ou Súmula 27 do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Ajuizar reclamação trabalhista requerendo a resolução contratual/rescisão indireta/despedida indireta (0,50). Indicação do Art. 483, “d”, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Jandira porque, sendo comissionista, o repouso semanal remunerado não está embutido no seu salário (0,55). Indicação Art. 7º, § 2º, Lei 605/1949 ou Súmula 27 do TST (0,10). 0,00/0,55/0,65 B. Ajuizar reclamação trabalhista requerendo a resolução contratual/rescisão indireta/despedida indireta (0,50). Indicação do Art. 483, “d”, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 297,
+      "paginaFinalColetanea": 297,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-41-q2",
+    "questionId": "trabalho-41-q2",
+    "exameNumero": 41,
+    "numero": 2,
+    "gabaritoComentado": "A) O candidato deverá sustentar que o plano de saúde não gerará qualquer reflexo por expressa previsão legal, uma vez que, por lei, não é considerado salário, na forma do Art. 458, § 2º, inciso IV, da CLT. B) O candidato deverá sustentar que é juridicamente inviável o cancelamento do plano de saúde dos empregados afastados em benefício previdenciário, porque o contrato de trabalho encontra-se suspenso, na forma da Súmula 440 do TST, logo deverá ser ajuizada reclamação trabalhista com pedido de tutela de urgência, na forma do Art. 840 da CLT e do Art. 300 ou do Art. 303, ambos do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá sustentar que o plano de saúde não gerará qualquer reflexo por expressa previsão legal, uma vez que, por lei, não é considerado salário, na forma do Art. 458, § 2º, inciso IV, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "O candidato deverá sustentar que é juridicamente inviável o cancelamento do plano de saúde dos empregados afastados em benefício previdenciário, porque o contrato de trabalho encontra-se suspenso, na forma da Súmula 440 do TST, logo deverá ser ajuizada reclamação trabalhista com pedido de tutela de urgência, na forma do Art. 840 da CLT e do Art. 300 ou do Art. 303, ambos do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não, pois não é considerado salário (0,55). Indicação do Art. 458, § 2º, IV, da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Ajuizar reclamação trabalhista com pedido de tutela de urgência (0,50). Indicação do Art. 300 ou do Art. 303, ambos do CPC (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não, pois não é considerado salário (0,55). Indicação do Art. 458, § 2º, IV, da CLT (0,10). 0,00/0,55/0,65 B. Ajuizar reclamação trabalhista com pedido de tutela de urgência (0,50). Indicação do Art. 300 ou do Art. 303, ambos do CPC (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 298,
+      "paginaFinalColetanea": 298,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-41-q3",
+    "questionId": "trabalho-41-q3",
+    "exameNumero": 41,
+    "numero": 3,
+    "gabaritoComentado": "A) Apresentar exceção de suspeição/ impedimento, conforme o Art. 802 da CLT. B) (Anulada)",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Apresentar exceção de suspeição/ impedimento, conforme o Art. 802 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "(Anulada)"
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Apresentar exceção de suspeição/impedimento (0,55). Indicação Art. 802 da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "(Anulada)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Apresentar exceção de suspeição/impedimento (0,55). Indicação Art. 802 da CLT (0,10). 0,00/0,55/0,65 B. (Anulada) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 299,
+      "paginaFinalColetanea": 299,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-41-q4",
+    "questionId": "trabalho-41-q4",
+    "exameNumero": 41,
+    "numero": 4,
+    "gabaritoComentado": "A) A tese de que não se pode executar quem não participou da relação processual ou não consta do título executivo judicial, na forma da Súmula 331, inciso IV, do TST ou do Art. 513 § 5º, do CPC. B) Interpor agravo de petição, na forma do Art. 897, alínea a, da CLT. Não seria cabível ajuizamento de embargos de terceiro porque o banco já foi incluído como executado (logo não pode mais intitular-se terceiro estranho à lide), nem exceção de pré-executividade porque a rigor o juiz repetiria a decisão de inclusão do banco e dela, por não ter natureza terminativa do feito, não caberia recurso ou acesso ao 2º grau.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A tese de que não se pode executar quem não participou da relação processual ou não consta do título executivo judicial, na forma da Súmula 331, inciso IV, do TST ou do Art. 513 § 5º, do CPC."
+      },
+      {
+        "letra": "B",
+        "texto": "Interpor agravo de petição, na forma do Art. 897, alínea a, da CLT. Não seria cabível ajuizamento de embargos de terceiro porque o banco já foi incluído como executado (logo não pode mais intitular-se terceiro estranho à lide), nem exceção de pré-executividade porque a rigor o juiz repetiria a decisão de inclusão do banco e dela, por não ter natureza terminativa do feito, não caberia recurso ou acesso ao 2º grau."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que não se pode executar alguém que não participou da relação processual ou o banco não consta do título executivo judicial (0,55). Indicação Súmula 331, IV, do TST, ou Art. 513 § 5º, do CPC (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Interpor agravo de petição (0,50). Indicação do Art. 897, a, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A) Que não se pode executar alguém que não participou da relação processual ou o banco não consta do título executivo judicial (0,55). Indicação Súmula 331, IV, do TST, ou Art. 513 § 5º, do CPC (0,10). 0,00/0,55/0,65 B) Interpor agravo de petição (0,50). Indicação do Art. 897, a, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 300,
+      "paginaFinalColetanea": 300,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-42-q1",
+    "questionId": "trabalho-42-q1",
+    "exameNumero": 42,
+    "numero": 1,
+    "gabaritoComentado": "A) No Juízo deprecado ou no juízo de Belo Horizonte/MG, na forma da Súmula 419 do TST ou do Art. 676, parágrafo único, do CPC. B) Deverá ser alegado bem de família, nos termos do Art. 1º ou Art. 5º, caput, ambos da Lei nº 8.009/90.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "No Juízo deprecado ou no juízo de Belo Horizonte/MG, na forma da Súmula 419 do TST ou do Art. 676, parágrafo único, do CPC."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser alegado bem de família, nos termos do Art. 1º ou Art. 5º, caput, ambos da Lei nº 8.009/90."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "No Juízo deprecado ou no juízo de Belo Horizonte/MG (0,55), na forma da Súmula 419 do TST ou do Art. 676, parágrafo único, do CPC (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Deverá ser alegado bem de família (0,50), nos termos do Art. 1º ou Art. 5º, ambos da Lei nº 8.009/90 (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. No Juízo deprecado ou no juízo de Belo Horizonte/MG (0,55), na forma da Súmula 419 do TST ou do Art. 676, parágrafo único, do CPC (0,10). 0,00/0,55/0,65 B. Deverá ser alegado bem de família (0,50), nos termos do Art. 1º ou Art. 5º, ambos da Lei nº 8.009/90 (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 304,
+      "paginaFinalColetanea": 304,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-42-q2",
+    "questionId": "trabalho-42-q2",
+    "exameNumero": 42,
+    "numero": 2,
+    "gabaritoComentado": "A) Deverá ser alegado que a quitação dos salários atrasados em audiência não elide a mora salarial, conforme a Súmula 13 do TST. B) Deverá ser interposto recurso de revista, por contrariedade à súmula do TST, com fundamento no Art. 896, alínea a, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser alegado que a quitação dos salários atrasados em audiência não elide a mora salarial, conforme a Súmula 13 do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser interposto recurso de revista, por contrariedade à súmula do TST, com fundamento no Art. 896, alínea a, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A quitação dos salários em atraso em audiência não elide a mora salarial (0,55). Indicação da Súmula 13 do TST (0,10).",
+        "escala": "0/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Interpor recurso de revista (0,50). Indicação do Art. 896, alínea a, da CLT (0,10).",
+        "escala": "0/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A quitação dos salários em atraso em audiência não elide a mora salarial (0,55). Indicação da Súmula 13 do TST (0,10). 0/0,55/0,65 B. Interpor recurso de revista (0,50). Indicação do Art. 896, alínea a, da CLT (0,10). 0/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 305,
+      "paginaFinalColetanea": 305,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-42-q3",
+    "questionId": "trabalho-42-q3",
+    "exameNumero": 42,
+    "numero": 3,
+    "gabaritoComentado": "A) O candidato deverá responder que a dispensa sem justa causa é inválida, porque somente poderia ocorrer após a contratação de outro trabalhador com deficiência ou de condição semelhante ou reabilitado, conforme os Arts. 93, § 1º, da Lei nº 8.213/1991 ou Art. 36, § 1º, do decreto nº 3.298/99. B) O candidato deverá responder que a pessoa reabilitada também pode ser considerada na cota, conforme o Art. 93 caput ou § 1º da Lei nº 8.213/1991 ou pessoa em condições semelhantes, conforme Art. 36, § 1º, do decreto nº 3.298/99.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá responder que a dispensa sem justa causa é inválida, porque somente poderia ocorrer após a contratação de outro trabalhador com deficiência ou de condição semelhante ou reabilitado, conforme os Arts. 93, § 1º, da Lei nº 8.213/1991 ou Art. 36, § 1º, do decreto nº 3.298/99."
+      },
+      {
+        "letra": "B",
+        "texto": "O candidato deverá responder que a pessoa reabilitada também pode ser considerada na cota, conforme o Art. 93 caput ou § 1º da Lei nº 8.213/1991 ou pessoa em condições semelhantes, conforme Art. 36, § 1º, do decreto nº 3.298/99."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não. A dispensa somente poderia ocorrer após a contratação de outro trabalhador com deficiência ou de condição semelhante ou reabilitado (0,55). Indicação do Art. 93, § 1º, da Lei 8.213/91 ou Art. 36, § 1º, do decreto nº 3.298/99 (0,10)",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Pessoa reabilitada (0,50). Indicação do Art. 93 caput ou § 1º da Lei 8.213/91 (0,10) ou Pessoa em condições semelhantes (0,50). Indicação do Art. 36, § 1º, do decreto nº 3.298/99 (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não. A dispensa somente poderia ocorrer após a contratação de outro trabalhador com deficiência ou de condição semelhante ou reabilitado (0,55). Indicação do Art. 93, § 1º, da Lei 8.213/91 ou Art. 36, § 1º, do decreto nº 3.298/99 (0,10) 0,00/0,55/0,65 B. Pessoa reabilitada (0,50). Indicação do Art. 93 caput ou § 1º da Lei 8.213/91 (0,10) ou Pessoa em condições semelhantes (0,50). Indicação do Art. 36, § 1º, do decreto nº 3.298/99 (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 306,
+      "paginaFinalColetanea": 306,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-42-q4",
+    "questionId": "trabalho-42-q4",
+    "exameNumero": 42,
+    "numero": 4,
+    "gabaritoComentado": "A) O candidato deverá sugerir a dispensa por justa causa em razão de ato lesivo da honra ou da boa fama praticadas contra o empregador, fazendo a associação correta da hipótese ao normativo respectivo, Art. 482, alínea k, da CLT. Poderá alegar, ainda, a violação do direito de imagem, segundo o Art. 223-D da CLT ou Art. 5º, V ou X, da CRFB/88. B) O candidato deverá sugerir a dispensa por justa causa em razão da negociação habitual por conta própria sem permissão do empregador, ou quando constituir ato de concorrência desleal à empresa para a qual trabalham os empregados, na forma do Art. 482, alínea c, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá sugerir a dispensa por justa causa em razão de ato lesivo da honra ou da boa fama praticadas contra o empregador, fazendo a associação correta da hipótese ao normativo respectivo, Art. 482, alínea k, da CLT. Poderá alegar, ainda, a violação do direito de imagem, segundo o Art. 223-D da CLT ou Art. 5º, V ou X, da CRFB/88."
+      },
+      {
+        "letra": "B",
+        "texto": "O candidato deverá sugerir a dispensa por justa causa em razão da negociação habitual por conta própria sem permissão do empregador, ou quando constituir ato de concorrência desleal à empresa para a qual trabalham os empregados, na forma do Art. 482, alínea c, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Dispensa por justa causa em razão de ato lesivo da honra ou da boa fama praticadas contra o empregador (0,55). Indicação do Art. 482, alínea k, da CLT (0,10). ou Há violação do direito de imagem (0,55). Indicação do Art. 223-D, da CLT ou Art. 5º, V ou X, da CRFB/88 (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Dispensa por justa causa em razão de negociação habitual por conta própria sem permissão do empregador ou por ato de concorrência desleal (0,50). Indicação do Art. 482, alínea c, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Dispensa por justa causa em razão de ato lesivo da honra ou da boa fama praticadas contra o empregador (0,55). Indicação do Art. 482, alínea k, da CLT (0,10). ou Há violação do direito de imagem (0,55). Indicação do Art. 223-D, da CLT ou Art. 5º, V ou X, da CRFB/88 (0,10). 0,00/0,55/0,65 B. Dispensa por justa causa em razão de negociação habitual por conta própria sem permissão do empregador ou por ato de concorrência desleal (0,50). Indicação do Art. 482, alínea c, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 307,
+      "paginaFinalColetanea": 307,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-43-q1",
+    "questionId": "trabalho-43-q1",
+    "exameNumero": 43,
+    "numero": 1,
+    "gabaritoComentado": "A) A tese é a de que Jorge está vinculado a uma jornada de oito horas diárias, na forma do Art. 224, § 2º, da CLT ou Súmula 102, incisos II ou IV, do TST. B) A tese é a de que Sônia ocupa cargo de confiança e, por isso, não tem direito a horas extras, na forma da Súmula 287 do TST, ou do Art. 62, inciso II, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A tese é a de que Jorge está vinculado a uma jornada de oito horas diárias, na forma do Art. 224, § 2º, da CLT ou Súmula 102, incisos II ou IV, do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "A tese é a de que Sônia ocupa cargo de confiança e, por isso, não tem direito a horas extras, na forma da Súmula 287 do TST, ou do Art. 62, inciso II, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Jorge está vinculado a uma jornada de oito horas diárias (0,55). Art. 224, § 2º, da CLT, ou Súmula 102, incisos II ou IV, do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Sônia ocupa cargo de confiança (0,50). Súmula 287 do TST ou o Art. 62, inciso II, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Jorge está vinculado a uma jornada de oito horas diárias (0,55). Art. 224, § 2º, da CLT, ou Súmula 102, incisos II ou IV, do TST (0,10). 0,00/0,55/0,65 B. Sônia ocupa cargo de confiança (0,50). Súmula 287 do TST ou o Art. 62, inciso II, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 313,
+      "paginaFinalColetanea": 313,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-43-q2",
+    "questionId": "trabalho-43-q2",
+    "exameNumero": 43,
+    "numero": 2,
+    "gabaritoComentado": "A) Somente Maria terá a ausência abonada em razão da previsão contida no Art. 473, inciso V, da CLT. B) Não. É vedado descontar do período de férias as faltas do empregado ao serviço, conforme o Art. 130, § 1º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Somente Maria terá a ausência abonada em razão da previsão contida no Art. 473, inciso V, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Não. É vedado descontar do período de férias as faltas do empregado ao serviço, conforme o Art. 130, § 1º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Somente Maria (0,55). Art. 473, inciso V, da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Não. É vedado descontar do período de férias as faltas ao serviço (0,50). Art. 130, § 1º, da CLT (0,10). Ou Um dia de falta não compromete os trinta dias de férias (0,50). Art. 130, inciso I, da CLT. (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Somente Maria (0,55). Art. 473, inciso V, da CLT (0,10). 0,00/0,55/0,65 B. Não. É vedado descontar do período de férias as faltas ao serviço (0,50). Art. 130, § 1º, da CLT (0,10). Ou Um dia de falta não compromete os trinta dias de férias (0,50). Art. 130, inciso I, da CLT. (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 314,
+      "paginaFinalColetanea": 314,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-43-q3",
+    "questionId": "trabalho-43-q3",
+    "exameNumero": 43,
+    "numero": 3,
+    "gabaritoComentado": "A) O candidato deverá informar que a atitude da sociedade empresária foi inadequada/incorreta, já que ela deveria ajuizar inquérito para a apuração de falta grave porque a empregada é estável, na forma do Art. 543, §3º, da CLT, da Súmula 197 do STF e da Súmula 379 do TST. B) O candidato deverá informar que o pedido de demissão de Sônia deveria ser homologado pelo sindicato, na forma do Art. 500 da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá informar que a atitude da sociedade empresária foi inadequada/incorreta, já que ela deveria ajuizar inquérito para a apuração de falta grave porque a empregada é estável, na forma do Art. 543, §3º, da CLT, da Súmula 197 do STF e da Súmula 379 do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "O candidato deverá informar que o pedido de demissão de Sônia deveria ser homologado pelo sindicato, na forma do Art. 500 da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não, porque deveria ajuizar inquérito/inquérito judicial/inquérito para a apuração de falta grave (0,55). Art. 543, § 3º, da CLT, ou Súmula 197 STF ou Súmula 379 TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Sim, deve haver homologação/assistência do sindicato (0,50). Art. 500 da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não, porque deveria ajuizar inquérito/inquérito judicial/inquérito para a apuração de falta grave (0,55). Art. 543, § 3º, da CLT, ou Súmula 197 STF ou Súmula 379 TST (0,10). 0,00/0,55/0,65 B. Sim, deve haver homologação/assistência do sindicato (0,50). Art. 500 da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 315,
+      "paginaFinalColetanea": 315,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-43-q4",
+    "questionId": "trabalho-43-q4",
+    "exameNumero": 43,
+    "numero": 4,
+    "gabaritoComentado": "A) O candidato deverá sustentar que o desconto é válido porque estava previsto no contrato e há culpa, na forma do Art. 462, § 1º, da CLT. B) O equivalente a um mês de remuneração da empregada ou R$ 3.000,00 (três mil reais), na forma do Art. 477, § 5º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá sustentar que o desconto é válido porque estava previsto no contrato e há culpa, na forma do Art. 462, § 1º, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "O equivalente a um mês de remuneração da empregada ou R$ 3.000,00 (três mil reais), na forma do Art. 477, § 5º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Sim, porque está previsto no contrato e houve culpa (0,55). Art. 462, § 1º, CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "O equivalente a um mês de remuneração ou R$ 3.000,00 (três mil reais) (0,50). Art. 477, § 5º, CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Sim, porque está previsto no contrato e houve culpa (0,55). Art. 462, § 1º, CLT (0,10). 0,00/0,55/0,65 B. O equivalente a um mês de remuneração ou R$ 3.000,00 (três mil reais) (0,50). Art. 477, § 5º, CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 316,
+      "paginaFinalColetanea": 316,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-44-q1",
+    "questionId": "trabalho-44-q1",
+    "exameNumero": 44,
+    "numero": 1,
+    "gabaritoComentado": "A) O candidato deverá sustentar que ocorreu a suspensão do contrato de trabalho, na forma do Art. 475 da CLT. B) O candidato deverá sustentar que a alteração é inválida, porque prejudicial ao trabalhador, na forma do Art. 468 da CLT ou da Súmula 440 TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "O candidato deverá sustentar que ocorreu a suspensão do contrato de trabalho, na forma do Art. 475 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "O candidato deverá sustentar que a alteração é inválida, porque prejudicial ao trabalhador, na forma do Art. 468 da CLT ou da Súmula 440 TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Ocorreu a suspensão do contrato de trabalho (0,55). Indicação do Art. 475 da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Inválida, porque prejudicial ao trabalhador (0,50). Indicação do Art. 468, CLT ou da Súmula 440 TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Ocorreu a suspensão do contrato de trabalho (0,55). Indicação do Art. 475 da CLT (0,10). 0,00/0,55/0,65 B. Inválida, porque prejudicial ao trabalhador (0,50). Indicação do Art. 468, CLT ou da Súmula 440 TST (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 325,
+      "paginaFinalColetanea": 325,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-44-q2",
+    "questionId": "trabalho-44-q2",
+    "exameNumero": 44,
+    "numero": 2,
+    "gabaritoComentado": "A) Deverá ser sustentado que o desconhecimento do estado de gravidez pelo empregador não afasta o direito à indenização, na forma da Súmula 244, inciso I, do TST ou do Art. 10, inciso II, alínea b, do ADCT ou do Art. 391- A, da CLT. B) Deverá ser interposto recurso de revista, por decisão contrária à Súmula do TST e ofensa à CRFB/88, conforme o Art. 896, alíneas a ou c, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser sustentado que o desconhecimento do estado de gravidez pelo empregador não afasta o direito à indenização, na forma da Súmula 244, inciso I, do TST ou do Art. 10, inciso II, alínea b, do ADCT ou do Art. 391- A, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser interposto recurso de revista, por decisão contrária à Súmula do TST e ofensa à CRFB/88, conforme o Art. 896, alíneas a ou c, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "O desconhecimento do estado de gravidez pelo empregador não afasta o direito à indenização (0,55). Indicação da Súmula 244, inciso I, do TST ou do Art. 10, inciso II, alínea b, do ADCT ou Art. 391-A da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Interpor recurso de revista (0,50). Indicação do Art. 896, alínea a ou c, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. O desconhecimento do estado de gravidez pelo empregador não afasta o direito à indenização (0,55). Indicação da Súmula 244, inciso I, do TST ou do Art. 10, inciso II, alínea b, do ADCT ou Art. 391-A da CLT (0,10). 0,00/0,55/0,65 B. Interpor recurso de revista (0,50). Indicação do Art. 896, alínea a ou c, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 326,
+      "paginaFinalColetanea": 326,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-44-q3",
+    "questionId": "trabalho-44-q3",
+    "exameNumero": 44,
+    "numero": 3,
+    "gabaritoComentado": "A) Deverá ser alegada a perempção ou que teria que aguardar 6 meses para ajuizar a 3ª ação, conforme os Arts. 731 e 732, ambos da CLT. B) Deverá ser alegada a condição de teletrabalhador, na forma do Art. 75-B, § 3º, ou do Art. 62, inciso III, ambos da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser alegada a perempção ou que teria que aguardar 6 meses para ajuizar a 3ª ação, conforme os Arts. 731 e 732, ambos da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser alegada a condição de teletrabalhador, na forma do Art. 75-B, § 3º, ou do Art. 62, inciso III, ambos da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "A perempção ou que teria que aguardar 6 meses para ajuizar a 3ª ação (0,55). Indicação dos Arts. 731 e 732, ambos da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que o autor é teletrabalhador (0,50). Indicação do Art. 75-B, § 3º, ou no Art. 62, inciso III, ambos da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. A perempção ou que teria que aguardar 6 meses para ajuizar a 3ª ação (0,55). Indicação dos Arts. 731 e 732, ambos da CLT (0,10). 0,00/0,55/0,65 B. Que o autor é teletrabalhador (0,50). Indicação do Art. 75-B, § 3º, ou no Art. 62, inciso III, ambos da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 327,
+      "paginaFinalColetanea": 327,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-44-q4",
+    "questionId": "trabalho-44-q4",
+    "exameNumero": 44,
+    "numero": 4,
+    "gabaritoComentado": "A) Deverá ser alegado que, nos termos da Súmula 18 do TST, a compensação está restrita à matéria de natureza trabalhista, e o empréstimo de dinheiro não possui tal natureza. B) Multa de 50% das verbas rescisórias, conforme previsto no Art. 467 da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser alegado que, nos termos da Súmula 18 do TST, a compensação está restrita à matéria de natureza trabalhista, e o empréstimo de dinheiro não possui tal natureza."
+      },
+      {
+        "letra": "B",
+        "texto": "Multa de 50% das verbas rescisórias, conforme previsto no Art. 467 da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Que a compensação é restrita a dívidas de natureza trabalhista (0,55). Indicação da Súmula 18 do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Multa de 50% das verbas rescisórias (0,50). Indicação do Art. 467 da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Que a compensação é restrita a dívidas de natureza trabalhista (0,55). Indicação da Súmula 18 do TST (0,10). 0,00/0,55/0,65 B. Multa de 50% das verbas rescisórias (0,50). Indicação do Art. 467 da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 328,
+      "paginaFinalColetanea": 328,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-45-q1",
+    "questionId": "trabalho-45-q1",
+    "exameNumero": 45,
+    "numero": 1,
+    "gabaritoComentado": "A) Luana tem direito a dois intervalos de 30 minutos cada para amamentar o filho, segundo o Art. 396 da CLT. B) Impetrar mandado de Segurança, na forma da Súmula 414, inciso II, do TST.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Luana tem direito a dois intervalos de 30 minutos cada para amamentar o filho, segundo o Art. 396 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Impetrar mandado de Segurança, na forma da Súmula 414, inciso II, do TST."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Luana tem direito a dois intervalos de 30 minutos (0,55), segundo o Art. 396 da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Mandado de Segurança (0,50), nos termos da Súmula 414, inciso II, do TST (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Luana tem direito a dois intervalos de 30 minutos (0,55), segundo o Art. 396 da CLT (0,10). 0,00/0,55/0,65 B. Mandado de Segurança (0,50), nos termos da Súmula 414, inciso II, do TST (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 332,
+      "paginaFinalColetanea": 332,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-45-q2",
+    "questionId": "trabalho-45-q2",
+    "exameNumero": 45,
+    "numero": 2,
+    "gabaritoComentado": "A) Deverá sustentar que é ilegal fixar limite de idade máximo para a contratação, nos termos do Art. 27 do Estatuto da Pessoa Idosa (Lei nº 10.741/2003) ou do Art. 7º, inciso XXX, da CRFB/88, ou do Art. 1º da Lei nº 9.029/1995. B) Deverão ser aduzidas razões finais por dez minutos, conforme o Art. 850 da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá sustentar que é ilegal fixar limite de idade máximo para a contratação, nos termos do Art. 27 do Estatuto da Pessoa Idosa (Lei nº 10.741/2003) ou do Art. 7º, inciso XXX, da CRFB/88, ou do Art. 1º da Lei nº 9.029/1995."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverão ser aduzidas razões finais por dez minutos, conforme o Art. 850 da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "É ilegal fixar idade máxima para contratação (0,55), nos termos do Art. 27 da Lei nº 10.741/2003, ou do Art. 7º, inciso XXX, da CRFB/88, ou do Art. 1º da Lei nº 9.029/1995 (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Deverão ser aduzidas razões finais (0,40) por dez minutos (0,10), conforme o Art. 850 da CLT (0,10).",
+        "escala": "0,00/0,10/0,20/0,40/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. É ilegal fixar idade máxima para contratação (0,55), nos termos do Art. 27 da Lei nº 10.741/2003, ou do Art. 7º, inciso XXX, da CRFB/88, ou do Art. 1º da Lei nº 9.029/1995 (0,10). 0,00/0,55/0,65 B. Deverão ser aduzidas razões finais (0,40) por dez minutos (0,10), conforme o Art. 850 da CLT (0,10). 0,00/0,10/0,20/ 0,40/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 333,
+      "paginaFinalColetanea": 333,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-45-q3",
+    "questionId": "trabalho-45-q3",
+    "exameNumero": 45,
+    "numero": 3,
+    "gabaritoComentado": "A) Trata-se do instituto da culpa recíproca, previsto no Art. 484 da CLT, ou na Súmula 14 do TST. B) A parte ré deverá apresentar embargos à execução/embargos de devedor, nos termos do Art. 884 da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Trata-se do instituto da culpa recíproca, previsto no Art. 484 da CLT, ou na Súmula 14 do TST."
+      },
+      {
+        "letra": "B",
+        "texto": "A parte ré deverá apresentar embargos à execução/embargos de devedor, nos termos do Art. 884 da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Culpa recíproca (0,55), previsto no Art. 484 da CLT ou na Súmula 14 do TST (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "A parte ré deverá apresentar embargos à execução/embargos de devedor (0,50), nos termos do Art. 884 da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Culpa recíproca (0,55), previsto no Art. 484 da CLT ou na Súmula 14 do TST (0,10). 0,00/0,55/0,65 B. A parte ré deverá apresentar embargos à execução/embargos de devedor (0,50), nos termos do Art. 884 da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 334,
+      "paginaFinalColetanea": 334,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-45-q4",
+    "questionId": "trabalho-45-q4",
+    "exameNumero": 45,
+    "numero": 4,
+    "gabaritoComentado": "A) Deverá ser apresentada a exceção de incompetência territorial, na forma do Art. 800 da CLT. B) Deverá ser arguido que Pedro integra categoria diferenciada como motorista, conforme o Art. 511, § 3º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Deverá ser apresentada a exceção de incompetência territorial, na forma do Art. 800 da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Deverá ser arguido que Pedro integra categoria diferenciada como motorista, conforme o Art. 511, § 3º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Apresentar exceção de incompetência (0,55), na forma do Art. 800 da CLT (0,10).",
+        "escala": "0,00/055/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Que Pedro integra categoria diferenciada (0,50), segundo o Art. 511, § 3º, da CLT (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Apresentar exceção de incompetência (0,55), na forma do Art. 800 da CLT (0,10). 0,00/055/0,65 B. Que Pedro integra categoria diferenciada (0,50), segundo o Art. 511, § 3º, da CLT (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 335,
+      "paginaFinalColetanea": 335,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-46-q1",
+    "questionId": "trabalho-46-q1",
+    "exameNumero": 46,
+    "numero": 1,
+    "gabaritoComentado": "A) A transferência de Isabel, sem o seu consentimento, não é juridicamente válida. O Art. 469 da CLT estabelece como regra geral a proibição de transferências de empregados sem o seu consentimento, salvo em casos de extinção do estabelecimento ou de previsão expressa no contrato de trabalho para os empregados que exerçam cargos de confiança. No presente caso, Isabel não ocupa cargo de confiança, a filial de São Paulo não será extinta e não há cláusula contratual expressa autorizando a transferência. A transferência de localidade (município) implicaria mudança de domicílio e gera evidentes prejuízos para a empregada, que tem sua vida familiar e social alterada drasticamente, confrontando o princípio da inalterabilidade contratual lesiva, consagrado no Art. 468 da CLT. Assim, a necessidade de serviço alegada pela sociedade empresária não é suficiente para justificar a transferência unilateral e lesiva. B) Caso Isabel recuse a transferência e seja dispensada por justa causa por insubordinação, ela poderá ajuizar uma reclamação trabalhista, nos termos do Art. 840, § 1º, da CLT. A tese jurídica a ser sustentada será a de que a justa causa aplicada é nula, por ser a transferência ilegal e arbitrária. A recusa do empregado a uma ordem ilegítima do empregador não configura insubordinação passível de justa causa. Página 339",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "A transferência de Isabel, sem o seu consentimento, não é juridicamente válida. O Art. 469 da CLT estabelece como regra geral a proibição de transferências de empregados sem o seu consentimento, salvo em casos de extinção do estabelecimento ou de previsão expressa no contrato de trabalho para os empregados que exerçam cargos de confiança. No presente caso, Isabel não ocupa cargo de confiança, a filial de São Paulo não será extinta e não há cláusula contratual expressa autorizando a transferência. A transferência de localidade (município) implicaria mudança de domicílio e gera evidentes prejuízos para a empregada, que tem sua vida familiar e social alterada drasticamente, confrontando o princípio da inalterabilidade contratual lesiva, consagrado no Art. 468 da CLT. Assim, a necessidade de serviço alegada pela sociedade empresária não é suficiente para justificar a transferência unilateral e lesiva."
+      },
+      {
+        "letra": "B",
+        "texto": "Caso Isabel recuse a transferência e seja dispensada por justa causa por insubordinação, ela poderá ajuizar uma reclamação trabalhista, nos termos do Art. 840, § 1º, da CLT. A tese jurídica a ser sustentada será a de que a justa causa aplicada é nula, por ser a transferência ilegal e arbitrária. A recusa do empregado a uma ordem ilegítima do empregador não configura insubordinação passível de justa causa. Página 339"
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não, pois ausente o consentimento da empregada (0,15), bem como os demais requisitos do Art. 469 da CLT (0,20), e geraria prejuízos para a empregada (0,20). Indicação do Art. 469, § 1º, da CLT e do Art. 468 da CLT (0,10). 0,65",
+        "escala": "0,00/0,15/0,20/0,25/0,35/0,40/0,45/0,50/0,55",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Ajuizar uma reclamação trabalhista (0,20). A tese jurídica será a de que a justa causa aplicada é nula, por ser a transferência ilegal e arbitrária, não configurando insubordinação (0,30). Indicação do Art. 840, § 1º, da CLT (0,10).",
+        "escala": "0,00/0,20/0,30/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não, pois ausente o consentimento da empregada (0,15), bem como os demais requisitos do Art. 469 da CLT (0,20), e geraria prejuízos para a empregada (0,20). Indicação do Art. 469, § 1º, da CLT e do Art. 468 da CLT (0,10). 0,00/0,15/0,20/ 0,25/0,35/0,40/ 0,45/0,50/0,55/ 0,65 B. Ajuizar uma reclamação trabalhista (0,20). A tese jurídica será a de que a justa causa aplicada é nula, por ser a transferência ilegal e arbitrária, não configurando insubordinação (0,30). Indicação do Art. 840, § 1º, da CLT (0,10). 0,00/0,20/0,30/ 0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 339,
+      "paginaFinalColetanea": 340,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-46-q2",
+    "questionId": "trabalho-46-q2",
+    "exameNumero": 46,
+    "numero": 2,
+    "gabaritoComentado": "A) Sim. A empregada gestante tem direito à estabilidade provisória mesmo na hipótese de admissão mediante contrato por tempo determinado, conforme estabelece a Súmula 244, inciso III, do TST ou Tese 163, do TST. O Art. 10, inciso II, alínea b, do ADCT, protege o emprego contra a dispensa arbitrária ou sem justa causa da gestante desde a confirmação da gravidez até cinco meses após o parto. B) Propor uma reclamação trabalhista (Art. 840, § 1º, da CLT), formulando o requerimento de tutela de urgência de natureza antecipada, nos termos do Art. 300 e do Art. 303, ambos do CPC, c/c o Art. 769 da CLT e o Art. 15 do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Sim. A empregada gestante tem direito à estabilidade provisória mesmo na hipótese de admissão mediante contrato por tempo determinado, conforme estabelece a Súmula 244, inciso III, do TST ou Tese 163, do TST. O Art. 10, inciso II, alínea b, do ADCT, protege o emprego contra a dispensa arbitrária ou sem justa causa da gestante desde a confirmação da gravidez até cinco meses após o parto."
+      },
+      {
+        "letra": "B",
+        "texto": "Propor uma reclamação trabalhista (Art. 840, § 1º, da CLT), formulando o requerimento de tutela de urgência de natureza antecipada, nos termos do Art. 300 e do Art. 303, ambos do CPC, c/c o Art. 769 da CLT e o Art. 15 do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Sim. O direito à estabilidade é garantido, mesmo em contrato por tempo determinado (0,55). Indicação da Súmula 244, inciso III, do TST ou Tese 163, do TST, ou do Art. 10, inciso II, alínea b, do ADCT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Propor uma reclamação trabalhista, formulando requerimento de tutela de urgência de natureza antecipada (0,50). Indicação do Art. 840, § 1º, da CLT, e do Art. 300 ou Art.303, ambos do CPC. (0,10)",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Sim. O direito à estabilidade é garantido, mesmo em contrato por tempo determinado (0,55). Indicação da Súmula 244, inciso III, do TST ou Tese 163, do TST, ou do Art. 10, inciso II, alínea b, do ADCT (0,10). 0,00/0,55/0,65 B. Propor uma reclamação trabalhista, formulando requerimento de tutela de urgência de natureza antecipada (0,50). Indicação do Art. 840, § 1º, da CLT, e do Art. 300 ou Art.303, ambos do CPC. (0,10) 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 341,
+      "paginaFinalColetanea": 341,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-46-q3",
+    "questionId": "trabalho-46-q3",
+    "exameNumero": 46,
+    "numero": 3,
+    "gabaritoComentado": "A) Não, a cláusula da Convenção Coletiva de Trabalho (CCT) que reduz o intervalo intrajornada para 20 minutos não é válida juridicamente. Embora a reforma trabalhista tenha ampliado a possibilidade de prevalência do negociado sobre o legislado, a redução do intervalo intrajornada para menos de 30 minutos em jornada superior a seis horas não é permitida, conforme o Art. 611-A, inciso III, da CLT. B) Em uma ação de nulidade de cláusula da CCT, seriam litisconsortes necessários os entes coletivos que participaram da celebração do instrumento coletivo, isto é, o sindicato representativo da categoria econômica da empresa e o sindicato representativo da categoria profissional, nos termos do Art. 611-A, § 5º, da CLT.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Não, a cláusula da Convenção Coletiva de Trabalho (CCT) que reduz o intervalo intrajornada para 20 minutos não é válida juridicamente. Embora a reforma trabalhista tenha ampliado a possibilidade de prevalência do negociado sobre o legislado, a redução do intervalo intrajornada para menos de 30 minutos em jornada superior a seis horas não é permitida, conforme o Art. 611-A, inciso III, da CLT."
+      },
+      {
+        "letra": "B",
+        "texto": "Em uma ação de nulidade de cláusula da CCT, seriam litisconsortes necessários os entes coletivos que participaram da celebração do instrumento coletivo, isto é, o sindicato representativo da categoria econômica da empresa e o sindicato representativo da categoria profissional, nos termos do Art. 611-A, § 5º, da CLT."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não. A redução do intervalo intrajornada para menos de 30 (trinta) minutos, em jornada superior a seis horas, não é permitida (0,55). Indicação do Art. 611-A, inciso III, da CLT (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "O sindicato representativo da categoria econômica da sociedade empresária e o sindicato representativo da categoria profissional (0,50). Indicação do Art. 611-A, § 5º, da CLT. (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não. A redução do intervalo intrajornada para menos de 30 (trinta) minutos, em jornada superior a seis horas, não é permitida (0,55). Indicação do Art. 611-A, inciso III, da CLT (0,10). 0,00/0,55/0,65 B. O sindicato representativo da categoria econômica da sociedade empresária e o sindicato representativo da categoria profissional (0,50). Indicação do Art. 611-A, § 5º, da CLT. (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 342,
+      "paginaFinalColetanea": 342,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  },
+  {
+    "id": "trabalho-46-q4",
+    "questionId": "trabalho-46-q4",
+    "exameNumero": 46,
+    "numero": 4,
+    "gabaritoComentado": "A) Não, o acordo individual de compensação de horas somente é válido para compensar as horas trabalhadas por Suzana que não ultrapassem o limite de dez horas diárias. A legislação trabalhista estabelece um limite máximo de dez horas diárias de trabalho, incluindo as horas extras, para que o acordo de compensação seja considerado válido, nos termos do Art. 59, da CLT, ou do Art. 7º, inciso XIII, da Constituição Federal. B) O ônus da prova caberá à reclamante, por ser fato constitutivo do seu direito, nos termos do Art. 818, inciso I, da CLT, ou Art. 373, inciso I, do CPC.",
+    "respostas": [
+      {
+        "letra": "A",
+        "texto": "Não, o acordo individual de compensação de horas somente é válido para compensar as horas trabalhadas por Suzana que não ultrapassem o limite de dez horas diárias. A legislação trabalhista estabelece um limite máximo de dez horas diárias de trabalho, incluindo as horas extras, para que o acordo de compensação seja considerado válido, nos termos do Art. 59, da CLT, ou do Art. 7º, inciso XIII, da Constituição Federal."
+      },
+      {
+        "letra": "B",
+        "texto": "O ônus da prova caberá à reclamante, por ser fato constitutivo do seu direito, nos termos do Art. 818, inciso I, da CLT, ou Art. 373, inciso I, do CPC."
+      }
+    ],
+    "criterios": [
+      {
+        "item": "A",
+        "descricao": "Não. O acordo não é válido para horas excedentes de 10 (dez) horas diárias (0,55). Indicação do Art. 59, da CLT, ou do Art. 7º, inciso XIII, da Constituição Federal (0,10).",
+        "escala": "0,00/0,55/0,65",
+        "pontuacaoMaxima": 0.65
+      },
+      {
+        "item": "B",
+        "descricao": "Caberá à reclamante, por ser fato constitutivo do seu direito (0,50). Indicação do Art. 818, inciso I, da CLT, ou Art. 373, inciso I, do CPC (0,10).",
+        "escala": "0,00/0,50/0,60",
+        "pontuacaoMaxima": 0.6
+      }
+    ],
+    "espelhoTexto": "A. Não. O acordo não é válido para horas excedentes de 10 (dez) horas diárias (0,55). Indicação do Art. 59, da CLT, ou do Art. 7º, inciso XIII, da Constituição Federal (0,10). 0,00/0,55/0,65 B. Caberá à reclamante, por ser fato constitutivo do seu direito (0,50). Indicação do Art. 818, inciso I, da CLT, ou Art. 373, inciso I, do CPC (0,10). 0,00/0,50/0,60",
+    "pontuacaoTotal": 1.25,
+    "fonte": {
+      "colecao": "OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf",
+      "paginaInicialColetanea": 343,
+      "paginaFinalColetanea": 343,
+      "origem": "Conselho Federal da OAB / FGV"
+    },
+    "conteudoHistorico": true,
+    "notaHistorica": "Conteúdo preservado conforme a legislação e a jurisprudência consideradas na época do exame; não atualizado para o direito vigente."
+  }
+]

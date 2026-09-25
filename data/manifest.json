@@ -1,0 +1,26 @@
+{
+  "questoes": 60,
+  "espelhos": 60,
+  "exames": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "primeiroId": "trabalho-32-q1",
+  "ultimoId": "trabalho-46-q4",
+  "conteudoHistorico": true,
+  "questoesSha256": "47629627801981703b38cb73750a0eb14a99be7b123c484da6c07b647812cb13",
+  "espelhosSha256": "7e66955d4c0bcf2d1764655397171546310ebcc202de485138b1942faf132d45"
+}
