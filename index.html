@@ -20,49 +20,26 @@
       </div>
 
       <nav class="nav" aria-label="Navegação principal">
-        <button class="nav-item active" data-page="inicio">
-          <span class="nav-icon">⌂</span>
-          <span>Início</span>
-        </button>
-        <button class="nav-item" data-page="treino">
-          <span class="nav-icon">✎</span>
-          <span>Meu treino</span>
-        </button>
-        <button class="nav-item" data-page="questoes">
-          <span class="nav-icon">☷</span>
-          <span>Questões</span>
-        </button>
-        <button class="nav-item" data-page="revisao">
-          <span class="nav-icon">↻</span>
-          <span>Revisão</span>
-        </button>
-        <button class="nav-item" data-page="plano">
-          <span class="nav-icon">▦</span>
-          <span>Plano</span>
-        </button>
+        <button class="nav-item active" data-page="inicio"><span class="nav-icon">⌂</span><span>Início</span></button>
+        <button class="nav-item" data-page="treino"><span class="nav-icon">✎</span><span>Meu treino</span></button>
+        <button class="nav-item" data-page="questoes"><span class="nav-icon">☷</span><span>Questões</span></button>
+        <button class="nav-item" data-page="revisao"><span class="nav-icon">↻</span><span>Revisão</span></button>
+        <button class="nav-item" data-page="plano"><span class="nav-icon">▦</span><span>Plano</span></button>
       </nav>
 
       <div class="sidebar-footer">
         <div class="mini-progress">
-          <div class="mini-progress-top">
-            <span>Progresso geral</span>
-            <strong id="sidebarProgressText">0%</strong>
-          </div>
-          <div class="progress-track" aria-label="Progresso geral">
-            <div class="progress-bar" id="sidebarProgressBar"></div>
-          </div>
+          <div class="mini-progress-top"><span>Progresso geral</span><strong id="sidebarProgressText">0%</strong></div>
+          <div class="progress-track" aria-label="Progresso geral"><div class="progress-bar" id="sidebarProgressBar"></div></div>
         </div>
-        <span class="version">Sprint 1 · GitHub Pages</span>
+        <span class="version">Sprint 2 · GitHub Pages</span>
       </div>
     </aside>
 
     <div class="content-area">
       <header class="topbar">
         <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
-        <div class="topbar-copy">
-          <span class="eyebrow">Preparação OAB</span>
-          <h1 id="pageTitle">Visão geral</h1>
-        </div>
+        <div class="topbar-copy"><span class="eyebrow">Preparação OAB</span><h1 id="pageTitle">Visão geral</h1></div>
         <div class="avatar" aria-label="Perfil do estudante">OA</div>
       </header>
 
@@ -71,109 +48,44 @@
           <div class="hero-card">
             <div class="hero-copy">
               <span class="pill">Direito do Trabalho</span>
-              <h2>Seu caderno de treino, agora organizado por missão.</h2>
+              <h2>Seu caderno de treino, organizado por missão.</h2>
               <p>Resolva questões no papel, acompanhe o desempenho e construa uma rotina de revisão sem transformar o estudo em planilha de sofrimento.</p>
               <div class="hero-actions">
                 <button class="button button-primary" id="startTrainingButton">Começar treino</button>
                 <button class="button button-ghost" id="resetDemoButton">Zerar progresso</button>
               </div>
             </div>
-
-            <div class="hero-stat">
-              <span class="hero-stat-label">Sequência atual</span>
-              <strong><span id="streakValue">0</span> dias</strong>
-              <small>Constância vence maratona de véspera.</small>
-            </div>
+            <div class="hero-stat"><span class="hero-stat-label">Sequência atual</span><strong><span id="streakValue">0</span> dias</strong><small>Constância vence maratona de véspera.</small></div>
           </div>
 
           <section class="section-block">
-            <div class="section-heading">
-              <div>
-                <span class="eyebrow">Hoje</span>
-                <h3>Resumo do estudo</h3>
-              </div>
-              <span class="date-chip" id="todayLabel">Hoje</span>
-            </div>
-
+            <div class="section-heading"><div><span class="eyebrow">Hoje</span><h3>Resumo do estudo</h3></div><span class="date-chip" id="todayLabel">Hoje</span></div>
             <div class="stats-grid">
-              <article class="stat-card">
-                <span class="stat-label">Questões resolvidas</span>
-                <strong id="resolvedCount">0</strong>
-                <span class="stat-meta">de <span id="questionTotal">60</span> disponíveis</span>
-              </article>
-
-              <article class="stat-card">
-                <span class="stat-label">Em revisão</span>
-                <strong id="reviewCount">0</strong>
-                <span class="stat-meta">itens marcados para retomar</span>
-              </article>
-
-              <article class="stat-card">
-                <span class="stat-label">Aproveitamento</span>
-                <strong id="accuracyValue">0%</strong>
-                <span class="stat-meta">estimativa do treino</span>
-              </article>
-
-              <article class="stat-card accent-card">
-                <span class="stat-label">Meta da semana</span>
-                <strong><span id="weeklyDone">0</span>/10</strong>
-                <span class="stat-meta">questões concluídas</span>
-              </article>
+              <article class="stat-card"><span class="stat-label">Questões resolvidas</span><strong id="resolvedCount">0</strong><span class="stat-meta">de <span id="questionTotal">60</span> disponíveis</span></article>
+              <article class="stat-card"><span class="stat-label">Em revisão</span><strong id="reviewCount">0</strong><span class="stat-meta">itens marcados para retomar</span></article>
+              <article class="stat-card"><span class="stat-label">Aproveitamento</span><strong id="accuracyValue">0%</strong><span class="stat-meta">autoavaliação do treino</span></article>
+              <article class="stat-card accent-card"><span class="stat-label">Meta da semana</span><strong><span id="weeklyDone">0</span>/10</strong><span class="stat-meta">questões concluídas</span></article>
             </div>
           </section>
 
           <section class="dashboard-grid">
             <article class="panel next-session">
-              <div class="panel-heading">
-                <div>
-                  <span class="eyebrow">Próxima missão</span>
-                  <h3>Treino recomendado</h3>
-                </div>
-                <span class="status-dot">Ativo</span>
-              </div>
-
+              <div class="panel-heading"><div><span class="eyebrow">Próxima missão</span><h3>Treino recomendado</h3></div><span class="status-dot">Ativo</span></div>
               <div class="session-card">
                 <div class="session-number" id="nextQuestionNumber">01</div>
-                <div class="session-copy">
-                  <strong id="nextQuestionTitle">Questão discursiva</strong>
-                  <span id="nextQuestionTheme">Relação de emprego</span>
-                </div>
+                <div class="session-copy"><strong id="nextQuestionTitle">Questão discursiva</strong><span id="nextQuestionTheme">Relação de emprego</span></div>
                 <button class="icon-button" id="openNextQuestion" aria-label="Abrir próxima questão">→</button>
               </div>
-
               <div class="checklist">
-                <div class="checklist-item">
-                  <span class="check-icon">1</span>
-                  <span>Leia o enunciado sem consultar material.</span>
-                </div>
-                <div class="checklist-item">
-                  <span class="check-icon">2</span>
-                  <span>Responda à mão no caderno.</span>
-                </div>
-                <div class="checklist-item">
-                  <span class="check-icon">3</span>
-                  <span>Depois, confronte com o espelho.</span>
-                </div>
+                <div class="checklist-item"><span class="check-icon">1</span><span>Leia o enunciado sem consultar material.</span></div>
+                <div class="checklist-item"><span class="check-icon">2</span><span>Responda à mão no caderno.</span></div>
+                <div class="checklist-item"><span class="check-icon">3</span><span>Depois, confronte com o espelho.</span></div>
               </div>
             </article>
 
             <article class="panel progress-panel">
-              <div class="panel-heading">
-                <div>
-                  <span class="eyebrow">Ritmo</span>
-                  <h3>Progresso do ciclo</h3>
-                </div>
-              </div>
-
-              <div class="donut-wrap">
-                <div class="donut" id="donutChart">
-                  <div class="donut-center">
-                    <strong id="donutPercent">0%</strong>
-                    <span>concluído</span>
-                  </div>
-                </div>
-              </div>
-
+              <div class="panel-heading"><div><span class="eyebrow">Ritmo</span><h3>Progresso do ciclo</h3></div></div>
+              <div class="donut-wrap"><div class="donut" id="donutChart"><div class="donut-center"><strong id="donutPercent">0%</strong><span>concluído</span></div></div></div>
               <div class="legend-list">
                 <div><span class="legend-dot done"></span>Resolvidas <strong id="legendResolved">0</strong></div>
                 <div><span class="legend-dot review"></span>Revisão <strong id="legendReview">0</strong></div>
@@ -184,42 +96,85 @@
         </section>
 
         <section class="page" id="page-treino">
-          <div class="empty-state">
-            <span class="empty-icon">✎</span>
-            <h2>Meu treino</h2>
-            <p>No Sprint 2 vamos transformar esta área no fluxo completo de resolução da questão.</p>
+          <div class="training-layout">
+            <article class="panel training-main">
+              <div class="training-toolbar">
+                <button class="back-button" id="trainingBackButton">← Banco de questões</button>
+                <div class="timer-box" aria-label="Cronômetro de treino"><span id="timerDisplay">00:00</span><button id="timerToggle" class="timer-button">Iniciar</button><button id="timerReset" class="timer-button ghost">Zerar</button></div>
+              </div>
+
+              <div id="trainingEmpty" class="training-empty">
+                <span class="empty-icon">✎</span>
+                <h2>Escolha uma questão para começar</h2>
+                <p>Abra o banco, selecione uma questão e faça sua resposta no papel antes de marcar a conclusão.</p>
+                <button class="button button-primary" id="goToQuestionsButton">Abrir banco de questões</button>
+              </div>
+
+              <div id="trainingContent" class="training-content hidden">
+                <div class="question-kicker"><span id="trainingExam">Exame OAB</span><span>•</span><span id="trainingQuestionNumber">Questão 01</span></div>
+                <div class="training-heading"><div><h2 id="trainingTitle">Questão discursiva</h2><p id="trainingTheme">Tema</p></div><span class="question-status status-new" id="trainingStatus">Nova</span></div>
+                <div class="question-statement" id="trainingStatement"></div>
+                <div class="question-items" id="trainingItems"></div>
+
+                <div class="paper-reminder"><strong>Agora é no papel.</strong><span>Redija sua resposta como faria no caderno da prova. Só depois marque a questão como concluída.</span></div>
+
+                <div class="training-actions">
+                  <button class="button button-primary" id="markResolvedButton">✓ Concluí minha resposta manuscrita</button>
+                  <button class="button button-ghost" id="markReviewButton">↻ Marcar para revisão</button>
+                </div>
+
+                <div class="self-evaluation hidden" id="selfEvaluation">
+                  <div><span class="eyebrow">Autoavaliação</span><h3>Como ficou sua resposta?</h3><p>Esta nota serve apenas para acompanhar seu treino. A correção pelo espelho entra em uma etapa posterior.</p></div>
+                  <div class="score-buttons" role="group" aria-label="Autoavaliação">
+                    <button data-score="0">Ainda não sei</button>
+                    <button data-score="1">Parcial</button>
+                    <button data-score="2">Boa</button>
+                  </div>
+                </div>
+
+                <div class="question-navigation"><button class="button button-ghost" id="previousQuestionButton">← Anterior</button><span id="questionPosition">1 de 60</span><button class="button button-ghost" id="nextQuestionButton">Próxima →</button></div>
+              </div>
+            </article>
+
+            <aside class="panel training-side">
+              <span class="eyebrow">Método</span>
+              <h3>Fluxo de resolução</h3>
+              <ol class="method-list"><li><span>1</span><div><strong>Leia com calma</strong><small>Identifique exatamente o que cada item pede.</small></div></li><li><span>2</span><div><strong>Resolva à mão</strong><small>Sem consultar o material na primeira tentativa.</small></div></li><li><span>3</span><div><strong>Marque o status</strong><small>Conclua ou envie para revisão.</small></div></li><li><span>4</span><div><strong>Corrija pelo espelho</strong><small>Na próxima etapa, registraremos os critérios da FGV.</small></div></li></ol>
+            </aside>
           </div>
         </section>
 
         <section class="page" id="page-questoes">
-          <div class="empty-state">
-            <span class="empty-icon">☷</span>
-            <h2>Banco de questões</h2>
-            <p>A estrutura está pronta. No próximo sprint entra a listagem, filtros, prova de origem e status de cada questão.</p>
+          <div class="page-intro"><div><span class="eyebrow">Biblioteca</span><h2>Banco de questões</h2><p>Escolha o que treinar, filtre por status e retome exatamente de onde parou.</p></div><div class="question-summary"><strong id="questionSummaryCount">60</strong><span>questões</span></div></div>
+
+          <div class="question-tools panel">
+            <label class="search-box"><span>⌕</span><input id="questionSearch" type="search" placeholder="Buscar tema, exame ou palavra-chave..." autocomplete="off" /></label>
+            <div class="filter-chips" id="statusFilters" aria-label="Filtrar por status">
+              <button class="filter-chip active" data-filter="all">Todas <span id="filterAllCount">60</span></button>
+              <button class="filter-chip" data-filter="new">Novas <span id="filterNewCount">60</span></button>
+              <button class="filter-chip" data-filter="resolved">Resolvidas <span id="filterResolvedCount">0</span></button>
+              <button class="filter-chip" data-filter="review">Revisar <span id="filterReviewCount">0</span></button>
+            </div>
           </div>
+
+          <div class="question-list" id="questionList"></div>
+          <div class="empty-filter hidden" id="questionListEmpty"><span>⌕</span><strong>Nenhuma questão encontrada</strong><p>Tente outro termo ou mude o filtro.</p></div>
         </section>
 
         <section class="page" id="page-revisao">
-          <div class="empty-state">
-            <span class="empty-icon">↻</span>
-            <h2>Revisão</h2>
-            <p>Aqui ficarão as questões marcadas para segunda tentativa e os pontos fracos do espelho.</p>
-          </div>
+          <div class="page-intro"><div><span class="eyebrow">Segunda tentativa</span><h2>Fila de revisão</h2><p>As questões que você marcou para rever ficam concentradas aqui.</p></div><div class="question-summary review-summary"><strong id="reviewPageCount">0</strong><span>para revisar</span></div></div>
+          <div class="question-list" id="reviewQuestionList"></div>
+          <div class="empty-state compact" id="reviewEmpty"><span class="empty-icon">↻</span><h2>Nenhuma pendência por enquanto</h2><p>Quando uma questão pedir uma segunda rodada, marque “Revisar” e ela aparecerá aqui.</p></div>
         </section>
 
         <section class="page" id="page-plano">
-          <div class="empty-state">
-            <span class="empty-icon">▦</span>
-            <h2>Plano de estudo</h2>
-            <p>O painel de metas semanais, calendário e sessões planejadas entra numa etapa posterior.</p>
-          </div>
+          <div class="empty-state"><span class="empty-icon">▦</span><h2>Plano de estudo</h2><p>Metas, calendário e sessões planejadas entram no Sprint 3.</p></div>
         </section>
       </main>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
   <script src="./app.js" defer></script>
 </body>
 </html>

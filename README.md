@@ -1,57 +1,40 @@
-# Caderno OAB - Sprint 1
+# Caderno OAB — Sprint 2
 
-Base estática do Caderno OAB, preparada para GitHub Pages.
+Aplicação estática, mobile-first, para estudo da 2ª fase da OAB em Direito do Trabalho.
 
-## O que já existe
+## Entregas do Sprint 2
 
-- Dashboard inicial responsivo
-- Menu lateral com navegação entre áreas
-- Indicadores de progresso
-- Próxima questão sugerida
-- Persistência local com `localStorage`
-- Base JSON com 60 questões placeholder
-- Compatibilidade com GitHub Pages, sem backend
+- Banco de 60 questões com busca por palavra-chave.
+- Filtros por status: Todas, Novas, Resolvidas e Revisar.
+- Tela completa de treino com enunciado, itens A/B e navegação entre questões.
+- Cronômetro opcional por sessão.
+- Marcação de questão resolvida e fila de revisão.
+- Autoavaliação simples: ainda não sei, parcial ou boa.
+- Dashboard calculado automaticamente a partir do status de cada questão.
+- Persistência no navegador com `localStorage`.
+- Migração automática do progresso simples do Sprint 1, quando existente.
+- Interface responsiva para desktop e mobile.
 
-## Estrutura
+## Importante sobre os enunciados
+
+O conteúdo incluído neste Sprint é um banco demonstrativo de treino, criado para validar a experiência do aplicativo. Ele não reproduz questões oficiais da FGV. O próximo passo de conteúdo pode substituir esses registros por dados oficiais/organizados, mantendo a mesma interface.
+
+## Publicar no GitHub Pages
+
+Coloque os arquivos na raiz do repositório e ative:
+
+`Settings → Pages → Deploy from a branch → main → / (root)`
+
+A estrutura deve ficar assim:
 
 ```text
-caderno-oab-sprint1/
+/
 ├── index.html
 ├── styles.css
 ├── app.js
 ├── data/
 │   └── questoes.json
-├── assets/
 └── README.md
 ```
 
-## Teste local
-
-Por usar `fetch()` para carregar o JSON, abra a pasta por um servidor local.
-
-### Python
-
-```bash
-python -m http.server 8000
-```
-
-Depois acesse `http://localhost:8000`.
-
-### VS Code
-
-Também funciona com a extensão Live Server.
-
-## Publicar no GitHub Pages
-
-1. Crie ou abra o repositório do projeto.
-2. Envie todo o conteúdo desta pasta para a raiz do repositório.
-3. No GitHub, abra **Settings > Pages**.
-4. Em **Build and deployment**, escolha **Deploy from a branch**.
-5. Selecione a branch `main` e a pasta `/ (root)`.
-6. Salve.
-
-O site usará caminhos relativos (`./`), portanto funciona em repositórios do tipo `usuario.github.io/caderno-oab/`.
-
-## Próximo Sprint sugerido
-
-Sprint 2: Banco de questões + tela individual de resolução + status da questão.
+> Para testar localmente, prefira servir a pasta via HTTP (por exemplo, extensão Live Server), porque alguns navegadores bloqueiam `fetch()` de JSON ao abrir `index.html` diretamente por `file://`.
