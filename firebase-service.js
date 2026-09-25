@@ -11,8 +11,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import {
   getFirestore,
+  collection,
   doc,
   getDoc,
+  getDocs,
   setDoc,
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
@@ -60,6 +62,20 @@ export function signUpUser(email, password) {
 export function signOutUser() {
   assertConfigured();
   return signOut(auth);
+}
+
+export async function loadOfficialQuestions() {
+  assertConfigured();
+  const snapshot = await getDocs(collection(db, "questions"));
+  return snapshot.docs
+    .map((item) => item.data())
+    .sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0));
+}
+
+export async function loadQuestionMirror(questionId) {
+  assertConfigured();
+  const snapshot = await getDoc(doc(db, "mirrors", questionId));
+  return snapshot.exists() ? snapshot.data() : null;
 }
 
 export async function loadUserProgress(uid) {

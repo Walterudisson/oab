@@ -5,6 +5,7 @@ import {
   signOutUser,
   loadUserProgress,
   saveUserProgress,
+  loadOfficialQuestions,
   isFirebaseConfigured
 } from "./firebase-service.js";
 
@@ -195,6 +196,18 @@ function navigateTo(pageName) {
 }
 
 async function loadQuestions() {
+  if (isFirebaseConfigured()) {
+    try {
+      const remoteQuestions = await loadOfficialQuestions();
+      if (remoteQuestions.length) {
+        questions = remoteQuestions;
+        return;
+      }
+    } catch (error) {
+      console.warn("Firestore indisponível; usando banco local de questões.", error);
+    }
+  }
+
   try {
     const response = await fetch("./data/questoes.json");
     if (!response.ok) throw new Error("Falha ao carregar questões");

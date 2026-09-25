@@ -1,0 +1,12 @@
+{
+  "name": "caderno-oab-firestore-seed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "node scripts/seed-firestore.mjs",
+    "seed:dry": "node scripts/seed-firestore.mjs --dry-run"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0"
+  }
+}

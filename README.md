@@ -1,98 +1,93 @@
-# Caderno OAB — Sprint 2.1 + Firebase
+# Caderno OAB — Banco Oficial 32º ao 46º + Firebase
 
-Frontend estático para GitHub Pages com Firebase Authentication e Cloud Firestore.
+Frontend estático para GitHub Pages conectado ao projeto Firebase `oabcaderno`.
 
-## Projeto Firebase conectado
+## Conteúdo desta versão
 
-- Project ID: `oabcaderno`
-- Auth domain: `oabcaderno.firebaseapp.com`
-- Configuração Web: `firebase-config.js`
+- 60 questões discursivas oficiais de Direito do Trabalho, do 32º ao 46º Exame de Ordem (15 exames × 4 questões).
+- 60 espelhos/gabaritos oficiais correspondentes.
+- Enunciados em `data/questoes.json`.
+- Espelhos em `data/espelhos.json`.
+- Firebase Authentication + sincronização de progresso do estudante.
+- Firestore como fonte principal das questões, com fallback local para `questoes.json`.
+- Script administrativo para popular as coleções `questions` e `mirrors`.
 
-O projeto usa o Firebase JS SDK modular via CDN oficial, portanto não precisa de npm, Vite ou outro bundler para rodar no GitHub Pages.
-
-## O que já funciona
-
-- Banco de 60 questões de demonstração.
-- Busca e filtros por status.
-- Tela de resolução.
-- Marcar como resolvida e para revisão.
-- Autoavaliação.
-- `localStorage` como cache local.
-- Cadastro com e-mail e senha.
-- Login/logout.
-- Sincronização do progresso no Firestore.
-- Mesclagem entre progresso local e remoto.
-
-## Ativação no Firebase Console
-
-### 1. Authentication
-
-Abra **Firebase Console > Authentication > Sign-in method** e habilite **Email/Password**.
-
-### 2. Firestore
-
-Abra **Firestore Database** e crie o banco de dados.
-
-Depois publique as regras presentes em `firestore.rules`.
-
-Os dados de cada estudante ficam em:
+## Estrutura no Firestore
 
 ```text
+questions/{questionId}
+mirrors/{questionId}
 users/{uid}/state/progress
 ```
 
-As regras impedem que um usuário autenticado leia ou altere os dados de outro usuário.
-
-### 3. Domínio do GitHub Pages
-
-Em **Authentication > Settings > Authorized domains**, adicione o domínio usado pelo site publicado, por exemplo:
+IDs são estáveis, por exemplo:
 
 ```text
-seuusuario.github.io
+trabalho-32-q1
+trabalho-32-q2
+...
+trabalho-46-q4
 ```
 
-Use somente o hostname, sem `https://` e sem caminho do repositório.
+## 1. Publicar as Security Rules
 
-Se testar em `localhost`, projetos Firebase recentes podem exigir que `localhost` também seja incluído manualmente na lista de domínios autorizados.
+No Firebase Console, abra **Firestore Database > Rules** e publique o conteúdo de `firestore.rules`.
 
-## Publicação no GitHub Pages
+- `questions`: leitura pública e escrita bloqueada para clientes Web.
+- `mirrors`: leitura somente para usuários autenticados e escrita bloqueada para clientes Web.
+- `users/{uid}`: cada estudante acessa apenas os próprios dados.
 
-Copie todo o conteúdo desta pasta para a raiz do repositório:
+As escritas administrativas de `questions` e `mirrors` são feitas pelo Firebase Admin SDK, que não depende dessas regras de cliente.
+
+## 2. Gerar uma chave administrativa
+
+No Firebase Console:
+
+1. **Configurações do projeto**.
+2. **Contas de serviço**.
+3. **Firebase Admin SDK**.
+4. **Gerar nova chave privada**.
+5. Salve o arquivo como `serviceAccountKey.json` na raiz deste projeto.
+
+**Nunca envie esse arquivo para o GitHub.** Ele já está incluído no `.gitignore`.
+
+## 3. Enviar as 60 questões e 60 espelhos ao Firestore
+
+Com Node.js instalado:
+
+```bash
+npm install
+npm run seed:dry
+npm run seed
+```
+
+O comando real faz `upsert` usando IDs determinísticos, portanto pode ser executado novamente sem criar duplicatas.
+
+Depois, confira no Firebase Console:
 
 ```text
-index.html
-styles.css
-app.js
-firebase-config.js
-firebase-service.js
-firestore.rules
-data/
-assets/
+questions   60 documentos
+mirrors     60 documentos
 ```
 
-O `index.html` carrega `app.js` como ES module e todos os caminhos são relativos, portanto a aplicação funciona também em URLs do tipo:
+## 4. Publicar o frontend no GitHub Pages
+
+Envie para o repositório os arquivos do frontend, incluindo `data/questoes.json` como fallback, mas **não** envie:
 
 ```text
-https://usuario.github.io/caderno-oab/
+serviceAccountKey.json
+node_modules/
 ```
 
-## Teste mínimo
+Ao abrir o site, a aplicação tenta carregar `questions` do Firestore. Se o banco remoto estiver indisponível, usa automaticamente `data/questoes.json`.
 
-1. Publique os arquivos.
-2. Abra o site.
-3. Clique em **Entrar**.
-4. Crie uma conta com e-mail e senha.
-5. Resolva ou marque uma questão para revisão.
-6. No Firebase Console, abra **Firestore > Data**.
-7. Confirme a criação de:
+## Fontes dos dados
 
-```text
-users
-  └── <UID DO USUÁRIO>
-      └── state
-          └── progress
-```
+Os registros foram extraídos das duas coletâneas fornecidas para o projeto:
 
-## Próxima etapa
+- `OAB_Trabalho_I_a_46_Enunciados.pdf`
+- `OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf`
 
-Migrar o banco estático de questões para coleções Firestore, mantendo o progresso individual separado do conteúdo oficial.
+O recorte desta versão é exclusivamente do **32º ao 46º Exame de Ordem**, sem incluir peças prático-profissionais.
+
+**Nota histórica:** os enunciados e espelhos foram preservados conforme a legislação e a jurisprudência consideradas na época de cada exame. O banco não reescreve questões antigas para o direito vigente.
