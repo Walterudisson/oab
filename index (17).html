@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Est@r BATEL</title>
+
+  <!-- Favicon e Ícone Web App -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#3b82f6">
+
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --green-free: #10b981;
+      --red-busy: #ef4444;
+      --accent-blue: #3b82f6;
+      --border-color: #334155;
+      --tel-green: #22c55e;
+      --amber-edit: #f59e0b;
+      --purple-swap: #a855f7;
+      --vip-gold: #fbbf24;
+      --vip-bg: rgba(251, 191, 36, 0.08);
+      --vip-border: rgba(251, 191, 36, 0.4);
+      --extra-orange: #f97316;
+      --extra-bg: rgba(249, 115, 22, 0.08);
+      --extra-border: rgba(249, 115, 22, 0.4);
+      --status-blocked: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+    body { background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; padding: 16px; display: flex; flex-direction: column; max-width: 650px; margin: 0 auto; }
+
+    header { background-color: var(--card-bg); padding: 16px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3); }
+    .header-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    h1 { font-size: 1.2rem; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 8px; }
+
+    .header-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .nav-btn { background: #334155; border: 1px solid #475569; color: var(--text-main); padding: 6px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; }
+    .nav-btn.active { background: var(--accent-blue); border-color: var(--accent-blue); }
+
+    .auth-bar { display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.05); padding: 8px 12px; border-radius: 8px; margin-bottom: 12px; font-size: 0.8rem; }
+    .btn-auth { background: var(--accent-blue); border: none; color: #fff; padding: 4px 10px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.75rem; }
+    .btn-auth.logout { background: #475569; }
+
+    .top-data-actions { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .btn-data { flex: 1; padding: 8px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; border: 1px solid transparent; white-space: nowrap; }
+    .btn-data-export { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); color: var(--accent-blue); }
+    .btn-data-import { background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: var(--green-free); }
+    .btn-data-reset { background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); color: var(--red-busy); }
+
+    .progress-container { margin-bottom: 12px; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; border: 1px solid var(--border-color); }
+    .progress-header { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; margin-bottom: 6px; }
+    .progress-bar-bg { background: #334155; height: 10px; border-radius: 5px; overflow: hidden; }
+    .progress-bar-fill { background: var(--green-free); height: 100%; width: 0%; transition: width 0.3s ease, background-color 0.3s ease; }
+
+    .dashboard-grid { display: flex; flex-direction: column; gap: 8px; }
+    .dash-row { display: grid; grid-template-columns: 100px 1fr 1fr 1fr; align-items: center; background: rgba(255, 255, 255, 0.03); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.8rem; }
+    .dash-row.general { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); }
+    .dash-label { font-weight: 800; display: flex; align-items: center; gap: 4px; }
+    .dash-label.reg { color: var(--accent-blue); }
+    .dash-label.ext { color: var(--extra-orange); }
+    .dash-label.vip { color: var(--vip-gold); }
+    .dash-label.gen { color: #fff; }
+    .dash-cell { text-align: center; }
+    .dash-val { font-weight: 800; font-size: 0.95rem; }
+    .dash-sub { font-size: 0.65rem; color: var(--text-sub); }
+
+    /* ESTILOS DO DASHBOARD DE VEÍCULOS */
+    .veiculos-summary-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 14px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .summary-title { font-size: 0.85rem; font-weight: 800; color: var(--accent-blue); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 6px; }
+    .summary-grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+    .summary-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); padding: 8px 4px; border-radius: 8px; }
+    .summary-num { font-size: 1.1rem; font-weight: 800; color: #fff; }
+    .summary-lbl { font-size: 0.65rem; color: var(--text-sub); font-weight: 600; margin-top: 2px; }
+
+    .summary-grid-tags { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
+    .tag-box { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 6px 2px; border-radius: 6px; }
+    .tag-box-num { font-size: 0.9rem; font-weight: 800; color: var(--vip-gold); }
+    .tag-box-lbl { font-size: 0.6rem; color: var(--text-sub); font-weight: 600; }
+
+    .search-box { margin-bottom: 16px; position: relative; }
+    .search-input { width: 100%; padding: 12px 40px 12px 16px; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; color: #fff; font-size: 0.9rem; outline: none; }
+    .search-clear-btn { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-sub); font-size: 1.1rem; cursor: pointer; display: none; }
+
+    .view-section { display: none; }
+    .view-section.active { display: block; }
+
+    .section-divider { font-size: 0.9rem; font-weight: 800; margin: 20px 0 10px 0; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; letter-spacing: 0.5px; }
+    .section-divider.reg { color: var(--accent-blue); border-color: rgba(59, 130, 246, 0.3); }
+    .section-divider.ext { color: var(--extra-orange); border-color: rgba(249, 115, 22, 0.3); }
+    .section-divider.vip { color: var(--vip-gold); border-color: rgba(251, 191, 36, 0.3); }
+
+    .grid-vagas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+    @media (min-width: 450px) { .grid-vagas { grid-template-columns: repeat(3, 1fr); } }
+
+    .vaga-card { background-color: var(--card-bg); border-radius: 14px; border: 2px solid var(--border-color); padding: 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 195px; position: relative; }
+    .vaga-card.livre { border-color: rgba(16, 185, 129, 0.4); }
+    .vaga-card.ocupada { border-color: rgba(239, 68, 68, 0.5); background-color: rgba(239, 68, 68, 0.05); }
+    .vaga-card.bloqueada { border-color: rgba(100, 116, 139, 0.5); background-color: rgba(100, 116, 139, 0.1); }
+
+    .vaga-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .vaga-num { font-weight: 800; font-size: 1rem; }
+    .badge-status { font-size: 0.65rem; padding: 2px 6px; border-radius: 12px; font-weight: 700; text-transform: uppercase; }
+    .badge-livre { background-color: rgba(16, 185, 129, 0.15); color: var(--green-free); }
+    .badge-ocupada { background-color: rgba(239, 68, 68, 0.15); color: var(--red-busy); }
+    .badge-bloqueada { background-color: rgba(100, 116, 139, 0.2); color: #cbd5e1; }
+
+    .vaga-body { margin: 4px 0 8px 0; font-size: 0.8rem; display: flex; flex-direction: column; gap: 3px; }
+    .placa-txt { font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .tag-badge { font-size: 0.7rem; font-weight: bold; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); padding: 2px 6px; border-radius: 6px; color: var(--vip-gold); }
+
+    .contact-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+    .phone-btn { display: inline-flex; align-items: center; gap: 4px; background-color: rgba(34, 197, 94, 0.15); color: var(--tel-green); border: 1px solid rgba(34, 197, 94, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; text-decoration: none; }
+    .phone-btn.wa { background-color: rgba(37, 211, 102, 0.2); color: #25d366; border-color: rgba(37, 211, 102, 0.4); padding: 3px 6px; font-size: 0.75rem; }
+
+    .info-line { color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .info-line strong { color: var(--text-main); }
+    .tempo-txt { font-size: 0.7rem; color: var(--accent-blue); margin-top: 4px; font-weight: 600; }
+
+    .vaga-actions { display: flex; gap: 4px; }
+    .btn-action { flex: 1; padding: 8px 4px; border: none; border-radius: 8px; font-weight: 700; font-size: 0.75rem; cursor: pointer; }
+    .btn-ocupar { background-color: var(--green-free); color: #000; }
+    .btn-liberar { background-color: var(--red-busy); color: #fff; }
+    .btn-status-vaga { background-color: var(--status-blocked); color: #fff; }
+
+    .btn-trocar { background-color: rgba(168, 85, 247, 0.2); border: 1px solid var(--purple-swap); color: var(--purple-swap); padding: 8px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
+    .btn-editar { background-color: rgba(245, 158, 11, 0.2); border: 1px solid var(--amber-edit); color: var(--amber-edit); padding: 8px; border-radius: 8px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
+
+    .historico-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .historico-list { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+    .std-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-blue); border-radius: 12px; padding: 12px 14px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    .std-card.precadastro { border-left-color: var(--vip-gold); }
+    .std-top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 6px; margin-bottom: 8px; }
+    .std-title { font-size: 1.05rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 6px; }
+    .std-badge { font-size: 0.8rem; font-weight: 700; background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); padding: 2px 8px; border-radius: 6px; }
+    .std-badge.gold { background: rgba(251, 191, 36, 0.2); color: var(--vip-gold); }
+    .std-details { font-size: 0.8rem; color: var(--text-sub); display: flex; flex-direction: column; gap: 3px; }
+    .std-actions { display: flex; gap: 6px; margin-top: 8px; justify-content: flex-end; }
+
+    .form-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+    .user-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-blue); border-radius: 12px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; flex-wrap: wrap; gap: 8px; }
+    .badge-role { font-size: 0.7rem; padding: 3px 8px; border-radius: 10px; font-weight: 800; text-transform: uppercase; margin-left: 6px; }
+    .role-gestor { background: rgba(251, 191, 36, 0.2); color: var(--vip-gold); border: 1px solid rgba(251, 191, 36, 0.4); }
+    .role-operador { background: rgba(16, 185, 129, 0.2); color: var(--green-free); border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    .btn-pass-user { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.4); padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+    .btn-del-user { background: rgba(239, 68, 68, 0.2); color: var(--red-busy); border: 1px solid rgba(239, 68, 68, 0.4); padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+
+    .vagas-config-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .vaga-config-item { background-color: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent-blue); border-radius: 10px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+    .vaga-config-actions { display: flex; gap: 6px; }
+    .btn-sm-edit { background: rgba(245, 158, 11, 0.2); color: var(--amber-edit); border: 1px solid rgba(245, 158, 11, 0.4); padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+    .btn-sm-del { background: rgba(239, 68, 68, 0.2); color: var(--red-busy); border: 1px solid rgba(239, 68, 68, 0.4); padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+
+    .autocomplete-list { position: absolute; top: 100%; left: 0; right: 0; background-color: var(--card-bg); border: 1px solid var(--accent-blue); border-radius: 8px; max-height: 160px; overflow-y: auto; z-index: 1050; display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .autocomplete-item { padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border-color); font-size: 0.85rem; display: flex; align-items: center; justify-content: space-between; }
+    .autocomplete-item:hover { background-color: rgba(59, 130, 246, 0.2); }
+    .auto-icon-tag { font-size: 1.1rem; filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.6)); }
+
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+    .modal-overlay.active { opacity: 1; pointer-events: auto; }
+    .modal-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; width: 100%; max-width: 400px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); max-height: 90vh; overflow-y: auto; }
+    .modal-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; text-align: center; }
+
+    .form-group { margin-bottom: 12px; position: relative; }
+    .form-label { display: block; font-size: 0.75rem; color: var(--text-sub); margin-bottom: 4px; font-weight: 600; }
+    .modal-input, .modal-select { width: 100%; padding: 10px 12px; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-size: 0.95rem; outline: none; }
+    .modal-input.placa { text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+
+    .modal-actions { display: flex; gap: 10px; margin-top: 18px; }
+    .modal-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    .btn-cancel { background-color: #334155; color: #fff; }
+    .btn-confirm { background-color: var(--accent-blue); color: #fff; }
+
+    footer {
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 0.75rem;
+      margin-top: auto;
+      padding: 16px 0 8px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-sync { font-weight: 600; color: var(--green-free); display: flex; align-items: center; gap: 6px; }
+    .footer-dev { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; color: var(--text-main); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <h1>🅿️ Est@r <span style="font-size: 0.7rem; background: #22c55e; color: #000; padding: 2px 6px; border-radius: 10px; margin-left: 6px;">BATEL</span></h1>
+      <div class="header-btns">
+        <button class="nav-btn active" id="btn-tab-vagas">Vagas</button>
+        <button class="nav-btn" id="btn-tab-hist" style="display: none;">Histórico</button>
+        <button class="nav-btn" id="btn-tab-veiculos" style="display: none;">🚘 Veículos</button>
+        <button class="nav-btn" id="btn-tab-equipe" style="display: none;">👥 Equipe</button>
+        <button class="nav-btn" id="btn-tab-config" style="display: none;">⚙️ Vagas</button>
+      </div>
+    </div>
+
+    <div class="auth-bar">
+      <div class="auth-status" id="auth-status-txt">👁️ Modo Leitura (Visitante)</div>
+      <button class="btn-auth" id="btn-auth-action">🔑 Entrar</button>
+    </div>
+
+    <div class="top-data-actions" id="top-data-actions" style="display: none;">
+      <button class="btn-data btn-data-export" id="btn-export-json">📤 Exportar Backup</button>
+      <button class="btn-data btn-data-import" id="btn-trigger-import">📥 Importar Backup</button>
+      <button class="btn-data btn-data-reset" id="btn-reset-data">⚠️ Resetar Tudo</button>
+      <input type="file" id="file-import-input" accept=".json" style="display: none;">
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-header">
+        <span>TAXA DE OCUPAÇÃO REAL</span>
+        <span id="progress-percent-txt">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="dash-row">
+        <div class="dash-label reg">🔹 Regulares</div>
+        <div class="dash-cell"><div class="dash-val" id="stat-reg-tot">14</div><div class="dash-sub">TOTAL</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--green-free);" id="stat-reg-liv">14</div><div class="dash-sub">LIVRES</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--red-busy);" id="stat-reg-ocu">0</div><div class="dash-sub">OCUPADAS</div></div>
+      </div>
+
+      <div class="dash-row">
+        <div class="dash-label ext">🔸 Extras</div>
+        <div class="dash-cell"><div class="dash-val" id="stat-ext-tot">6</div><div class="dash-sub">TOTAL</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--green-free);" id="stat-ext-liv">6</div><div class="dash-sub">LIVRES</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--red-busy);" id="stat-ext-ocu">0</div><div class="dash-sub">OCUPADAS</div></div>
+      </div>
+
+      <div class="dash-row">
+        <div class="dash-label vip">⭐ VIP</div>
+        <div class="dash-cell"><div class="dash-val" id="stat-vip-tot">5</div><div class="dash-sub">TOTAL</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--green-free);" id="stat-vip-liv">5</div><div class="dash-sub">LIVRES</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--red-busy);" id="stat-vip-ocu">0</div><div class="dash-sub">OCUPADAS</div></div>
+      </div>
+
+      <div class="dash-row general">
+        <div class="dash-label gen">📊 GERAL</div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--accent-blue);" id="stat-gen-tot">25</div><div class="dash-sub">CAPACIDADE</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--green-free);" id="stat-gen-liv">25</div><div class="dash-sub">LIVRES</div></div>
+        <div class="dash-cell"><div class="dash-val" style="color:var(--red-busy);" id="stat-gen-ocu">0</div><div class="dash-sub">OCUPADAS</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div id="sec-vagas" class="view-section active">
+    <div class="search-box">
+      <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar vaga, placa, TAG, nome ou setor..." value="">
+      <button class="search-clear-btn" id="search-clear-btn">✖</button>
+    </div>
+
+    <div class="section-divider reg">🔹 Vagas Regulares</div>
+    <div class="grid-vagas" id="grid-vagas-regulares"></div>
+
+    <div class="section-divider ext">🔸 Vagas Extras</div>
+    <div class="grid-vagas" id="grid-vagas-extras"></div>
+
+    <div class="section-divider vip">⭐ Vagas VIP</div>
+    <div class="grid-vagas" id="grid-vagas-vip"></div>
+  </div>
+
+  <div id="sec-historico" class="view-section">
+    <div class="form-card" style="padding: 12px; margin-bottom: 12px;">
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+        <label class="form-label" style="margin: 0;">FILTRAR PERÍODO:</label>
+        <select id="hist-filtro-periodo" class="modal-select" style="padding: 6px 10px; width: auto; flex: 1;">
+          <option value="todos">Todo o Histórico</option>
+          <option value="hoje">Hoje</option>
+          <option value="7dias">Últimos 7 dias</option>
+          <option value="mes">Este Mês</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="historico-header">
+      <span style="font-size: 0.9rem; font-weight: bold; color: var(--text-sub);" id="cnt-historico">Registros: 0</span>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn-export" id="btn-export-csv" style="display: none;">📥 Baixar CSV</button>
+        <button class="reset-btn" id="btn-clear-hist" style="display: none;">Limpar</button>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search-hist" class="search-input" placeholder="🔍 Buscar por placa, TAG, nome ou telefone...">
+    </div>
+    <div class="historico-list" id="lista-historico"></div>
+  </div>
+
+  <div id="sec-veiculos" class="view-section">
+
+    <!-- NOVO PAINEL DE CONTADORES E RESUMO DE VEÍCULOS -->
+    <div class="veiculos-summary-card">
+      <div class="summary-title">
+        <span>📊 RESUMO DA BASE DE VEÍCULOS</span>
+        <span style="font-size: 0.7rem; color: var(--text-sub); font-weight: normal;">Veículos Únicos</span>
+      </div>
+
+      <div class="summary-grid-top">
+        <div class="summary-box">
+          <div class="summary-num" style="color: var(--accent-blue);" id="cnt-veic-total">0</div>
+          <div class="summary-lbl">TOTAL ÚNICOS</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-num" style="color: var(--vip-gold);" id="cnt-veic-precadastro">0</div>
+          <div class="summary-lbl">PRÉ-CADASTROS</div>
+        </div>
+        <div class="summary-box">
+          <div class="summary-num" style="color: var(--green-free);" id="cnt-veic-passagem">0</div>
+          <div class="summary-lbl">HIST. PASSAGEM</div>
+        </div>
+      </div>
+
+      <div class="summary-grid-tags">
+        <div class="tag-box">
+          <div class="tag-box-num" id="cnt-tag-credencial">0</div>
+          <div class="tag-box-lbl">🏷️ CREDENCIAL</div>
+        </div>
+        <div class="tag-box">
+          <div class="tag-box-num" id="cnt-tag-vip">0</div>
+          <div class="tag-box-lbl">⭐ VIP</div>
+        </div>
+        <div class="tag-box">
+          <div class="tag-box-num" id="cnt-tag-prioritario">0</div>
+          <div class="tag-box-lbl">🚩 PRIORITÁRIO</div>
+        </div>
+        <div class="tag-box">
+          <div class="tag-box-num" style="color: var(--text-sub);" id="cnt-tag-semtag">0</div>
+          <div class="tag-box-lbl">⚪ SEM TAG</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h2 style="font-size: 1.1rem; margin-bottom: 14px; color: var(--accent-blue);" id="form-veiculo-titulo">➕ Pré-Cadastrar Veículo</h2>
+      <div class="form-group">
+        <label class="form-label">PLACA DO VEÍCULO *</label>
+        <input type="text" id="cad-veiculo-placa" class="modal-input placa" placeholder="ABC-1234" maxlength="10" autocomplete="off">
+        <div id="autocomplete-veiculo-box" class="autocomplete-list"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">TAG / CREDENCIAL ESPECIAL</label>
+        <select id="cad-veiculo-tag" class="modal-select">
+          <option value="">Nenhuma (Padrão)</option>
+          <option value="🏷️ Credencial">🏷️ Credencial</option>
+          <option value="⭐ VIP">⭐ VIP</option>
+          <option value="🚩 Prioritário">🚩 Prioritário</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">TELEFONE DO CONDUTOR</label>
+        <input type="tel" id="cad-veiculo-telefone" class="modal-input" placeholder="(41) 9 9999-9999">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MARCA / MODELO</label>
+        <input type="text" id="cad-veiculo-modelo" class="modal-input" placeholder="Ex: GOL PRATA">
+      </div>
+      <div class="form-group">
+        <label class="form-label">NOME DO CONDUTOR</label>
+        <input type="text" id="cad-veiculo-nome" class="modal-input" placeholder="Ex: JOÃO SILVA">
+      </div>
+      <div class="form-group">
+        <label class="form-label">SETOR / DESTINO</label>
+        <input type="text" id="cad-veiculo-setor" class="modal-input" placeholder="Ex: RH, VENDAS">
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 10px;">
+        <button class="modal-btn btn-cancel" id="btn-cancel-edit-veiculo" style="display: none;">Cancelar Edição</button>
+        <button class="modal-btn btn-confirm" id="btn-salvar-veiculo" style="width: 100%;">Salvar Dados do Veículo</button>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="search-veiculos" class="search-input" placeholder="🔍 Consultar qualquer campo (Placa, Nome, Telefone, Modelo, Setor...)...">
+    </div>
+
+    <div class="section-divider vip">⭐ Base de Pré-Cadastros</div>
+    <div class="historico-list" id="lista-veiculos-precadastro"></div>
+
+    <div class="section-divider reg">📋 Histórico de Passagens pelo Pátio</div>
+    <div class="historico-list" id="lista-veiculos-historico"></div>
+  </div>
+
+  <div id="sec-equipe" class="view-section">
+    <div class="form-card">
+      <h2 style="font-size: 1.1rem; margin-bottom: 14px; color: var(--accent-blue);">➕ Cadastrar Novo Usuário</h2>
+      <div class="form-group">
+        <label class="form-label">E-MAIL DO OPERADOR / GESTOR *</label>
+        <input type="email" id="novo-user-email" class="modal-input" placeholder="operador@estacionamento.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">SENHA DE ACESSO *</label>
+        <input type="password" id="novo-user-senha" class="modal-input" placeholder="Mínimo 6 caracteres">
+      </div>
+      <div class="form-group">
+        <label class="form-label">PERFIL / FUNÇÃO *</label>
+        <select id="novo-user-funcao" class="modal-select">
+          <option value="operador">Operador (Apenas operações de vagas e histórico)</option>
+          <option value="gestor">Gestor (Acesso total, relatórios, backup e equipe)</option>
+        </select>
+      </div>
+      <button class="modal-btn btn-confirm" id="btn-cadastrar-usuario" style="width: 100%; margin-top: 10px;">Cadastrar Usuário</button>
+    </div>
+
+    <div class="section-divider reg">👥 Usuários Cadastrados</div>
+    <div class="equipe-list" id="lista-equipe"></div>
+  </div>
+
+  <div id="sec-config" class="view-section">
+    <div class="form-card">
+      <h2 style="font-size: 1.1rem; margin-bottom: 14px; color: var(--vip-gold);" id="form-vaga-titulo">➕ Adicionar Nova Vaga</h2>
+      <div class="form-group">
+        <label class="form-label">NOME / CÓDIGO DA VAGA *</label>
+        <input type="text" id="nova-vaga-nome" class="modal-input" placeholder="Ex: 11A, VIP 6, Vaga C1">
+      </div>
+      <div class="form-group">
+        <label class="form-label">CATEGORIA DA VAGA *</label>
+        <select id="nova-vaga-categoria" class="modal-select">
+          <option value="regular">Regular</option>
+          <option value="extra">Extra</option>
+          <option value="vip">VIP</option>
+        </select>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 10px;">
+        <button class="modal-btn btn-cancel" id="btn-cancel-edit-vaga" style="display: none;">Cancelar Edição</button>
+        <button class="modal-btn btn-confirm" id="btn-adicionar-vaga" style="width: 100%;">Criar Vaga</button>
+      </div>
+    </div>
+
+    <div class="section-divider vip">⚙️ Vagas Existentes no Pátio</div>
+    <div class="vagas-config-list" id="lista-vagas-config"></div>
+  </div>
+
+  <footer>
+    <div class="footer-sync">
+      <span>🟢 Sincronizado em Nuvem</span> • <span id="txt-timer-atualizacao">atualizado há 0 seg</span>
+    </div>
+
+    <div class="footer-dev">
+      <span style="width: 100%; text-align: center;">Desenvolvido por <strong>UDISSON</strong></span>
+      <a href="tel:+5541995004488" class="phone-btn" style="padding: 2px 6px; font-size: 0.75rem;">📞 (41) 9 9500-4488</a>
+      <a href="https://wa.me/5541995004488" target="_blank" class="phone-btn wa" style="padding: 2px 6px; font-size: 0.75rem;">💬 WhatsApp</a>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-login">
+    <div class="modal-card">
+      <div class="modal-title">🔑 Acesso ao Sistema</div>
+      <div class="form-group">
+        <label class="form-label">E-MAIL</label>
+        <input type="email" id="login-email" class="modal-input" placeholder="usuario@estacionamento.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">SENHA</label>
+        <input type="password" id="login-senha" class="modal-input" placeholder="••••••••">
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn btn-cancel" id="btn-cancel-login">Cancelar</button>
+        <button class="modal-btn btn-confirm" id="btn-confirm-login">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-status-vaga">
+    <div class="modal-card">
+      <div class="modal-title" id="modal-status-titulo">Alterar Status da Vaga</div>
+      <div class="form-group">
+        <label class="form-label">SELECIONE O STATUS</label>
+        <select id="select-status-vaga" class="modal-select">
+          <option value="livre">🟢 Livre (Disponível)</option>
+          <option value="Manutenção">🛠️ Em Manutenção</option>
+          <option value="Reservada">🔒 Reservada</option>
+          <option value="Inativa">⛔ Inativa</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn btn-cancel" id="btn-cancel-status">Cancelar</button>
+        <button class="modal-btn btn-confirm" id="btn-confirm-status">Salvar Status</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-entrada">
+    <div class="modal-card">
+      <div class="modal-title" id="modal-entrada-titulo">Entrada na Vaga --</div>
+      <div class="form-group">
+        <label class="form-label">PLACA DO VEÍCULO *</label>
+        <input type="text" id="input-placa" class="modal-input placa" placeholder="ABC-1234" maxlength="10" autocomplete="off">
+        <div id="autocomplete-box" class="autocomplete-list"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">TAG / CREDENCIAL ESPECIAL</label>
+        <select id="input-tag" class="modal-select">
+          <option value="">Nenhuma (Padrão)</option>
+          <option value="🏷️ Credencial">🏷️ Credencial</option>
+          <option value="⭐ VIP">⭐ VIP</option>
+          <option value="🚩 Prioritário">🚩 Prioritário</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">TELEFONE DO CONDUTOR</label>
+        <input type="tel" id="input-telefone" class="modal-input" placeholder="(41) 9 9999-9999">
+      </div>
+      <div class="form-group">
+        <label class="form-label">MARCA / MODELO</label>
+        <input type="text" id="input-modelo" class="modal-input" placeholder="Ex: GOL PRATA, COROLLA PRETO">
+      </div>
+      <div class="form-group">
+        <label class="form-label">NOME DO CONDUTOR</label>
+        <input type="text" id="input-nome" class="modal-input" placeholder="Ex: JOÃO SILVA">
+      </div>
+      <div class="form-group">
+        <label class="form-label">SETOR / DESTINO</label>
+        <input type="text" id="input-setor" class="modal-input" placeholder="Ex: RH, VENDAS, BLOCO B">
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn btn-cancel" id="btn-cancel-entrada">Cancelar</button>
+        <button class="modal-btn btn-confirm" id="btn-confirm-entrada">Confirmar Entrada</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-saida">
+    <div class="modal-card">
+      <div class="modal-title" id="modal-saida-titulo">Saída da Vaga --</div>
+      <div class="detalhes-saida" id="modal-saida-detalhes"></div>
+      <div class="modal-actions">
+        <button class="modal-btn btn-cancel" id="btn-cancel-saida">Cancelar</button>
+        <button class="modal-btn btn-liberar" id="btn-confirm-saida">Confirmar Saída</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-troca">
+    <div class="modal-card">
+      <div class="modal-title" id="modal-troca-titulo">🔄 Trocar de Vaga</div>
+      <div class="detalhes-saida" id="modal-troca-detalhes"></div>
+      <div class="form-group">
+        <label class="form-label">SELECIONE A VAGA DE DESTINO</label>
+        <select id="select-nova-vaga" class="modal-select"></select>
+      </div>
+      <div id="troca-alerta-inversao" style="display:none; color: var(--amber-edit); font-size: 0.8rem; margin-bottom: 10px; font-weight: bold;">
+        ⚠️ A vaga de destino está ocupada. Os dois veículos trocarão de vaga entre si.
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn btn-cancel" id="btn-cancel-troca">Cancelar</button>
+        <button class="modal-btn" id="btn-confirm-troca" style="background-color: var(--purple-swap); color: #fff;">Confirmar Troca</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, collection, onSnapshot, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA88uHMJN-5WgI1Hn9gQEp8hA2nreSum2s",
+      authDomain: "estacionamento-app-e0926.firebaseapp.com",
+      projectId: "estacionamento-app-e0926",
+      storageBucket: "estacionamento-app-e0926.firebasestorage.app",
+      messagingSenderId: "802180955702",
+      appId: "1:802180955702:web:e544318d85459827926297"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    const secondaryApp = initializeApp(firebaseConfig, "SecondaryApp");
+    const secondaryAuth = getAuth(secondaryApp);
+
+    let vagaSelecionada = null;
+    let modoEdicao = false;
+    let vagaEmEdicaoId = null;
+    let veiculoEmEdicaoPlaca = null;
+    let eEdicaoHistoricoPassagem = false;
+    let vagas = [];
+    let historico = [];
+    let veiculosPrecadastrados = [];
+    let perfilUsuario = "visitante";
+    let segundosDesdeAtualizacao = 0;
+
+    const NOMES_REGULARES_DEF = Array.from({ length: 7 }, (_, i) => [`${i + 1}A`, `${i + 1}B`]).flat();
+    const NOMES_EXTRAS_DEF = Array.from({ length: 3 }, (_, i) => [`${i + 8}A`, `${i + 8}B`]).flat();
+    const NOMES_VIP_DEF = ['VIP 1', 'VIP 2', 'VIP 3', 'VIP 4', 'VIP 5'];
+
+    setInterval(() => {
+      segundosDesdeAtualizacao++;
+      const elTimer = document.getElementById('txt-timer-atualizacao');
+      if (elTimer) elTimer.innerText = `atualizado há ${segundosDesdeAtualizacao} seg`;
+    }, 1000);
+
+    function resetarTimerAtualizacao() {
+      segundosDesdeAtualizacao = 0;
+      const elTimer = document.getElementById('txt-timer-atualizacao');
+      if (elTimer) elTimer.innerText = `atualizado há 0 seg`;
+    }
+
+    function aplicarMascaraTelefone(value) {
+      const nums = value.replace(/\D/g, '').slice(0, 11);
+      if (nums.length === 0) return '';
+      if (nums.length <= 2) return `(${nums}`;
+      if (nums.length <= 3) return `(${nums.slice(0, 2)}) ${nums.slice(2)}`;
+      if (nums.length <= 7) return `(${nums.slice(0, 2)}) ${nums.slice(2, 3)} ${nums.slice(3)}`;
+      return `(${nums.slice(0, 2)}) ${nums.slice(2, 3)} ${nums.slice(3, 7)}-${nums.slice(7)}`;
+    }
+
+    function formatarTelefoneParaBD(tel) {
+      if (!tel) return '';
+      const nums = tel.replace(/\D/g, '');
+      if (nums.length === 0) return '';
+      if (nums.startsWith('55') && nums.length >= 12) return `+${nums}`;
+      return `+55${nums}`;
+    }
+
+    function formatarTelefoneExibicao(tel) {
+      if (!tel) return '';
+      const numLimpo = tel.replace(/^\+55/, '').replace(/\D/g, '');
+      return aplicarMascaraTelefone(numLimpo);
+    }
+
+    function obterIconeTag(tag) {
+      if (!tag) return '';
+      if (tag.includes('VIP') || tag.includes('⭐')) return '⭐';
+      if (tag.includes('Credencial') || tag.includes('🏷️')) return '🏷️';
+      if (tag.includes('Prioritário') || tag.includes('🚩')) return '🚩';
+      return '🏷️';
+    }
+
+    function normalizarValorSelectTag(tag) {
+      if (!tag) return '';
+      const t = tag.toUpperCase();
+      if (t.includes('VIP')) return '⭐ VIP';
+      if (t.includes('CREDENCIAL')) return '🏷️ Credencial';
+      if (t.includes('PRIORITÁRIO') || t.includes('PRIORITARIO')) return '🚩 Prioritário';
+      return tag;
+    }
+
+    function obterEmailUsuarioAtual() {
+      return auth.currentUser ? auth.currentUser.email : 'Sistema';
+    }
+
+    function criarEstruturaPadrao() {
+      const arr = [];
+      let id = 1;
+      NOMES_REGULARES_DEF.forEach(n => arr.push({ id: id++, nomeVaga: n, categoria: 'regular', ocupada: false, statusEspecial: null }));
+      NOMES_EXTRAS_DEF.forEach(n => arr.push({ id: id++, nomeVaga: n, categoria: 'extra', ocupada: false, statusEspecial: null }));
+      NOMES_VIP_DEF.forEach(n => arr.push({ id: id++, nomeVaga: n, categoria: 'vip', ocupada: false, statusEspecial: null }));
+      return arr;
+    }
+
+    vagas = criarEstruturaPadrao();
+
+    const inputTelefone = document.getElementById('input-telefone');
+    inputTelefone.addEventListener('input', (e) => {
+      e.target.value = aplicarMascaraTelefone(e.target.value);
+    });
+
+    const cadVeiculoTelefone = document.getElementById('cad-veiculo-telefone');
+    cadVeiculoTelefone.addEventListener('input', (e) => {
+      e.target.value = aplicarMascaraTelefone(e.target.value);
+    });
+
+    document.getElementById('btn-tab-vagas').addEventListener('click', () => mudarAba('vagas'));
+    document.getElementById('btn-tab-hist').addEventListener('click', () => mudarAba('historico'));
+    document.getElementById('btn-tab-veiculos').addEventListener('click', () => mudarAba('veiculos'));
+    document.getElementById('btn-tab-equipe').addEventListener('click', () => mudarAba('equipe'));
+    document.getElementById('btn-tab-config').addEventListener('click', () => mudarAba('config'));
+
+    document.getElementById('btn-auth-action').addEventListener('click', () => {
+      if (perfilUsuario !== "visitante") signOut(auth); else abrirModalLogin();
+    });
+
+    document.getElementById('btn-cancel-login').addEventListener('click', fecharModalLogin);
+    document.getElementById('btn-confirm-login').addEventListener('click', realizarLogin);
+
+    document.getElementById('btn-cancel-entrada').addEventListener('click', fecharModalEntrada);
+    document.getElementById('btn-confirm-entrada').addEventListener('click', confirmarEntrada);
+
+    document.getElementById('btn-cancel-saida').addEventListener('click', fecharModalSaida);
+    document.getElementById('btn-confirm-saida').addEventListener('click', confirmarSaida);
+
+    document.getElementById('btn-cancel-troca').addEventListener('click', fecharModalTroca);
+    document.getElementById('btn-confirm-troca').addEventListener('click', confirmarTroca);
+
+    document.getElementById('btn-cancel-status').addEventListener('click', fecharModalStatus);
+    document.getElementById('btn-confirm-status').addEventListener('click', confirmarStatusVaga);
+
+    document.getElementById('btn-export-json').addEventListener('click', exportarBackupJSON);
+    document.getElementById('btn-trigger-import').addEventListener('click', () => document.getElementById('file-import-input').click());
+    document.getElementById('file-import-input').addEventListener('change', importarBackupJSON);
+    document.getElementById('btn-reset-data').addEventListener('click', resetarTodosOsDados);
+    document.getElementById('btn-clear-hist').addEventListener('click', limparHistorico);
+    document.getElementById('btn-export-csv').addEventListener('click', exportarCSV);
+
+    document.getElementById('btn-cadastrar-usuario').addEventListener('click', cadastrarNovoUsuario);
+    document.getElementById('btn-adicionar-vaga').addEventListener('click', salvarNovaOuEditadaVaga);
+    document.getElementById('btn-cancel-edit-vaga').addEventListener('click', cancelarEdicaoVaga);
+
+    document.getElementById('btn-salvar-veiculo').addEventListener('click', salvarVeiculoPrecadastro);
+    document.getElementById('btn-cancel-edit-veiculo').addEventListener('click', cancelarEdicaoVeiculo);
+    document.getElementById('search-veiculos').addEventListener('input', renderizarAbaVeiculos);
+
+    function obterBaseCompletaVeiculos() {
+      const mapa = new Map();
+      veiculosPrecadastrados.forEach(v => mapa.set(v.placa, { ...v, tipo: 'precadastro' }));
+
+      historico.forEach(h => {
+        if (h.placa && !mapa.has(h.placa)) {
+          mapa.set(h.placa, { ...h, tipo: 'historico' });
+        }
+      });
+      return Array.from(mapa.values());
+    }
+
+    function configurarAutocompleteInput(inputId, boxId, selectTagId, telId, modId, nomId, setId) {
+      const elInput = document.getElementById(inputId);
+      const elBox = document.getElementById(boxId);
+
+      elInput.addEventListener('input', () => {
+        const termo = elInput.value.trim().toUpperCase();
+        elBox.innerHTML = '';
+
+        if (termo.length < 2) {
+          elBox.style.display = 'none';
+          return;
+        }
+
+        const base = obterBaseCompletaVeiculos();
+        const matches = base.filter(v => v.placa && v.placa.includes(termo));
+
+        if (matches.length === 0) {
+          elBox.style.display = 'none';
+          return;
+        }
+
+        matches.slice(0, 5).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'autocomplete-item';
+          const iconeTag = item.tag ? obterIconeTag(item.tag) : '';
+
+          div.innerHTML = `
+            <div>
+              <strong>${item.placa}</strong> ${iconeTag ? `<span class="auto-icon-tag" title="${item.tag}">${iconeTag}</span>` : ''} 
+              - ${item.modelo || 'Sem modelo'} <small style="color:var(--text-sub);">(${item.nome || 'Sem nome'})</small>
+            </div>
+            ${item.tipo === 'precadastro' ? '<span style="font-size:0.65rem; background:rgba(251,191,36,0.2); color:var(--vip-gold); padding:2px 4px; border-radius:4px; font-weight:bold;">PRE</span>' : ''}
+          `;
+
+          div.addEventListener('click', () => {
+            elInput.value = item.placa.toUpperCase();
+            if (selectTagId) document.getElementById(selectTagId).value = normalizarValorSelectTag(item.tag || '');
+            if (telId) document.getElementById(telId).value = formatarTelefoneExibicao(item.telefone || '');
+            if (modId) document.getElementById(modId).value = (item.modelo || '').toUpperCase();
+            if (nomId) document.getElementById(nomId).value = (item.nome || '').toUpperCase();
+            if (setId) document.getElementById(setId).value = (item.setor || '').toUpperCase();
+            elBox.style.display = 'none';
+          });
+          elBox.appendChild(div);
+        });
+
+        elBox.style.display = 'block';
+      });
+    }
+
+    configurarAutocompleteInput('input-placa', 'autocomplete-box', 'input-tag', 'input-telefone', 'input-modelo', 'input-nome', 'input-setor');
+    configurarAutocompleteInput('cad-veiculo-placa', 'autocomplete-veiculo-box', 'cad-veiculo-tag', 'cad-veiculo-telefone', 'cad-veiculo-modelo', 'cad-veiculo-nome', 'cad-veiculo-setor');
+
+    const searchInput = document.getElementById('search-input');
+    const searchClearBtn = document.getElementById('search-clear-btn');
+
+    searchInput.addEventListener('input', () => {
+      searchClearBtn.style.display = searchInput.value ? 'block' : 'none';
+      renderizar();
+    });
+
+    searchClearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchClearBtn.style.display = 'none';
+      renderizar();
+    });
+
+    document.addEventListener('click', (e) => {
+      const autoBox = document.getElementById('autocomplete-box');
+      const cadAutoBox = document.getElementById('autocomplete-veiculo-box');
+      if (e.target !== document.getElementById('input-placa') && e.target !== autoBox) autoBox.style.display = 'none';
+      if (e.target !== document.getElementById('cad-veiculo-placa') && e.target !== cadAutoBox) cadAutoBox.style.display = 'none';
+    });
+
+    document.getElementById('search-hist').addEventListener('input', renderizarHistorico);
+    document.getElementById('hist-filtro-periodo').addEventListener('change', renderizarHistorico);
+
+    onAuthStateChanged(auth, async (user) => {
+      const statusTxt = document.getElementById('auth-status-txt');
+      const actionBtn = document.getElementById('btn-auth-action');
+      const tabHist = document.getElementById('btn-tab-hist');
+      const tabVeiculos = document.getElementById('btn-tab-veiculos');
+      const tabEquipe = document.getElementById('btn-tab-equipe');
+      const tabConfig = document.getElementById('btn-tab-config');
+      const topActions = document.getElementById('top-data-actions');
+      const btnExportCsv = document.getElementById('btn-export-csv');
+      const btnClearHist = document.getElementById('btn-clear-hist');
+
+      if (user) {
+        try {
+          const userDoc = await getDoc(doc(db, "usuarios", user.uid));
+          if (userDoc.exists() && userDoc.data().funcao) {
+            perfilUsuario = userDoc.data().funcao.toLowerCase();
+          } else {
+            perfilUsuario = "operador";
+          }
+        } catch (err) { perfilUsuario = "operador"; }
+
+        actionBtn.innerText = 'Sair';
+        actionBtn.className = 'btn-auth logout';
+        tabHist.style.display = 'inline-block';
+
+        if (perfilUsuario === "gestor") {
+          statusTxt.innerHTML = `⭐ <b>${user.email.split('@')[0]}</b> (Gestor)`;
+          topActions.style.display = 'flex';
+          btnExportCsv.style.display = 'inline-block';
+          btnClearHist.style.display = 'inline-block';
+          tabVeiculos.style.display = 'inline-block';
+          tabEquipe.style.display = 'inline-block';
+          tabConfig.style.display = 'inline-block';
+          ouvirListaUsuarios();
+        } else {
+          statusTxt.innerHTML = `🟢 <b>${user.email.split('@')[0]}</b> (Operador)`;
+          topActions.style.display = 'none';
+          btnExportCsv.style.display = 'none';
+          btnClearHist.style.display = 'none';
+          tabVeiculos.style.display = 'none';
+          tabEquipe.style.display = 'none';
+          tabConfig.style.display = 'none';
+        }
+      } else {
+        perfilUsuario = "visitante";
+        statusTxt.innerHTML = '👁️ Modo Leitura (Visitante)';
+        actionBtn.innerText = '🔑 Entrar';
+        actionBtn.className = 'btn-auth';
+        tabHist.style.display = 'none';
+        tabVeiculos.style.display = 'none';
+        tabEquipe.style.display = 'none';
+        tabConfig.style.display = 'none';
+        topActions.style.display = 'none';
+        btnExportCsv.style.display = 'none';
+        btnClearHist.style.display = 'none';
+        mudarAba('vagas');
+      }
+      renderizar();
+    });
+
+    const docRef = doc(db, "estacionamento", "dados_gerais");
+    onSnapshot(docRef, (docSnap) => {
+      resetarTimerAtualizacao();
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        if (data.vagas) vagas = data.vagas;
+        if (data.historico) historico = data.historico;
+        if (data.veiculosPrecadastrados) veiculosPrecadastrados = data.veiculosPrecadastrados;
+      } else {
+        salvar();
+      }
+      renderizar();
+      renderizarHistorico();
+      renderizarAbaVeiculos();
+      renderizarListaVagasConfig();
+    });
+
+    async function salvar() {
+      if (perfilUsuario === "visitante") return;
+      try {
+        await setDoc(docRef, { vagas, historico, veiculosPrecadastrados });
+      } catch (e) { console.error("Erro ao salvar no Firestore: ", e); }
+    }
+
+    function salvarVeiculoPrecadastro() {
+      if (perfilUsuario !== "gestor") return;
+
+      const placa = document.getElementById('cad-veiculo-placa').value.trim().toUpperCase();
+      if (!placa) return alert('Por favor, informe a placa do veículo.');
+
+      const tag = document.getElementById('cad-veiculo-tag').value;
+      const telefone = formatarTelefoneParaBD(document.getElementById('cad-veiculo-telefone').value);
+      const modelo = document.getElementById('cad-veiculo-modelo').value.trim().toUpperCase();
+      const nome = document.getElementById('cad-veiculo-nome').value.trim().toUpperCase();
+      const setor = document.getElementById('cad-veiculo-setor').value.trim().toUpperCase();
+
+      if (eEdicaoHistoricoPassagem) {
+        let alterados = 0;
+        historico.forEach(h => {
+          if (h.placa === placa) {
+            h.tag = tag;
+            h.telefone = telefone;
+            h.modelo = modelo;
+            h.nome = nome;
+            h.setor = setor;
+            alterados++;
+          }
+        });
+
+        vagas.forEach(v => {
+          if (v.ocupada && v.placa === placa) {
+            v.tag = tag;
+            v.telefone = telefone;
+            v.modelo = modelo;
+            v.nome = nome;
+            v.setor = setor;
+          }
+        });
+
+        salvar();
+        alert(`Dados do veículo ${placa} corrigidos no histórico de passagens!`);
+        cancelarEdicaoVeiculo();
+        return;
+      }
+
+      const novoObjeto = { placa, tag, telefone, modelo, nome, setor, cadastradoEm: new Date().toISOString() };
+      const index = veiculosPrecadastrados.findIndex(v => v.placa === placa);
+
+      if (index !== -1) {
+        veiculosPrecadastrados[index] = novoObjeto;
+        alert(`Veículo ${placa} atualizado na Base de Pré-Cadastros!`);
+      } else {
+        veiculosPrecadastrados.push(novoObjeto);
+        alert(`Veículo ${placa} adicionado à Base de Pré-Cadastros!`);
+      }
+
+      salvar();
+      cancelarEdicaoVeiculo();
+    }
+
+    function carregarVeiculoParaEdicao(placa, eHistoricoPassagem = false) {
+      const v = veiculosPrecadastrados.find(item => item.placa === placa) || historico.find(item => item.placa === placa);
+      if (!v) return;
+
+      veiculoEmEdicaoPlaca = v.placa;
+      eEdicaoHistoricoPassagem = eHistoricoPassagem;
+
+      document.getElementById('form-veiculo-titulo').innerText = eHistoricoPassagem ? `✏️ Corrigir Dados - Veículo ${v.placa}` : `✏️ Editar Pré-Cadastro - ${v.placa}`;
+      document.getElementById('cad-veiculo-placa').value = v.placa;
+      document.getElementById('cad-veiculo-tag').value = normalizarValorSelectTag(v.tag || '');
+      document.getElementById('cad-veiculo-telefone').value = formatarTelefoneExibicao(v.telefone || '');
+      document.getElementById('cad-veiculo-modelo').value = v.modelo || '';
+      document.getElementById('cad-veiculo-nome').value = v.nome || '';
+      document.getElementById('cad-veiculo-setor').value = v.setor || '';
+
+      document.getElementById('btn-salvar-veiculo').innerText = eHistoricoPassagem ? 'Salvar Correção' : 'Salvar Alterações';
+      document.getElementById('btn-cancel-edit-veiculo').style.display = 'block';
+
+      document.getElementById('sec-veiculos').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cancelarEdicaoVeiculo() {
+      veiculoEmEdicaoPlaca = null;
+      eEdicaoHistoricoPassagem = false;
+
+      document.getElementById('form-veiculo-titulo').innerText = '➕ Pré-Cadastrar Veículo';
+      document.getElementById('cad-veiculo-placa').value = '';
+      document.getElementById('cad-veiculo-tag').value = '';
+      document.getElementById('cad-veiculo-telefone').value = '';
+      document.getElementById('cad-veiculo-modelo').value = '';
+      document.getElementById('cad-veiculo-nome').value = '';
+      document.getElementById('cad-veiculo-setor').value = '';
+
+      document.getElementById('btn-salvar-veiculo').innerText = 'Salvar Dados do Veículo';
+      document.getElementById('btn-cancel-edit-veiculo').style.display = 'none';
+    }
+
+    function excluirVeiculoPrecadastro(placa) {
+      if (perfilUsuario !== "gestor") return;
+      if (confirm(`Deseja remover o pré-cadastro do veículo ${placa}?`)) {
+        veiculosPrecadastrados = veiculosPrecadastrados.filter(v => v.placa !== placa);
+        salvar();
+        alert('Pré-cadastro removido com sucesso!');
+      }
+    }
+
+    /* ATUALIZAÇÃO DA ABA VEÍCULOS E CÁLCULO DOS CONTADORES DA RESUMO */
+    function renderizarAbaVeiculos() {
+      if (perfilUsuario !== "gestor") return;
+
+      const containerPre = document.getElementById('lista-veiculos-precadastro');
+      const containerHist = document.getElementById('lista-veiculos-historico');
+      const termo = document.getElementById('search-veiculos').value.toUpperCase().trim();
+
+      containerPre.innerHTML = '';
+      containerHist.innerHTML = '';
+
+      const baseCompleta = obterBaseCompletaVeiculos();
+
+      let cntPrecad = veiculosPrecadastrados.length;
+      let cntPassagem = 0;
+      let cntCred = 0, cntVip = 0, cntPrio = 0, cntSemTag = 0;
+
+      const placasJaPre = new Set(veiculosPrecadastrados.map(v => v.placa));
+
+      baseCompleta.forEach(v => {
+        if (!placasJaPre.has(v.placa)) cntPassagem++;
+
+        const tag = (v.tag || '').toUpperCase();
+        if (tag.includes('CREDENCIAL')) cntCred++;
+        else if (tag.includes('VIP')) cntVip++;
+        else if (tag.includes('PRIORITÁRIO') || tag.includes('PRIORITARIO')) cntPrio++;
+        else cntSemTag++;
+      });
+
+      document.getElementById('cnt-veic-total').innerText = baseCompleta.length;
+      document.getElementById('cnt-veic-precadastro').innerText = cntPrecad;
+      document.getElementById('cnt-veic-passagem').innerText = cntPassagem;
+
+      document.getElementById('cnt-tag-credencial').innerText = cntCred;
+      document.getElementById('cnt-tag-vip').innerText = cntVip;
+      document.getElementById('cnt-tag-prioritario').innerText = cntPrio;
+      document.getElementById('cnt-tag-semtag').innerText = cntSemTag;
+
+      const matchFiltro = (v) => {
+        if (!termo) return true;
+        return (v.placa && v.placa.includes(termo)) ||
+               (v.tag && v.tag.toUpperCase().includes(termo)) ||
+               (v.modelo && v.modelo.toUpperCase().includes(termo)) ||
+               (v.nome && v.nome.toUpperCase().includes(termo)) ||
+               (v.telefone && v.telefone.includes(termo)) ||
+               (v.setor && v.setor.toUpperCase().includes(termo));
+      };
+
+      const precadastradosFiltrados = veiculosPrecadastrados.filter(matchFiltro);
+
+      if (precadastradosFiltrados.length === 0) {
+        containerPre.innerHTML = '<div class="empty-msg">Nenhum veículo no Pré-Cadastro.</div>';
+      } else {
+        precadastradosFiltrados.forEach(v => {
+          const telFormatado = formatarTelefoneExibicao(v.telefone || '');
+          const card = document.createElement('div');
+          card.className = 'std-card precadastro';
+          card.innerHTML = `
+            <div class="std-top">
+              <span class="std-title">🚘 ${v.placa} ${v.tag ? `<small style="font-size:0.75rem; color:var(--vip-gold);">[${v.tag}]</small>` : ''}</span>
+              <span class="std-badge gold">⭐ Pré-Cadastrado</span>
+            </div>
+            <div class="std-details">
+              <div><strong>Modelo:</strong> ${v.modelo || 'Não informado'}</div>
+              <div><strong>Condutor:</strong> ${v.nome || 'Não informado'} ${telFormatado ? `(${telFormatado})` : ''}</div>
+              <div><strong>Setor:</strong> ${v.setor || 'Não informado'}</div>
+            </div>
+            <div class="std-actions">
+              <button class="btn-sm-edit" data-placa="${v.placa}">Editar</button>
+              <button class="btn-sm-del" data-placa="${v.placa}">Excluir</button>
+            </div>
+          `;
+
+          card.querySelector('.btn-sm-edit').addEventListener('click', () => carregarVeiculoParaEdicao(v.placa, false));
+          card.querySelector('.btn-sm-del').addEventListener('click', () => excluirVeiculoPrecadastro(v.placa));
+          containerPre.appendChild(card);
+        });
+      }
+
+      const mapaHist = new Map();
+      historico.forEach(h => {
+        if (h.placa && !placasJaPre.has(h.placa) && !mapaHist.has(h.placa)) {
+          mapaHist.set(h.placa, h);
+        }
+      });
+
+      const historicoUnicoFiltrado = Array.from(mapaHist.values()).filter(matchFiltro);
+
+      if (historicoUnicoFiltrado.length === 0) {
+        containerHist.innerHTML = '<div class="empty-msg">Nenhum registro extra encontrado.</div>';
+      } else {
+        historicoUnicoFiltrado.forEach(v => {
+          const telFormatado = formatarTelefoneExibicao(v.telefone || '');
+          const card = document.createElement('div');
+          card.className = 'std-card';
+          card.innerHTML = `
+            <div class="std-top">
+              <span class="std-title">📋 ${v.placa} ${v.tag ? `<small style="font-size:0.75rem; color:var(--vip-gold);">[${v.tag}]</small>` : ''}</span>
+              <span class="std-badge">📋 Passagem Pátio</span>
+            </div>
+            <div class="std-details">
+              <div><strong>Modelo:</strong> ${v.modelo || 'Não informado'}</div>
+              <div><strong>Condutor:</strong> ${v.nome || 'Não informado'} ${telFormatado ? `(${telFormatado})` : ''}</div>
+              <div><strong>Setor:</strong> ${v.setor || 'Não informado'}</div>
+            </div>
+            <div class="std-actions">
+              <button class="btn-sm-edit" data-placa="${v.placa}">Editar</button>
+              <button class="btn-sm-edit" style="background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); border-color: rgba(59, 130, 246, 0.4);" data-placa="${v.placa}" data-action="promote">Promover p/ Pré-Cadastro</button>
+            </div>
+          `;
+
+          const btns = card.querySelectorAll('.btn-sm-edit');
+          btns[0].addEventListener('click', () => carregarVeiculoParaEdicao(v.placa, true));
+          btns[1].addEventListener('click', () => carregarVeiculoParaEdicao(v.placa, false));
+          containerHist.appendChild(card);
+        });
+      }
+    }
+
+    function mudarAba(aba) {
+      document.getElementById('sec-vagas').classList.remove('active');
+      document.getElementById('sec-historico').classList.remove('active');
+      document.getElementById('sec-veiculos').classList.remove('active');
+      document.getElementById('sec-equipe').classList.remove('active');
+      document.getElementById('sec-config').classList.remove('active');
+
+      document.getElementById('btn-tab-vagas').classList.remove('active');
+      document.getElementById('btn-tab-hist').classList.remove('active');
+      document.getElementById('btn-tab-veiculos').classList.remove('active');
+      document.getElementById('btn-tab-equipe').classList.remove('active');
+      document.getElementById('btn-tab-config').classList.remove('active');
+
+      if (aba === 'vagas') {
+        document.getElementById('sec-vagas').classList.add('active');
+        document.getElementById('btn-tab-vagas').classList.add('active');
+      } else if (aba === 'historico' && perfilUsuario !== "visitante") {
+        document.getElementById('sec-historico').classList.add('active');
+        document.getElementById('btn-tab-hist').classList.add('active');
+        renderizarHistorico();
+      } else if (aba === 'veiculos' && perfilUsuario === "gestor") {
+        document.getElementById('sec-veiculos').classList.add('active');
+        document.getElementById('btn-tab-veiculos').classList.add('active');
+        renderizarAbaVeiculos();
+      } else if (aba === 'equipe' && perfilUsuario === "gestor") {
+        document.getElementById('sec-equipe').classList.add('active');
+        document.getElementById('btn-tab-equipe').classList.add('active');
+      } else if (aba === 'config' && perfilUsuario === "gestor") {
+        document.getElementById('sec-config').classList.add('active');
+        document.getElementById('btn-tab-config').classList.add('active');
+        renderizarListaVagasConfig();
+      }
+    }
+
+    function formatarDataHora(isoString) {
+      if (!isoString) return '---';
+      const d = new Date(isoString);
+      return d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' }) + ' ' + 
+             d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function formatarHora(isoString) {
+      if (!isoString) return '';
+      const d = new Date(isoString);
+      return d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function calcularPermanenciaVal(entradaIso, salidaIso) {
+      if (!entradaIso) return '';
+      const fim = salidaIso ? new Date(salidaIso) : new Date();
+      const diff = Math.floor((fim - new Date(entradaIso)) / 1000 / 60);
+      if (diff < 60) return `${diff} min`;
+      const horas = Math.floor(diff / 60);
+      const mins = diff % 60;
+      return `${horas}h ${mins}m`;
+    }
+
+    function abrirModalLogin() {
+      document.getElementById('login-email').value = '';
+      document.getElementById('login-senha').value = '';
+      document.getElementById('modal-login').classList.add('active');
+    }
+
+    function fecharModalLogin() { document.getElementById('modal-login').classList.remove('active'); }
+
+    async function realizarLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      const senha = document.getElementById('login-senha').value;
+      if (!email || !senha) return alert('Informe e-mail e senha.');
+
+      try {
+        await signInWithEmailAndPassword(auth, email, senha);
+        fecharModalLogin();
+      } catch (error) { alert('Falha na autenticação: ' + error.message); }
+    }
+
+    async function cadastrarNovoUsuario() {
+      if (perfilUsuario !== "gestor") return;
+
+      const email = document.getElementById('novo-user-email').value.trim();
+      const senha = document.getElementById('novo-user-senha').value;
+      const funcao = document.getElementById('novo-user-funcao').value;
+
+      if (!email || !senha) return alert('Preencha e-mail e senha.');
+      if (senha.length < 6) return alert('A senha deve ter pelo menos 6 caracteres.');
+
+      try {
+        const userCred = await createUserWithEmailAndPassword(secondaryAuth, email, senha);
+        const newUid = userCred.user.uid;
+
+        await setDoc(doc(db, "usuarios", newUid), { email, funcao, criadoEm: new Date().toISOString() });
+        await signOut(secondaryAuth);
+
+        alert(`Usuário (${email}) cadastrado com sucesso!`);
+        document.getElementById('novo-user-email').value = '';
+        document.getElementById('novo-user-senha').value = '';
+      } catch (error) { alert('Erro ao cadastrar usuário: ' + error.message); }
+    }
+
+    function ouvirListaUsuarios() {
+      onSnapshot(collection(db, "usuarios"), (snapshot) => {
+        const container = document.getElementById('lista-equipe');
+        container.innerHTML = '';
+
+        if (snapshot.empty) {
+          container.innerHTML = '<div class="empty-msg">Nenhum usuário cadastrado.</div>';
+          return;
+        }
+
+        snapshot.forEach(docSnap => {
+          const u = docSnap.data();
+          const uid = docSnap.id;
+          const card = document.createElement('div');
+          card.className = 'user-card';
+          const role = (u.funcao || 'operador').toLowerCase();
+
+          card.innerHTML = `
+            <div>
+              <span class="user-email">📧 ${u.email || 'Email não informado'}</span>
+              <span class="badge-role role-${role}">${role}</span>
+            </div>
+            <div class="user-actions">
+              <button class="btn-pass-user" data-uid="${uid}">🔑 Alterar Senha</button>
+              <button class="btn-del-user" data-uid="${uid}">Excluir</button>
+            </div>
+          `;
+
+          card.querySelector('.btn-pass-user').addEventListener('click', () => alterarSenhaUsuario(u.email));
+          card.querySelector('.btn-del-user').addEventListener('click', () => excluirUsuarioEquipe(uid, u.email));
+
+          container.appendChild(card);
+        });
+      });
+    }
+
+    function alterarSenhaUsuario(email) {
+      if (perfilUsuario !== "gestor") return;
+      const novaSenha = prompt(`Digite a nova senha para o operador ${email}:`);
+      if (!novaSenha) return;
+      if (novaSenha.length < 6) return alert('A senha deve ter pelo menos 6 caracteres.');
+      alert(`Para concluir a alteração de senha de ${email}, acesse o Console de Administração do Firebase Auth.`);
+    }
+
+    async function excluirUsuarioEquipe(uid, email) {
+      if (confirm(`Deseja remover a permissão do usuário ${email}?`)) {
+        try {
+          await deleteDoc(doc(db, "usuarios", uid));
+          alert('Acesso do usuário removido!');
+        } catch (e) { alert('Erro ao excluir usuário: ' + e.message); }
+      }
+    }
+
+    function renderizarListaVagasConfig() {
+      const container = document.getElementById('lista-vagas-config');
+      if (!container) return;
+      container.innerHTML = '';
+
+      vagas.forEach(v => {
+        const item = document.createElement('div');
+        item.className = 'vaga-config-item';
+        item.innerHTML = `
+          <div>
+            <strong>Vaga ${v.nomeVaga}</strong> 
+            <span style="font-size: 0.75rem; color: var(--text-sub);">(${v.categoria.toUpperCase()})</span>
+            ${v.ocupada ? '<span style="color: var(--red-busy); font-size: 0.75rem; margin-left:6px;">[Ocupada]</span>' : ''}
+          </div>
+          <div class="vaga-config-actions">
+            <button class="btn-sm-edit" data-id="${v.id}">Editar</button>
+            <button class="btn-sm-del" data-id="${v.id}">Excluir</button>
+          </div>
+        `;
+
+        item.querySelector('.btn-sm-edit').addEventListener('click', () => carregarVagaParaEdicao(v.id));
+        item.querySelector('.btn-sm-del').addEventListener('click', () => excluirVaga(v.id));
+
+        container.appendChild(item);
+      });
+    }
+
+    function salvarNovaOuEditadaVaga() {
+      if (perfilUsuario !== "gestor") return;
+
+      const nomeVaga = document.getElementById('nova-vaga-nome').value.trim().toUpperCase();
+      const categoria = document.getElementById('nova-vaga-categoria').value;
+
+      if (!nomeVaga) return alert('Informe o nome/código da vaga.');
+
+      if (vagaEmEdicaoId !== null) {
+        const idx = vagas.findIndex(v => v.id === vagaEmEdicaoId);
+        if (idx !== -1) {
+          vagas[idx].nomeVaga = nomeVaga;
+          vagas[idx].categoria = categoria;
+          salvar();
+          alert('Vaga atualizada com sucesso!');
+        }
+        cancelarEdicaoVaga();
+      } else {
+        if (vagas.some(v => v.nomeVaga === nomeVaga)) return alert('Já existe uma vaga com esse nome!');
+
+        const novoId = vagas.length > 0 ? Math.max(...vagas.map(v => v.id)) + 1 : 1;
+        vagas.push({ id: novoId, nomeVaga: nomeVaga, categoria: categoria, ocupada: false, statusEspecial: null });
+        salvar();
+        alert(`Vaga ${nomeVaga} criada com sucesso!`);
+        document.getElementById('nova-vaga-nome').value = '';
+      }
+    }
+
+    function carregarVagaParaEdicao(id) {
+      const v = vagas.find(item => item.id === id);
+      if (!v) return;
+
+      vagaEmEdicaoId = id;
+      document.getElementById('form-vaga-titulo').innerText = `✏️ Editar Vaga ${v.nomeVaga}`;
+      document.getElementById('nova-vaga-nome').value = v.nomeVaga;
+      document.getElementById('nova-vaga-categoria').value = v.categoria;
+      document.getElementById('btn-adicionar-vaga').innerText = 'Salvar Alterações';
+      document.getElementById('btn-cancel-edit-vaga').style.display = 'block';
+    }
+
+    function cancelarEdicaoVaga() {
+      vagaEmEdicaoId = null;
+      document.getElementById('form-vaga-titulo').innerText = '➕ Adicionar Nova Vaga';
+      document.getElementById('nova-vaga-nome').value = '';
+      document.getElementById('btn-adicionar-vaga').innerText = 'Criar Vaga';
+      document.getElementById('btn-cancel-edit-vaga').style.display = 'none';
+    }
+
+    function excluirVaga(id) {
+      if (perfilUsuario !== "gestor") return;
+      const v = vagas.find(item => item.id === id);
+
+      if (v && v.ocupada) {
+        return alert('Não é possível excluir uma vaga que está OCUPADA no momento. Libere a vaga primeiro.');
+      }
+
+      if (confirm(`Deseja realmente remover a Vaga ${v.nomeVaga} do pátio?`)) {
+        vagas = vagas.filter(item => item.id !== id);
+        salvar();
+        alert('Vaga removida!');
+      }
+    }
+
+    function renderizarCardVaga(v, termoBusca) {
+      const telFormatado = formatarTelefoneExibicao(v.telefone || '');
+      const numWa = v.telefone ? v.telefone.replace(/\D/g, '') : '';
+
+      const matchBusca = 
+        (v.placa && v.placa.includes(termoBusca)) ||
+        (v.tag && v.tag.toUpperCase().includes(termoBusca)) ||
+        v.nomeVaga.includes(termoBusca) ||
+        (v.modelo && v.modelo.toUpperCase().includes(termoBusca)) ||
+        (v.nome && v.nome.toUpperCase().includes(termoBusca)) ||
+        (v.telefone && v.telefone.includes(termoBusca)) ||
+        (v.setor && v.setor.toUpperCase().includes(termoBusca));
+
+      if (termoBusca && !matchBusca) return null;
+
+      const card = document.createElement('div');
+      const estaBloqueada = v.statusEspecial && v.statusEspecial !== 'livre';
+
+      card.className = `vaga-card cat-${v.categoria} ${estaBloqueada ? 'bloqueada' : (v.ocupada ? 'ocupada' : 'livre')}`;
+
+      const hora = v.horaEntrada ? formatarHora(v.horaEntrada) : '';
+      const duracao = v.horaEntrada ? calcularPermanenciaVal(v.horaEntrada, null) : '';
+      const iconeCat = v.categoria === 'vip' ? '⭐ ' : (v.categoria === 'extra' ? '🔸 ' : '');
+      const podeOperar = perfilUsuario === "operador" || perfilUsuario === "gestor";
+
+      let badgeTxt = 'Livre';
+      let badgeClass = 'badge-livre';
+
+      if (estaBloqueada) {
+        badgeTxt = v.statusEspecial;
+        badgeClass = 'badge-bloqueada';
+      } else if (v.ocupada) {
+        badgeTxt = 'Ocupada';
+        badgeClass = 'badge-ocupada';
+      }
+
+      card.innerHTML = `
+        <div class="vaga-header">
+          <span class="vaga-num">${iconeCat}Vaga ${v.nomeVaga}</span>
+          <span class="badge-status ${badgeClass}">${badgeTxt}</span>
+        </div>
+        <div class="vaga-body">
+          ${v.ocupada ? `
+            <div class="placa-txt">
+              <span>${v.placa}</span>
+              ${v.tag ? `<span class="tag-badge">${v.tag}</span>` : ''}
+            </div>
+            ${v.telefone ? `
+              <div class="contact-row">
+                <a href="tel:${v.telefone}" class="phone-btn" title="Ligar para ${telFormatado}">📞 ${telFormatado}</a>
+                <a href="https://wa.me/${numWa}" target="_blank" class="phone-btn wa" title="Abrir WhatsApp">💬 Whats</a>
+              </div>
+            ` : ''}
+            <div class="info-line" style="margin-top:2px;">${v.modelo || 'Sem modelo'}</div>
+            <div class="info-line"><strong>${v.nome || 'Sem nome'}</strong></div>
+            <div class="info-line">${v.setor ? 'Setor: ' + v.setor : ''}</div>
+            <div class="tempo-txt">🕒 ${hora} (${duracao})</div>
+            <div style="font-size:0.65rem; color:var(--text-sub); margin-top:2px;">👤 Ent. por: ${v.operadorEntrada ? v.operadorEntrada.split('@')[0] : '---'}</div>
+          ` : `
+            <div class="info-line" style="margin-top: 20px;">
+              ${estaBloqueada ? `🚫 Vaga em Status: <b>${v.statusEspecial}</b>` : 'Vaga Disponível'}
+            </div>
+          `}
+        </div>
+        ${podeOperar ? `
+          <div class="vaga-actions">
+            ${estaBloqueada ? `
+              <button class="btn-action btn-status-vaga" data-vaga="${v.nomeVaga}" data-act="status">ALTERAR STATUS</button>
+            ` : `
+              <button class="btn-action ${v.ocupada ? 'btn-liberar' : 'btn-ocupar'}" data-vaga="${v.nomeVaga}" data-act="abrir">
+                ${v.ocupada ? 'SAÍDA' : 'ENTRADA'}
+              </button>
+              ${v.ocupada ? `
+                <button class="btn-trocar" title="Trocar de vaga" data-vaga="${v.nomeVaga}" data-act="trocar">🔄</button>
+                <button class="btn-editar" title="Editar dados" data-vaga="${v.nomeVaga}" data-act="editar">✏️</button>
+              ` : `
+                <button class="btn-status-vaga" title="Bloquear / Reservar" data-vaga="${v.nomeVaga}" data-act="status">⚙️</button>
+              `}
+            `}
+          </div>
+        ` : ''}
+      `;
+
+      if (podeOperar) {
+        const btnMain = card.querySelector('[data-act="abrir"]');
+        if (btnMain) btnMain.addEventListener('click', () => abrirModal(v.nomeVaga));
+
+        const btnTrocar = card.querySelector('[data-act="trocar"]');
+        if (btnTrocar) btnTrocar.addEventListener('click', () => abrirModalTroca(v.nomeVaga));
+
+        const btnEditar = card.querySelector('[data-act="editar"]');
+        if (btnEditar) btnEditar.addEventListener('click', () => abrirModalEdicao(v.nomeVaga));
+
+        const btnStatus = card.querySelector('[data-act="status"]');
+        if (btnStatus) btnStatus.addEventListener('click', () => abrirModalStatus(v.nomeVaga));
+      }
+
+      return card;
+    }
+
+    function renderizar() {
+      const gridReg = document.getElementById('grid-vagas-regulares');
+      const gridExt = document.getElementById('grid-vagas-extras');
+      const gridVip = document.getElementById('grid-vagas-vip');
+      const termoBusca = document.getElementById('search-input').value.toUpperCase().trim();
+
+      gridReg.innerHTML = ''; gridExt.innerHTML = ''; gridVip.innerHTML = '';
+
+      let regLiv = 0, regOcu = 0, regTot = 0;
+      let extLiv = 0, extOcu = 0, extTot = 0;
+      let vipLiv = 0, vipOcu = 0, vipTot = 0;
+
+      let capacidadeRealTotal = 0;
+      let ocupadasTotais = 0;
+
+      vagas.forEach(v => {
+        const estaBloqueada = v.statusEspecial && v.statusEspecial !== 'livre';
+
+        if (v.categoria === 'regular') {
+          regTot++;
+          if (v.ocupada) regOcu++; else if (!estaBloqueada) regLiv++;
+        } else if (v.categoria === 'extra') {
+          extTot++;
+          if (v.ocupada) extOcu++; else if (!estaBloqueada) extLiv++;
+        } else if (v.categoria === 'vip') {
+          vipTot++;
+          if (v.ocupada) vipOcu++; else if (!estaBloqueada) vipLiv++;
+        }
+
+        if (!estaBloqueada) {
+          capacidadeRealTotal++;
+          if (v.ocupada) ocupadasTotais++;
+        }
+
+        const card = renderizarCardVaga(v, termoBusca);
+        if (card) {
+          if (v.categoria === 'regular') gridReg.appendChild(card);
+          else if (v.categoria === 'extra') gridExt.appendChild(card);
+          else if (v.categoria === 'vip') gridVip.appendChild(card);
+        }
+      });
+
+      document.getElementById('stat-reg-tot').innerText = regTot;
+      document.getElementById('stat-reg-liv').innerText = regLiv;
+      document.getElementById('stat-reg-ocu').innerText = regOcu;
+
+      document.getElementById('stat-ext-tot').innerText = extTot;
+      document.getElementById('stat-ext-liv').innerText = extLiv;
+      document.getElementById('stat-ext-ocu').innerText = extOcu;
+
+      document.getElementById('stat-vip-tot').innerText = vipTot;
+      document.getElementById('stat-vip-liv').innerText = vipLiv;
+      document.getElementById('stat-vip-ocu').innerText = vipOcu;
+
+      const livTotais = regLiv + extLiv + vipLiv;
+
+      document.getElementById('stat-gen-tot').innerText = capacidadeRealTotal;
+      document.getElementById('stat-gen-liv').innerText = livTotais;
+      document.getElementById('stat-gen-ocu').innerText = ocupadasTotais;
+
+      const percent = capacidadeRealTotal > 0 ? Math.round((ocupadasTotais / capacidadeRealTotal) * 100) : 0;
+      const fillBar = document.getElementById('progress-bar-fill');
+      document.getElementById('progress-percent-txt').innerText = `${percent}%`;
+      fillBar.style.width = `${percent}%`;
+
+      if (percent > 85) fillBar.style.backgroundColor = 'var(--red-busy)';
+      else if (percent > 60) fillBar.style.backgroundColor = 'var(--amber-edit)';
+      else fillBar.style.backgroundColor = 'var(--green-free)';
+    }
+
+    function renderizarHistorico() {
+      if (perfilUsuario === "visitante") return;
+
+      const container = document.getElementById('lista-historico');
+      const busca = document.getElementById('search-hist').value.toUpperCase().trim();
+      const filtroPeriodo = document.getElementById('hist-filtro-periodo').value;
+      container.innerHTML = '';
+
+      const agora = new Date();
+
+      const filtrados = historico.filter(h => {
+        const matchText = (h.placa && h.placa.includes(busca)) ||
+          (h.tag && h.tag.toUpperCase().includes(busca)) ||
+          (h.nomeVaga && h.nomeVaga.includes(busca)) ||
+          (h.modelo && h.modelo.toUpperCase().includes(busca)) ||
+          (h.nome && h.nome.toUpperCase().includes(busca)) ||
+          (h.telefone && h.telefone.includes(busca)) ||
+          (h.setor && h.setor.toUpperCase().includes(busca));
+
+        if (!matchText) return false;
+
+        if (filtroPeriodo === 'todos') return true;
+
+        const dataEntrada = new Date(h.horaEntrada);
+
+        if (filtroPeriodo === 'hoje') {
+          return dataEntrada.toDateString() === agora.toDateString();
+        } else if (filtroPeriodo === '7dias') {
+          const limite7d = new Date();
+          limite7d.setDate(agora.getDate() - 7);
+          return dataEntrada >= limite7d;
+        } else if (filtroPeriodo === 'mes') {
+          return dataEntrada.getMonth() === agora.getMonth() && dataEntrada.getFullYear() === agora.getFullYear();
+        }
+
+        return true;
+      });
+
+      document.getElementById('cnt-historico').innerText = `Registros: ${filtrados.length}`;
+
+      if (filtrados.length === 0) {
+        container.innerHTML = `<div class="empty-msg">Nenhum histórico encontrado para o período.</div>`;
+        return;
+      }
+
+      filtrados.forEach(h => {
+        const telFormatado = formatarTelefoneExibicao(h.telefone || '');
+        const card = document.createElement('div');
+        card.className = 'std-card';
+        card.innerHTML = `
+          <div class="std-top">
+            <span class="std-title">${h.placa} ${h.tag ? `<small style="font-size:0.75rem; color:var(--vip-gold);">[${h.tag}]</small>` : ''}</span>
+            <span class="std-badge">Vaga ${h.nomeVaga}</span>
+          </div>
+          <div class="std-details">
+            <div><strong>Modelo:</strong> ${h.modelo || 'Não informado'}</div>
+            <div><strong>Condutor:</strong> ${h.nome || 'Não informado'} ${telFormatado ? `(${telFormatado})` : ''}</div>
+            <div><strong>Setor:</strong> ${h.setor || 'Não informado'}</div>
+            <div style="margin-top:4px; font-size:0.75rem; color:var(--accent-blue);">
+              <span><b>Entrada por:</b> ${h.operadorEntrada || '---'}</span> | 
+              <span><b>Saída por:</b> ${h.operadorSaida || '---'}</span>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; background:rgba(0,0,0,0.2); padding:6px 10px; border-radius:8px; font-size:0.73rem; margin-top:8px; border:1px solid rgba(255,255,255,0.05);">
+            <span><b>Entrada:</b> ${formatarDataHora(h.horaEntrada)}</span>
+            <span><b>Saída:</b> ${formatarDataHora(h.horaSaida)}</span>
+            <span><b>Tempo:</b> ${h.permanencia}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function abrirModalStatus(nomeVaga) {
+      vagaSelecionada = nomeVaga;
+      const v = vagas.find(item => item.nomeVaga === nomeVaga);
+      document.getElementById('modal-status-titulo').innerText = `Status da Vaga ${nomeVaga}`;
+      document.getElementById('select-status-vaga').value = v.statusEspecial || 'livre';
+      document.getElementById('modal-status-vaga').classList.add('active');
+    }
+
+    function fecharModalStatus() { document.getElementById('modal-status-vaga').classList.remove('active'); }
+
+    function confirmarStatusVaga() {
+      const novoStatus = document.getElementById('select-status-vaga').value;
+      const idx = vagas.findIndex(v => v.nomeVaga === vagaSelecionada);
+
+      if (idx !== -1) {
+        vagas[idx].statusEspecial = (novoStatus === 'livre') ? null : novoStatus;
+        salvar();
+      }
+      fecharModalStatus();
+    }
+
+    function abrirModal(nomeVaga) {
+      if (perfilUsuario === "visitante") return;
+      vagaSelecionada = nomeVaga;
+      const vaga = vagas.find(v => v.nomeVaga === nomeVaga);
+
+      if (!vaga.ocupada) {
+        modoEdicao = false;
+        document.getElementById('modal-entrada-titulo').innerText = `Entrada na Vaga ${nomeVaga}`;
+        document.getElementById('btn-confirm-entrada').innerText = 'Confirmar Entrada';
+        document.getElementById('input-placa').value = '';
+        document.getElementById('input-tag').value = '';
+        document.getElementById('input-telefone').value = '';
+        document.getElementById('input-modelo').value = '';
+        document.getElementById('input-nome').value = '';
+        document.getElementById('input-setor').value = '';
+        document.getElementById('autocomplete-box').style.display = 'none';
+        document.getElementById('modal-entrada').classList.add('active');
+        setTimeout(() => document.getElementById('input-placa').focus(), 100);
+      } else {
+        document.getElementById('modal-saida-titulo').innerText = `Saída da Vaga ${nomeVaga}`;
+        const telFormatado = formatarTelefoneExibicao(vaga.telefone || '');
+        const numWa = vaga.telefone ? vaga.telefone.replace(/\D/g, '') : '';
+
+        document.getElementById('modal-saida-detalhes').innerHTML = `
+          <div><strong>Placa:</strong> ${vaga.placa} ${vaga.tag ? `<span class="tag-badge">${vaga.tag}</span>` : ''}</div>
+          <div>
+            <strong>Telefone:</strong> ${telFormatado ? `
+              <div class="contact-row" style="margin-top:4px;">
+                <a href="tel:${vaga.telefone}" class="phone-btn">📞 ${telFormatado}</a>
+                <a href="https://wa.me/${numWa}" target="_blank" class="phone-btn wa">💬 Whats</a>
+              </div>
+            ` : 'Não informado'}
+          </div>
+          <div style="margin-top:6px;"><strong>Modelo:</strong> ${vaga.modelo || 'Não informado'}</div>
+          <div><strong>Condutor:</strong> ${vaga.nome || 'Não informado'}</div>
+          <div><strong>Setor:</strong> ${vaga.setor || 'Não informado'}</div>
+          <div style="font-size:0.8rem; margin-top:4px; color:var(--text-sub);"><strong>Entrada registrada por:</strong> ${vaga.operadorEntrada || '---'}</div>
+          <div style="margin-top: 8px; color: var(--accent-blue);"><strong>Entrada:</strong> ${formatarHora(vaga.horaEntrada)} (${calcularPermanenciaVal(vaga.horaEntrada, null)})</div>
+        `;
+        document.getElementById('modal-saida').classList.add('active');
+      }
+    }
+
+    function abrirModalEdicao(nomeVaga) {
+      if (perfilUsuario === "visitante") return;
+      vagaSelecionada = nomeVaga;
+      modoEdicao = true;
+      const vaga = vagas.find(v => v.nomeVaga === nomeVaga);
+
+      document.getElementById('modal-entrada-titulo').innerText = `Editar Dados - Vaga ${nomeVaga}`;
+      document.getElementById('btn-confirm-entrada').innerText = 'Salvar Alterações';
+      document.getElementById('input-placa').value = vaga.placa || '';
+      document.getElementById('input-tag').value = normalizarValorSelectTag(vaga.tag || '');
+      document.getElementById('input-telefone').value = formatarTelefoneExibicao(vaga.telefone || '');
+      document.getElementById('input-modelo').value = vaga.modelo || '';
+      document.getElementById('input-nome').value = vaga.nome || '';
+      document.getElementById('input-setor').value = vaga.setor || '';
+      document.getElementById('autocomplete-box').style.display = 'none';
+      document.getElementById('modal-entrada').classList.add('active');
+    }
+
+    function abrirModalTroca(nomeVaga) {
+      if (perfilUsuario === "visitante") return;
+      vagaSelecionada = nomeVaga;
+      const vagaOrigem = vagas.find(v => v.nomeVaga === nomeVaga);
+
+      if (!vagaOrigem || !vagaOrigem.ocupada) {
+        alert("Esta vaga não possui um veículo para ser trocado.");
+        return;
+      }
+
+      const outrasVagas = vagas.filter(v => v.nomeVaga !== nomeVaga);
+
+      document.getElementById('modal-troca-detalhes').innerHTML = `
+        <div><strong>Veículo:</strong> ${vagaOrigem.placa} ${vagaOrigem.tag ? `[${vagaOrigem.tag}]` : ''} (${vagaOrigem.modelo || 'Sem modelo'})</div>
+        <div><strong>Vaga Atual:</strong> ${vagaOrigem.nomeVaga} [${vagaOrigem.categoria.toUpperCase()}]</div>
+      `;
+
+      const select = document.getElementById('select-nova-vaga');
+      select.innerHTML = '';
+
+      outrasVagas.forEach(vo => {
+        const option = document.createElement('option');
+        option.value = vo.nomeVaga;
+        const bloqueada = vo.statusEspecial && vo.statusEspecial !== 'livre';
+
+        let statusTexto = '🟢 Livre';
+        if (bloqueada) statusTexto = `⛔ ${vo.statusEspecial}`;
+        else if (vo.ocupada) statusTexto = `🔴 Ocupada (${vo.placa || 'Sem placa'})`;
+
+        option.innerText = `Vaga ${vo.nomeVaga} [${vo.categoria.toUpperCase()}] - ${statusTexto}`;
+        select.appendChild(option);
+      });
+
+      if (outrasVagas.length > 0) {
+        const firstDest = outrasVagas[0];
+        document.getElementById('troca-alerta-inversao').style.display = (firstDest && firstDest.ocupada) ? 'block' : 'none';
+      }
+
+      document.getElementById('modal-troca').classList.add('active');
+    }
+
+    function fecharModalEntrada() { 
+      document.getElementById('autocomplete-box').style.display = 'none';
+      document.getElementById('modal-entrada').classList.remove('active'); 
+    }
+    function fecharModalSaida() { document.getElementById('modal-saida').classList.remove('active'); }
+    function fecharModalTroca() { document.getElementById('modal-troca').classList.remove('active'); }
+
+    function confirmarTroca() {
+      const selectElement = document.getElementById('select-nova-vaga');
+      const vagaDestinoNome = selectElement ? selectElement.value : null;
+
+      if (!vagaDestinoNome) {
+        alert("Por favor, selecione uma vaga de destino.");
+        return;
+      }
+
+      const indexOrigem = vagas.findIndex(v => v.nomeVaga === vagaSelecionada);
+      const indexDestino = vagas.findIndex(v => v.nomeVaga === vagaDestinoNome);
+
+      if (indexOrigem !== -1 && indexDestino !== -1) {
+        const emailAtual = obterEmailUsuarioAtual();
+
+        const veiculoOrigem = {
+          ocupada: Boolean(vagas[indexOrigem].ocupada),
+          placa: (vagas[indexOrigem].placa || '').toUpperCase(),
+          tag: vagas[indexOrigem].tag || '',
+          modelo: (vagas[indexOrigem].modelo || '').toUpperCase(),
+          nome: (vagas[indexOrigem].nome || '').toUpperCase(),
+          telefone: vagas[indexOrigem].telefone || '',
+          setor: (vagas[indexOrigem].setor || '').toUpperCase(),
+          horaEntrada: vagas[indexOrigem].horaEntrada || null,
+          operadorEntrada: vagas[indexOrigem].operadorEntrada || emailAtual
+        };
+
+        const veiculoDestino = {
+          ocupada: Boolean(vagas[indexDestino].ocupada),
+          placa: (vagas[indexDestino].placa || '').toUpperCase(),
+          tag: vagas[indexDestino].tag || '',
+          modelo: (vagas[indexDestino].modelo || '').toUpperCase(),
+          nome: (vagas[indexDestino].nome || '').toUpperCase(),
+          telefone: vagas[indexDestino].telefone || '',
+          setor: (vagas[indexDestino].setor || '').toUpperCase(),
+          horaEntrada: vagas[indexDestino].horaEntrada || null,
+          operadorEntrada: vagas[indexDestino].operadorEntrada || emailAtual
+        };
+
+        vagas[indexOrigem] = { ...vagas[indexOrigem], ...veiculoDestino };
+        vagas[indexDestino] = { ...vagas[indexDestino], ...veiculoOrigem };
+
+        salvar();
+      }
+      fecharModalTroca();
+    }
+
+    function confirmarEntrada() {
+      const placa = document.getElementById('input-placa').value.trim().toUpperCase();
+      if (!placa) return alert('Por favor, informe a placa.');
+
+      const emailAtual = obterEmailUsuarioAtual();
+      const vagaIndex = vagas.findIndex(v => v.nomeVaga === vagaSelecionada);
+      const telFormatadoBD = formatarTelefoneParaBD(document.getElementById('input-telefone').value);
+
+      if (vagaIndex !== -1) {
+        if (modoEdicao) {
+          vagas[vagaIndex].placa = placa;
+          vagas[vagaIndex].tag = document.getElementById('input-tag').value;
+          vagas[vagaIndex].modelo = document.getElementById('input-modelo').value.trim().toUpperCase();
+          vagas[vagaIndex].nome = document.getElementById('input-nome').value.trim().toUpperCase();
+          vagas[vagaIndex].telefone = telFormatadoBD;
+          vagas[vagaIndex].setor = document.getElementById('input-setor').value.trim().toUpperCase();
+          vagas[vagaIndex].operadorEdicao = emailAtual;
+        } else {
+          vagas[vagaIndex].ocupada = true;
+          vagas[vagaIndex].placa = placa;
+          vagas[vagaIndex].tag = document.getElementById('input-tag').value;
+          vagas[vagaIndex].modelo = document.getElementById('input-modelo').value.trim().toUpperCase();
+          vagas[vagaIndex].nome = document.getElementById('input-nome').value.trim().toUpperCase();
+          vagas[vagaIndex].telefone = telFormatadoBD;
+          vagas[vagaIndex].setor = document.getElementById('input-setor').value.trim().toUpperCase();
+          vagas[vagaIndex].horaEntrada = new Date().toISOString();
+          vagas[vagaIndex].operadorEntrada = emailAtual;
+        }
+        salvar();
+      }
+      fecharModalEntrada();
+    }
+
+    function confirmarSaida() {
+      const vagaIndex = vagas.findIndex(v => v.nomeVaga === vagaSelecionada);
+      if (vagaIndex !== -1) {
+        const v = vagas[vagaIndex];
+        const horaSaida = new Date().toISOString();
+        const permanencia = calcularPermanenciaVal(v.horaEntrada, horaSaida);
+        const emailAtual = obterEmailUsuarioAtual();
+
+        historico.unshift({
+          idAtendimento: 'hist_' + Date.now(),
+          vagaId: v.id,
+          nomeVaga: v.nomeVaga,
+          placa: (v.placa || '').toUpperCase(),
+          tag: v.tag || '',
+          modelo: (v.modelo || '').toUpperCase(),
+          nome: (v.nome || '').toUpperCase(),
+          telefone: v.telefone || '',
+          setor: (v.setor || '').toUpperCase(),
+          horaEntrada: v.horaEntrada,
+          horaSaida: horaSaida,
+          permanencia: permanencia,
+          operadorEntrada: v.operadorEntrada || 'Desconhecido',
+          operadorSaida: emailAtual
+        });
+
+        vagas[vagaIndex].ocupada = false;
+        vagas[vagaIndex].placa = '';
+        vagas[vagaIndex].tag = '';
+        vagas[vagaIndex].modelo = '';
+        vagas[vagaIndex].nome = '';
+        vagas[vagaIndex].telefone = '';
+        vagas[vagaIndex].setor = '';
+        vagas[vagaIndex].horaEntrada = null;
+        vagas[vagaIndex].operadorEntrada = null;
+
+        salvar();
+      }
+      fecharModalSaida();
+    }
+
+    function exportarBackupJSON() {
+      if (perfilUsuario !== "gestor") return;
+      const dadosBackup = { versao: "4.9.2-pro", dataBackup: new Date().toISOString(), vagas, historico, veiculosPrecadastrados };
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dadosBackup, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `backup_estacionamento_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function importarBackupJSON(event) {
+      if (perfilUsuario !== "gestor") return;
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const conteudo = JSON.parse(e.target.result);
+          if (conteudo.vagas && Array.isArray(conteudo.vagas)) vagas = conteudo.vagas;
+          if (conteudo.historico && Array.isArray(conteudo.historico)) historico = conteudo.historico;
+          if (conteudo.veiculosPrecadastrados && Array.isArray(conteudo.veiculosPrecadastrados)) veiculosPrecadastrados = conteudo.veiculosPrecadastrados;
+          salvar();
+          alert('Backup importado com sucesso!');
+        } catch (err) { alert('Erro ao ler o arquivo de backup.'); }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    }
+
+    function resetarTodosOsDados() {
+      if (perfilUsuario !== "gestor") return;
+      if (confirm('⚠️ ATENÇÃO (GESTOR): Deseja apagar TODOS os veículos e o histórico da nuvem?')) {
+        if (confirm('Esta ação afetará TODOS os usuários. Deseja continuar?')) {
+          vagas = criarEstruturaPadrao();
+          historico = [];
+          veiculosPrecadastrados = [];
+          salvar();
+          alert('Sistema resetado na nuvem.');
+        }
+      }
+    }
+
+    function limparHistorico() {
+      if (perfilUsuario !== "gestor") return;
+      if (confirm('Deseja realmente apagar o histórico da nuvem?')) {
+        historico = [];
+        salvar();
+      }
+    }
+
+    function exportarCSV() {
+      if (perfilUsuario !== "gestor") return;
+      if (historico.length === 0) return alert('Não há dados no histórico para exportar.');
+
+      const filtroPeriodo = document.getElementById('hist-filtro-periodo').value;
+      const agora = new Date();
+
+      const filtrados = historico.filter(h => {
+        if (filtroPeriodo === 'todos') return true;
+        const dataEntrada = new Date(h.horaEntrada);
+        if (filtroPeriodo === 'hoje') return dataEntrada.toDateString() === agora.toDateString();
+        if (filtroPeriodo === '7dias') {
+          const limite7d = new Date();
+          limite7d.setDate(agora.getDate() - 7);
+          return dataEntrada >= limite7d;
+        }
+        if (filtroPeriodo === 'mes') {
+          return dataEntrada.getMonth() === agora.getMonth() && dataEntrada.getFullYear() === agora.getFullYear();
+        }
+        return true;
+      });
+
+      if (filtrados.length === 0) return alert('Nenhum registro encontrado no período selecionado.');
+
+      let csv = 'Vaga,Placa,TAG,Modelo,Condutor,Telefone,Setor,Data/Hora Entrada,Data/Hora Saida,Tempo Permanencia,Operador Entrada,Operador Saida\n';
+      filtrados.forEach(h => {
+        csv += `"${h.nomeVaga}","${h.placa}","${h.tag || ''}","${h.modelo || ''}","${h.nome || ''}","${h.telefone || ''}","${h.setor || ''}","${formatarDataHora(h.horaEntrada)}","${formatarDataHora(h.horaSaida)}","${h.permanencia}","${h.operadorEntrada || 'Desconhecido'}","${h.operadorSaida || 'Desconhecido'}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', `relatorio_estacionamento_${filtroPeriodo}_${new Date().toISOString().slice(0,10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    setInterval(renderizar, 60000);
+  </script>
+</body>
+</html>
