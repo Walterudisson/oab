@@ -122,12 +122,42 @@
                 <div class="question-statement" id="trainingStatement"></div>
                 <div class="question-items" id="trainingItems"></div>
 
-                <div class="paper-reminder"><strong>Agora é no papel.</strong><span>Redija sua resposta como faria no caderno da prova. Só depois marque a questão como concluída.</span></div>
+                <section class="response-workspace" id="responseWorkspace">
+                  <div class="response-workspace-heading">
+                    <div>
+                      <span class="eyebrow">Sua resposta</span>
+                      <h3>Como você quer resolver?</h3>
+                      <p>Digite a resposta no Caderno ou mantenha o treino manuscrito, como na prova.</p>
+                    </div>
+                    <div class="response-mode-switch" role="group" aria-label="Modo de resposta">
+                      <button class="response-mode-button active" type="button" data-response-mode="typed">⌨ Digitada</button>
+                      <button class="response-mode-button" type="button" data-response-mode="handwritten">✎ Manuscrita</button>
+                    </div>
+                  </div>
+
+                  <div id="typedResponsePanel" class="typed-response-panel">
+                    <div id="responseFields" class="response-fields"></div>
+                    <div class="draft-state"><span class="draft-dot"></span><span id="draftStateText">Rascunho salvo neste dispositivo</span></div>
+                  </div>
+
+                  <div id="handwrittenResponsePanel" class="paper-reminder hidden">
+                    <strong>Modo manuscrito ativo.</strong>
+                    <span>Redija sua resposta em papel como faria no caderno da prova. O Caderno registrará a tentativa, o tempo e a revisão, mas não armazenará o texto.</span>
+                  </div>
+                </section>
 
                 <div class="training-actions">
-                  <button class="button button-primary" id="markResolvedButton">✓ Concluí minha resposta manuscrita</button>
+                  <button class="button button-primary" id="markResolvedButton">✓ Finalizar resposta</button>
                   <button class="button button-ghost" id="markReviewButton">↻ Marcar para revisão</button>
                 </div>
+
+                <section class="submitted-answer-panel hidden" id="submittedAnswerPanel">
+                  <div class="submitted-answer-heading">
+                    <div><span class="eyebrow">Última tentativa</span><h3>Sua resposta registrada</h3></div>
+                    <span id="submittedAnswerMode" class="submitted-answer-mode">Digitada</span>
+                  </div>
+                  <div id="submittedAnswerContent" class="submitted-answer-content"></div>
+                </section>
 
                 <section class="mirror-gate hidden" id="mirrorGate" aria-live="polite">
                   <div>
@@ -168,7 +198,7 @@
             <aside class="panel training-side">
               <span class="eyebrow">Método</span>
               <h3>Fluxo de resolução</h3>
-              <ol class="method-list"><li><span>1</span><div><strong>Leia com calma</strong><small>Identifique exatamente o que cada item pede.</small></div></li><li><span>2</span><div><strong>Resolva à mão</strong><small>Sem consultar o material na primeira tentativa.</small></div></li><li><span>3</span><div><strong>Marque o status</strong><small>Conclua ou envie para revisão.</small></div></li><li><span>4</span><div><strong>Corrija pelo espelho</strong><small>Após concluir, revele o padrão oficial e compare critério por critério.</small></div></li></ol>
+              <ol class="method-list"><li><span>1</span><div><strong>Leia com calma</strong><small>Identifique exatamente o que cada item pede.</small></div></li><li><span>2</span><div><strong>Escolha como responder</strong><small>Digite no Caderno ou resolva em papel, sem consultar o material.</small></div></li><li><span>3</span><div><strong>Marque o status</strong><small>Conclua ou envie para revisão.</small></div></li><li><span>4</span><div><strong>Corrija pelo espelho</strong><small>Após concluir, revele o padrão oficial e compare critério por critério.</small></div></li></ol>
             </aside>
           </div>
         </section>

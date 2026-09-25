@@ -112,3 +112,29 @@ mirrorViewedAt
 ## Próxima evolução sugerida
 
 Sprint 4: histórico de tentativas, nota estimada por critério do espelho e dashboard de desempenho por tema/exame.
+
+## Sprint 4 — Respostas do usuário
+
+Esta versão adiciona dois modos de resolução por questão:
+
+- **Digitada:** campos separados por item (A, B etc.), contador de caracteres e rascunho salvo automaticamente.
+- **Manuscrita:** mantém o fluxo de simulação em papel sem armazenar o texto.
+
+Ao finalizar uma resposta digitada, a tentativa enviada para `users/{uid}/attempts/{attemptId}` passa a registrar também:
+
+```json
+{
+  "responseMode": "typed",
+  "responses": [
+    { "item": "A", "text": "..." },
+    { "item": "B", "text": "..." }
+  ],
+  "responseCharacterCount": 1234
+}
+```
+
+O último texto também permanece no estado da questão para comparação imediata com o espelho. O histórico de tentativas continua em documentos separados no Firestore.
+
+### Compatibilidade
+
+Não é necessário recriar o banco nem reenviar as 60 questões/espelhos. As regras atuais de `users/{uid}/**` já permitem ao próprio usuário gravar as respostas em `attempts`.

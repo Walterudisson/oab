@@ -177,6 +177,34 @@ button:disabled { opacity: .42; cursor: not-allowed; transform: none !important;
 .question-item p { margin:5px 0 0; color:#aebed2; line-height:1.58; }
 .paper-reminder { margin-top:17px; padding:15px; display:grid; gap:4px; border-radius:14px; background:rgba(61,214,160,.045); border:1px solid rgba(61,214,160,.10); }
 .paper-reminder strong { color:#a9f0d4; }.paper-reminder span{color:#8299b1;font-size:12px;line-height:1.5}
+.response-workspace { margin-top:18px; padding:18px; border:1px solid rgba(148,163,184,.10); border-radius:17px; background:rgba(255,255,255,.018); }
+.response-workspace-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.response-workspace-heading h3 { margin:4px 0 5px; font-size:18px; }
+.response-workspace-heading p { margin:0; color:#8195ac; font-size:12px; line-height:1.55; }
+.response-mode-switch { display:flex; gap:5px; padding:4px; border:1px solid var(--border); border-radius:12px; background:rgba(4,13,25,.46); }
+.response-mode-button { padding:8px 11px; border:0; border-radius:9px; background:transparent; color:#8397ae; font-size:11px; font-weight:900; cursor:pointer; white-space:nowrap; }
+.response-mode-button.active { background:rgba(79,140,255,.16); color:#d7e5ff; box-shadow:inset 0 0 0 1px rgba(79,140,255,.18); }
+.typed-response-panel { margin-top:16px; }
+.response-fields { display:grid; gap:13px; }
+.response-field { padding:14px; border:1px solid rgba(79,140,255,.11); border-radius:14px; background:rgba(4,13,25,.30); }
+.response-field-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:9px; }
+.response-field-heading strong { color:#cbd8e8; font-size:12px; }
+.response-counter { color:#627991; font-size:10px; font-weight:800; }
+.response-textarea { width:100%; min-height:150px; resize:vertical; padding:13px 14px; border:1px solid rgba(148,163,184,.12); border-radius:12px; outline:none; background:rgba(2,9,17,.55); color:#d4deeb; line-height:1.65; transition:border-color 140ms ease,box-shadow 140ms ease; }
+.response-textarea:focus { border-color:rgba(79,140,255,.42); box-shadow:0 0 0 3px rgba(79,140,255,.08); }
+.response-textarea::placeholder { color:#53677d; }
+.draft-state { margin-top:10px; display:flex; align-items:center; justify-content:flex-end; gap:7px; color:#687d93; font-size:10px; font-weight:800; }
+.draft-dot { width:6px; height:6px; border-radius:50%; background:#3dd6a0; box-shadow:0 0 0 4px rgba(61,214,160,.06); }
+.draft-state.saving .draft-dot { background:#f6c85f; box-shadow:0 0 0 4px rgba(246,200,95,.06); }
+.submitted-answer-panel { margin-top:18px; padding:18px; border:1px solid rgba(148,163,184,.10); border-radius:16px; background:rgba(255,255,255,.02); }
+.submitted-answer-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+.submitted-answer-heading h3 { margin:4px 0 0; font-size:18px; }
+.submitted-answer-mode { padding:6px 9px; border-radius:999px; background:rgba(61,214,160,.08); color:#9ce6cb; font-size:10px; font-weight:900; }
+.submitted-answer-content { margin-top:14px; display:grid; gap:10px; }
+.submitted-answer-item { padding:13px 14px; border-radius:12px; border:1px solid rgba(148,163,184,.08); background:rgba(4,13,25,.32); }
+.submitted-answer-item strong { display:block; margin-bottom:6px; color:#9fb8d3; font-size:11px; }
+.submitted-answer-item p { margin:0; color:#c0cddd; font-size:12px; line-height:1.7; white-space:pre-wrap; }
+.submitted-answer-empty { color:#7f94aa; font-size:12px; line-height:1.6; }
 .training-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:17px; }
 .self-evaluation { margin-top:18px; padding:17px; display:flex; justify-content:space-between; gap:18px; align-items:center; border:1px solid rgba(148,163,184,.10); border-radius:15px; background:rgba(255,255,255,.025); }
 .self-evaluation h3 { margin:4px 0 5px; }.self-evaluation p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
@@ -301,4 +329,11 @@ button:disabled { opacity: .42; cursor: not-allowed; transform: none !important;
   .mirror-criterion { grid-template-columns:34px minmax(0,1fr); }
   .mirror-criterion-letter { width:34px; height:34px; }
   .mirror-criterion-score { grid-column:2; text-align:left; }
+}
+
+@media (max-width: 680px) {
+  .response-workspace-heading,.submitted-answer-heading { flex-direction:column; }
+  .response-mode-switch { width:100%; }
+  .response-mode-button { flex:1; }
+  .response-textarea { min-height:180px; }
 }

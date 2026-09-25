@@ -44,6 +44,7 @@ let currentMirror = null;
 let mirrorVisible = false;
 let mirrorLoading = false;
 let currentAttemptStartedAt = null;
+let draftSyncTimer = null;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -97,6 +98,14 @@ const elements = {
   trainingStatus: $("#trainingStatus"),
   trainingStatement: $("#trainingStatement"),
   trainingItems: $("#trainingItems"),
+  responseModeButtons: $$(".response-mode-button"),
+  typedResponsePanel: $("#typedResponsePanel"),
+  handwrittenResponsePanel: $("#handwrittenResponsePanel"),
+  responseFields: $("#responseFields"),
+  draftStateText: $("#draftStateText"),
+  submittedAnswerPanel: $("#submittedAnswerPanel"),
+  submittedAnswerMode: $("#submittedAnswerMode"),
+  submittedAnswerContent: $("#submittedAnswerContent"),
   markResolvedButton: $("#markResolvedButton"),
   markReviewButton: $("#markReviewButton"),
   mirrorGate: $("#mirrorGate"),
@@ -160,6 +169,7 @@ function registerEvents() {
     saveProgress();
     stopTimer();
     resetTimer();
+    window.clearTimeout(draftSyncTimer);
     currentQuestionId = null;
     renderAll();
     renderTraining();
@@ -177,6 +187,8 @@ function registerEvents() {
 
   elements.questionList.addEventListener("click", handleQuestionCardClick);
   elements.reviewQuestionList.addEventListener("click", handleQuestionCardClick);
+  elements.responseModeButtons.forEach((button) => button.addEventListener("click", () => setResponseMode(button.dataset.responseMode)));
+  elements.responseFields.addEventListener("input", handleResponseInput);
   elements.markResolvedButton.addEventListener("click", markCurrentResolved);
   elements.markReviewButton.addEventListener("click", toggleCurrentReview);
   elements.showMirrorButton.addEventListener("click", handleShowMirror);
@@ -377,6 +389,8 @@ function renderTraining() {
   elements.previousQuestionButton.disabled = index <= 0;
   elements.nextQuestionButton.disabled = index >= questions.length - 1;
 
+  renderResponseWorkspace(question, state);
+  renderSubmittedAnswer(state);
   applyTrainingStatus(state);
   renderMirrorState(state);
 }
@@ -386,9 +400,115 @@ function applyTrainingStatus(state) {
   elements.trainingStatus.textContent = label;
   elements.trainingStatus.className = `question-status ${state.status === "resolved" ? "status-resolved" : state.status === "review" ? "status-review" : "status-new"}`;
   elements.markReviewButton.textContent = state.status === "review" ? "✓ Remover da revisão" : "↻ Marcar para revisão";
-  elements.markResolvedButton.textContent = state.status === "new" ? "✓ Concluí minha resposta manuscrita" : "↻ Registrar nova tentativa concluída";
+  const responseMode = state.responseMode || "typed";
+  elements.markResolvedButton.textContent = state.status === "new"
+    ? (responseMode === "typed" ? "✓ Finalizar resposta digitada" : "✓ Concluí minha resposta manuscrita")
+    : (responseMode === "typed" ? "↻ Registrar nova tentativa digitada" : "↻ Registrar nova tentativa manuscrita");
   elements.selfEvaluation.classList.toggle("hidden", state.status === "new" || !state.mirrorViewedAt);
   elements.scoreButtons.forEach((button) => button.classList.toggle("selected", Number(button.dataset.score) === state.score));
+}
+
+function renderResponseWorkspace(question, state) {
+  const mode = state.responseMode || "typed";
+  elements.responseModeButtons.forEach((button) => button.classList.toggle("active", button.dataset.responseMode === mode));
+  elements.typedResponsePanel.classList.toggle("hidden", mode !== "typed");
+  elements.handwrittenResponsePanel.classList.toggle("hidden", mode !== "handwritten");
+
+  if (mode !== "typed") return;
+
+  const itemCount = Array.isArray(question.itens) && question.itens.length ? question.itens.length : 1;
+  const draft = normalizeResponses(state.draftResponses, itemCount);
+  elements.responseFields.innerHTML = draft.map((response, index) => {
+    const letter = String.fromCharCode(65 + index);
+    const value = escapeHtml(response.text || "");
+    return `
+      <label class="response-field">
+        <div class="response-field-heading">
+          <strong>Resposta do item ${letter}</strong>
+          <span class="response-counter" data-response-counter="${index}">${(response.text || "").length} caracteres</span>
+        </div>
+        <textarea class="response-textarea" data-response-index="${index}" maxlength="6000" spellcheck="true" placeholder="Digite aqui a resposta do item ${letter}...">${value}</textarea>
+      </label>`;
+  }).join("");
+
+  if (state.lastResponseAt && !state.draftUpdatedAt) {
+    elements.draftStateText.textContent = "Última resposta carregada";
+  } else if (state.draftUpdatedAt) {
+    elements.draftStateText.textContent = currentUser ? "Rascunho salvo e sincronizável" : "Rascunho salvo neste dispositivo";
+  } else {
+    elements.draftStateText.textContent = currentUser ? "Rascunho será sincronizado" : "Rascunho salvo neste dispositivo";
+  }
+  elements.draftStateText.parentElement?.classList.remove("saving");
+}
+
+function normalizeResponses(responses, itemCount) {
+  const source = Array.isArray(responses) ? responses : [];
+  return Array.from({ length: itemCount }, (_, index) => ({
+    item: String.fromCharCode(65 + index),
+    text: String(source[index]?.text ?? source[index] ?? "")
+  }));
+}
+
+function setResponseMode(mode) {
+  if (!currentQuestionId || !["typed", "handwritten"].includes(mode)) return;
+  setQuestionState(currentQuestionId, { responseMode: mode });
+  saveProgress();
+  renderTraining();
+  showToast(mode === "typed" ? "Modo de resposta digitada ativado." : "Modo manuscrito ativado.");
+}
+
+function handleResponseInput(event) {
+  const textarea = event.target.closest("[data-response-index]");
+  if (!textarea || !currentQuestionId) return;
+  const question = questions.find((item) => item.id === currentQuestionId);
+  if (!question) return;
+
+  const itemCount = Array.isArray(question.itens) && question.itens.length ? question.itens.length : 1;
+  const state = getQuestionState(currentQuestionId);
+  const responses = normalizeResponses(state.draftResponses, itemCount);
+  const index = Number(textarea.dataset.responseIndex);
+  if (!Number.isInteger(index) || !responses[index]) return;
+  responses[index].text = textarea.value;
+
+  const now = new Date().toISOString();
+  setQuestionState(currentQuestionId, { responseMode: "typed", draftResponses: responses, draftUpdatedAt: now });
+  progress.updatedAt = now;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+
+  const counter = elements.responseFields.querySelector(`[data-response-counter="${index}"]`);
+  if (counter) counter.textContent = `${textarea.value.length} caracteres`;
+  elements.draftStateText.textContent = "Salvando rascunho...";
+  elements.draftStateText.parentElement?.classList.add("saving");
+
+  window.clearTimeout(draftSyncTimer);
+  draftSyncTimer = window.setTimeout(() => {
+    elements.draftStateText.textContent = currentUser ? "Rascunho sincronizado" : "Rascunho salvo neste dispositivo";
+    elements.draftStateText.parentElement?.classList.remove("saving");
+    scheduleRemoteSync();
+  }, 900);
+}
+
+function renderSubmittedAnswer(state) {
+  const hasSubmitted = Boolean(state.lastResponseAt);
+  elements.submittedAnswerPanel.classList.toggle("hidden", !hasSubmitted);
+  if (!hasSubmitted) return;
+
+  const mode = state.lastResponseMode || "handwritten";
+  elements.submittedAnswerMode.textContent = mode === "typed" ? "Digitada" : "Manuscrita";
+
+  if (mode !== "typed") {
+    elements.submittedAnswerContent.innerHTML = `<div class="submitted-answer-empty">Tentativa manuscrita registrada. O texto da resposta não foi armazenado.</div>`;
+    return;
+  }
+
+  const responses = Array.isArray(state.lastResponses) ? state.lastResponses : [];
+  elements.submittedAnswerContent.innerHTML = responses.length
+    ? responses.map((response, index) => `
+        <article class="submitted-answer-item">
+          <strong>Item ${escapeHtml(response.item || String.fromCharCode(65 + index))}</strong>
+          <p>${escapeHtml(response.text || "(sem resposta)")}</p>
+        </article>`).join("")
+    : `<div class="submitted-answer-empty">A tentativa foi registrada sem texto armazenado.</div>`;
 }
 
 function renderMirrorState(state) {
@@ -511,19 +631,38 @@ async function markCurrentResolved() {
   const question = questions.find((item) => item.id === currentQuestionId);
   if (!question) return;
 
-  stopTimer();
   const previousState = getQuestionState(currentQuestionId);
+  const responseMode = previousState.responseMode || "typed";
+  const itemCount = Array.isArray(question.itens) && question.itens.length ? question.itens.length : 1;
+  const responses = responseMode === "typed" ? normalizeResponses(previousState.draftResponses, itemCount) : [];
+
+  if (responseMode === "typed") {
+    const answered = responses.filter((item) => item.text.trim()).length;
+    if (!answered) {
+      showToast("Digite sua resposta antes de finalizar ou selecione o modo manuscrito.");
+      elements.responseFields.querySelector("textarea")?.focus();
+      return;
+    }
+    if (answered < itemCount && !window.confirm("Há item(ns) sem resposta. Deseja finalizar a tentativa assim mesmo?")) return;
+  }
+
+  stopTimer();
   const firstCompletion = previousState.status === "new";
   const finishedAt = new Date().toISOString();
   const startedAt = currentAttemptStartedAt || finishedAt;
   const attemptId = createAttemptId(currentQuestionId);
   const elapsedSeconds = Math.max(0, Math.round((Date.parse(finishedAt) - Date.parse(startedAt)) / 1000));
+  const responseCharacterCount = responses.reduce((sum, item) => sum + item.text.length, 0);
 
   setQuestionState(currentQuestionId, {
     status: "resolved",
     completedAt: previousState.completedAt || finishedAt,
     lastAttemptAt: finishedAt,
-    latestAttemptId: attemptId
+    latestAttemptId: attemptId,
+    lastResponseMode: responseMode,
+    lastResponses: responses,
+    lastResponseAt: finishedAt,
+    draftUpdatedAt: previousState.draftUpdatedAt || null
   });
 
   if (firstCompletion) progress.weeklyDone = (progress.weeklyDone || 0) + 1;
@@ -539,8 +678,11 @@ async function markCurrentResolved() {
     durationSeconds: timerSeconds,
     elapsedSeconds,
     status: "completed",
+    responseMode,
+    responses,
+    responseCharacterCount,
     selfEvaluation: previousState.score || 0,
-    review: false,
+    review: previousState.status === "review",
     mirrorViewedAt: null
   };
 
@@ -548,7 +690,9 @@ async function markCurrentResolved() {
   renderAll();
   renderTraining();
   currentAttemptStartedAt = new Date().toISOString();
-  showToast(firstCompletion ? "Tentativa concluída. O espelho FGV foi liberado." : "Nova tentativa registrada.");
+  showToast(responseMode === "typed"
+    ? (firstCompletion ? "Resposta digitada registrada. O espelho FGV foi liberado." : "Nova resposta digitada registrada.")
+    : (firstCompletion ? "Tentativa manuscrita concluída. O espelho FGV foi liberado." : "Nova tentativa manuscrita registrada."));
 
   await persistAttempt(attempt);
 }
@@ -601,6 +745,11 @@ function getQuestionState(questionId) {
     completedAt: null,
     latestAttemptId: null,
     mirrorViewedAt: null,
+    responseMode: "typed",
+    draftResponses: [],
+    lastResponseMode: null,
+    lastResponses: [],
+    lastResponseAt: null,
     ...(progress.questionStates[questionId] || {})
   };
 }
