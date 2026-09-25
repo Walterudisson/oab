@@ -2,20 +2,19 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Banco oficial de questões: leitura pública; escrita somente via Admin SDK.
+    // Banco oficial: o enunciado pode ser consultado pelo site público.
     match /questions/{questionId} {
       allow read: if true;
       allow write: if false;
     }
 
-    // Espelhos oficiais: disponíveis apenas para usuários autenticados.
-    // A interface de correção poderá liberá-los após a tentativa do aluno.
+    // O espelho só é entregue a usuário autenticado.
     match /mirrors/{questionId} {
       allow read: if request.auth != null;
       allow write: if false;
     }
 
-    // Dados privados do estudante.
+    // Progresso e tentativas pertencem exclusivamente ao próprio usuário.
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
 

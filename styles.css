@@ -259,3 +259,46 @@ button:disabled { opacity: .42; cursor: not-allowed; transform: none !important;
   .account-button { padding:4px; border:0; background:transparent; }
   .auth-actions { grid-template-columns:1fr; }
 }
+
+/* Sprint 3 · Espelho FGV */
+.button-secondary { background:rgba(61,214,160,.11); border:1px solid rgba(61,214,160,.2); color:#b7f4dc; }
+.button-secondary:hover { background:rgba(61,214,160,.16); }
+.text-button { padding:7px 0; border:0; background:transparent; color:#8fb7ff; font-weight:800; cursor:pointer; }
+.text-button:hover { color:#c5dbff; }
+
+.mirror-gate { margin-top:18px; padding:18px; display:flex; align-items:center; justify-content:space-between; gap:18px; border:1px solid rgba(61,214,160,.16); border-radius:16px; background:linear-gradient(120deg,rgba(61,214,160,.07),rgba(79,140,255,.035)); }
+.mirror-gate h3 { margin:4px 0 5px; font-size:18px; }
+.mirror-gate p { margin:0; max-width:760px; color:#8fa4bb; font-size:12px; line-height:1.55; }
+.mirror-gate .button { flex:0 0 auto; }
+
+.mirror-panel { margin-top:18px; padding:20px; border:1px solid rgba(79,140,255,.16); border-radius:18px; background:linear-gradient(145deg,rgba(12,29,51,.97),rgba(8,20,35,.96)); box-shadow:0 18px 48px rgba(0,0,0,.18); }
+.mirror-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.mirror-heading h3 { margin:4px 0 0; font-size:22px; }
+.historical-notice { margin-top:15px; padding:13px 14px; display:grid; gap:4px; border-radius:13px; border:1px solid rgba(255,190,85,.16); background:rgba(255,190,85,.055); }
+.historical-notice strong { color:#ffd089; font-size:12px; }
+.historical-notice span { color:#a98e68; font-size:11px; line-height:1.5; }
+.mirror-answer { margin-top:18px; display:grid; gap:12px; }
+.mirror-answer-item { padding:15px; border-radius:14px; border:1px solid rgba(148,163,184,.09); background:rgba(255,255,255,.025); }
+.mirror-answer-item>span { display:inline-grid; place-items:center; width:30px; height:30px; margin-bottom:9px; border-radius:9px; background:rgba(79,140,255,.12); color:#bdd4ff; font-weight:900; font-size:11px; }
+.mirror-answer-item p { margin:0; color:#c0cddd; font-size:13px; line-height:1.7; }
+.mirror-criteria { margin-top:18px; display:grid; gap:10px; }
+.mirror-criterion { padding:14px 15px; display:grid; grid-template-columns:38px minmax(0,1fr) auto; gap:12px; align-items:start; border-radius:14px; border:1px solid rgba(148,163,184,.09); background:rgba(255,255,255,.018); }
+.mirror-criterion-letter { width:38px; height:38px; display:grid; place-items:center; border-radius:11px; background:rgba(61,214,160,.08); color:#a9f0d4; font-weight:900; }
+.mirror-criterion-copy strong { display:block; margin-bottom:4px; font-size:12px; }
+.mirror-criterion-copy p { margin:0; color:#8fa2b9; font-size:12px; line-height:1.6; }
+.mirror-criterion-score { white-space:nowrap; text-align:right; }
+.mirror-criterion-score strong,.mirror-criterion-score span { display:block; }
+.mirror-criterion-score strong { font-size:13px; }
+.mirror-criterion-score span { margin-top:3px; color:#71869e; font-size:10px; }
+.mirror-total { margin-top:16px; padding-top:14px; display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid rgba(148,163,184,.09); color:#8fa2b9; font-size:12px; }
+.mirror-total strong { color:#dce8f7; font-size:18px; }
+.mirror-loading { padding:20px 0; color:#879bb2; font-size:12px; text-align:center; }
+
+@media (max-width: 680px) {
+  .mirror-gate { align-items:stretch; flex-direction:column; }
+  .mirror-gate .button { width:100%; }
+  .mirror-heading { align-items:flex-start; }
+  .mirror-criterion { grid-template-columns:34px minmax(0,1fr); }
+  .mirror-criterion-letter { width:34px; height:34px; }
+  .mirror-criterion-score { grid-column:2; text-align:left; }
+}

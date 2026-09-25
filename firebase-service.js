@@ -96,6 +96,18 @@ export async function saveUserProgress(uid, progress) {
   );
 }
 
+export async function saveAttempt(uid, attemptId, attempt) {
+  assertConfigured();
+  await setDoc(
+    doc(db, "users", uid, "attempts", attemptId),
+    {
+      ...attempt,
+      updatedAtServer: serverTimestamp()
+    },
+    { merge: true }
+  );
+}
+
 function assertConfigured() {
   if (!configured) throw new Error("Firebase não configurado. Preencha firebase-config.js.");
 }

@@ -32,7 +32,7 @@
           <div class="mini-progress-top"><span>Progresso geral</span><strong id="sidebarProgressText">0%</strong></div>
           <div class="progress-track" aria-label="Progresso geral"><div class="progress-bar" id="sidebarProgressBar"></div></div>
         </div>
-        <span class="version">Sprint 2.1 · Firebase</span>
+        <span class="version">Sprint 3 · Espelho FGV</span>
       </div>
     </aside>
 
@@ -129,8 +129,31 @@
                   <button class="button button-ghost" id="markReviewButton">↻ Marcar para revisão</button>
                 </div>
 
+                <section class="mirror-gate hidden" id="mirrorGate" aria-live="polite">
+                  <div>
+                    <span class="eyebrow">Correção oficial</span>
+                    <h3>Espelho FGV liberado</h3>
+                    <p id="mirrorGateText">Sua tentativa foi concluída. Agora você pode comparar sua resposta com o padrão oficial.</p>
+                  </div>
+                  <button class="button button-secondary" id="showMirrorButton" type="button">Conferir espelho FGV</button>
+                </section>
+
+                <section class="mirror-panel hidden" id="mirrorPanel">
+                  <div class="mirror-heading">
+                    <div><span class="eyebrow">Padrão oficial de resposta</span><h3>Espelho FGV</h3></div>
+                    <button class="text-button" id="hideMirrorButton" type="button">Ocultar espelho</button>
+                  </div>
+                  <div class="historical-notice">
+                    <strong>Questão histórica</strong>
+                    <span>O padrão abaixo preserva a legislação e a jurisprudência consideradas pela banca na época do exame.</span>
+                  </div>
+                  <div class="mirror-answer" id="mirrorAnswer"></div>
+                  <div class="mirror-criteria" id="mirrorCriteria"></div>
+                  <div class="mirror-total"><span>Pontuação máxima da questão</span><strong id="mirrorTotal">1,25</strong></div>
+                </section>
+
                 <div class="self-evaluation hidden" id="selfEvaluation">
-                  <div><span class="eyebrow">Autoavaliação</span><h3>Como ficou sua resposta?</h3><p>Esta nota serve apenas para acompanhar seu treino. A correção pelo espelho entra em uma etapa posterior.</p></div>
+                  <div><span class="eyebrow">Autoavaliação</span><h3>Como ficou sua resposta?</h3><p>Depois de conferir o espelho, registre sua percepção para acompanhar a evolução do treino.</p></div>
                   <div class="score-buttons" role="group" aria-label="Autoavaliação">
                     <button data-score="0">Ainda não sei</button>
                     <button data-score="1">Parcial</button>
@@ -145,7 +168,7 @@
             <aside class="panel training-side">
               <span class="eyebrow">Método</span>
               <h3>Fluxo de resolução</h3>
-              <ol class="method-list"><li><span>1</span><div><strong>Leia com calma</strong><small>Identifique exatamente o que cada item pede.</small></div></li><li><span>2</span><div><strong>Resolva à mão</strong><small>Sem consultar o material na primeira tentativa.</small></div></li><li><span>3</span><div><strong>Marque o status</strong><small>Conclua ou envie para revisão.</small></div></li><li><span>4</span><div><strong>Corrija pelo espelho</strong><small>Na próxima etapa, registraremos os critérios da FGV.</small></div></li></ol>
+              <ol class="method-list"><li><span>1</span><div><strong>Leia com calma</strong><small>Identifique exatamente o que cada item pede.</small></div></li><li><span>2</span><div><strong>Resolva à mão</strong><small>Sem consultar o material na primeira tentativa.</small></div></li><li><span>3</span><div><strong>Marque o status</strong><small>Conclua ou envie para revisão.</small></div></li><li><span>4</span><div><strong>Corrija pelo espelho</strong><small>Após concluir, revele o padrão oficial e compare critério por critério.</small></div></li></ol>
             </aside>
           </div>
         </section>
@@ -174,7 +197,7 @@
         </section>
 
         <section class="page" id="page-plano">
-          <div class="empty-state"><span class="empty-icon">▦</span><h2>Plano de estudo</h2><p>Metas, calendário e sessões planejadas entram no Sprint 3.</p></div>
+          <div class="empty-state"><span class="empty-icon">▦</span><h2>Plano de estudo</h2><p>Metas, calendário e sessões planejadas entram no Sprint 4.</p></div>
         </section>
       </main>
     </div>

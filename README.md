@@ -1,93 +1,114 @@
-# Caderno OAB — Banco Oficial 32º ao 46º + Firebase
+# Caderno OAB — Sprint 3
 
-Frontend estático para GitHub Pages conectado ao projeto Firebase `oabcaderno`.
+Frontend estático para GitHub Pages, integrado ao Firebase do projeto `oabcaderno`.
 
-## Conteúdo desta versão
+## O que entrou neste Sprint
 
-- 60 questões discursivas oficiais de Direito do Trabalho, do 32º ao 46º Exame de Ordem (15 exames × 4 questões).
-- 60 espelhos/gabaritos oficiais correspondentes.
-- Enunciados em `data/questoes.json`.
-- Espelhos em `data/espelhos.json`.
-- Firebase Authentication + sincronização de progresso do estudante.
-- Firestore como fonte principal das questões, com fallback local para `questoes.json`.
-- Script administrativo para popular as coleções `questions` e `mirrors`.
+- leitura das 60 questões oficiais diretamente de `questions/` no Firestore;
+- `data/questoes.json` mantido apenas como fallback de leitura;
+- conclusão da resposta manuscrita libera o fluxo de correção;
+- espelho oficial carregado sob demanda de `mirrors/{questionId}`;
+- espelho disponível somente para usuário autenticado;
+- registro de cada tentativa em `users/{uid}/attempts/{attemptId}`;
+- duração do cronômetro e tempo decorrido registrados na tentativa;
+- autoavaliação e marcação para revisão atualizam a tentativa mais recente;
+- tentativas feitas sem conexão/sem login ficam em fila local e são enviadas após autenticação;
+- progresso geral continua sincronizado em `users/{uid}/state/progress`.
 
-## Estrutura no Firestore
-
-```text
-questions/{questionId}
-mirrors/{questionId}
-users/{uid}/state/progress
-```
-
-IDs são estáveis, por exemplo:
+## Estrutura Firestore esperada
 
 ```text
-trabalho-32-q1
-trabalho-32-q2
-...
-trabalho-46-q4
+questions/
+  trabalho-32-q1
+  ...
+  trabalho-46-q4
+
+mirrors/
+  trabalho-32-q1
+  ...
+  trabalho-46-q4
+
+users/
+  {uid}/
+    state/
+      progress
+    attempts/
+      {attemptId}
 ```
 
-## 1. Publicar as Security Rules
+## Importante: espelhos não estão no GitHub Pages
 
-No Firebase Console, abra **Firestore Database > Rules** e publique o conteúdo de `firestore.rules`.
+Este pacote NÃO contém `data/espelhos.json`.
 
-- `questions`: leitura pública e escrita bloqueada para clientes Web.
-- `mirrors`: leitura somente para usuários autenticados e escrita bloqueada para clientes Web.
-- `users/{uid}`: cada estudante acessa apenas os próprios dados.
+Os padrões oficiais permanecem no Firestore. A interface só consulta um espelho depois que a questão foi concluída e o estudante está autenticado.
 
-As escritas administrativas de `questions` e `mirrors` são feitas pelo Firebase Admin SDK, que não depende dessas regras de cliente.
+## Regras do Firestore
 
-## 2. Gerar uma chave administrativa
+O arquivo `firestore.rules` deste pacote define:
 
-No Firebase Console:
+- `questions`: leitura pública, escrita bloqueada;
+- `mirrors`: leitura apenas autenticada, escrita bloqueada;
+- `users/{uid}` e subcoleções: somente o próprio usuário pode ler/escrever.
 
-1. **Configurações do projeto**.
-2. **Contas de serviço**.
-3. **Firebase Admin SDK**.
-4. **Gerar nova chave privada**.
-5. Salve o arquivo como `serviceAccountKey.json` na raiz deste projeto.
+### Publicar as regras pelo Cloud Shell
 
-**Nunca envie esse arquivo para o GitHub.** Ele já está incluído no `.gitignore`.
-
-## 3. Enviar as 60 questões e 60 espelhos ao Firestore
-
-Com Node.js instalado:
+Dentro da pasta deste Sprint:
 
 ```bash
-npm install
-npm run seed:dry
-npm run seed
+firebase deploy --only firestore:rules --project oabcaderno
 ```
 
-O comando real faz `upsert` usando IDs determinísticos, portanto pode ser executado novamente sem criar duplicatas.
+Também é possível copiar o conteúdo de `firestore.rules` para Firebase Console → Firestore Database → Rules e publicar.
 
-Depois, confira no Firebase Console:
+## Publicar no GitHub Pages
+
+Substitua no repositório os arquivos do frontend pelos arquivos desta pasta:
 
 ```text
-questions   60 documentos
-mirrors     60 documentos
+index.html
+styles.css
+app.js
+firebase-config.js
+firebase-service.js
+firestore.rules
+firebase.json
+data/questoes.json
+assets/
 ```
 
-## 4. Publicar o frontend no GitHub Pages
+Depois faça commit/push normalmente. O GitHub Pages continua servindo somente HTML/CSS/JS.
 
-Envie para o repositório os arquivos do frontend, incluindo `data/questoes.json` como fallback, mas **não** envie:
+## Teste funcional
+
+1. Abra o Caderno OAB publicado.
+2. Entre com uma conta Firebase.
+3. Abra uma questão.
+4. Inicie o cronômetro, se desejar.
+5. Resolva no papel.
+6. Clique em `Concluí minha resposta manuscrita`.
+7. Clique em `Conferir espelho FGV`.
+8. Confira no Firestore:
 
 ```text
-serviceAccountKey.json
-node_modules/
+users/{seu-uid}/attempts/
 ```
 
-Ao abrir o site, a aplicação tenta carregar `questions` do Firestore. Se o banco remoto estiver indisponível, usa automaticamente `data/questoes.json`.
+Deve existir um novo documento com campos semelhantes a:
 
-## Fontes dos dados
+```text
+questionId
+examNumber
+questionNumber
+startedAt
+finishedAt
+durationSeconds
+elapsedSeconds
+status
+selfEvaluation
+review
+mirrorViewedAt
+```
 
-Os registros foram extraídos das duas coletâneas fornecidas para o projeto:
+## Próxima evolução sugerida
 
-- `OAB_Trabalho_I_a_46_Enunciados.pdf`
-- `OAB_Trabalho_I_a_46_Gabaritos_Oficiais.pdf`
-
-O recorte desta versão é exclusivamente do **32º ao 46º Exame de Ordem**, sem incluir peças prático-profissionais.
-
-**Nota histórica:** os enunciados e espelhos foram preservados conforme a legislação e a jurisprudência consideradas na época de cada exame. O banco não reescreve questões antigas para o direito vigente.
+Sprint 4: histórico de tentativas, nota estimada por critério do espelho e dashboard de desempenho por tema/exame.

@@ -5,7 +5,9 @@ import {
   signOutUser,
   loadUserProgress,
   saveUserProgress,
+  saveAttempt,
   loadOfficialQuestions,
+  loadQuestionMirror,
   isFirebaseConfigured
 } from "./firebase-service.js";
 
@@ -14,6 +16,7 @@ const LEGACY_STORAGE_KEY = "cadernoOabProgressV1";
 
 const defaultProgress = {
   questionStates: {},
+  pendingAttempts: [],
   weeklyDone: 0,
   streak: 0,
   lastAccess: null
@@ -37,6 +40,10 @@ let timerInterval = null;
 let currentUser = null;
 let remoteSyncTimer = null;
 let authResolved = false;
+let currentMirror = null;
+let mirrorVisible = false;
+let mirrorLoading = false;
+let currentAttemptStartedAt = null;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -92,6 +99,14 @@ const elements = {
   trainingItems: $("#trainingItems"),
   markResolvedButton: $("#markResolvedButton"),
   markReviewButton: $("#markReviewButton"),
+  mirrorGate: $("#mirrorGate"),
+  mirrorGateText: $("#mirrorGateText"),
+  showMirrorButton: $("#showMirrorButton"),
+  mirrorPanel: $("#mirrorPanel"),
+  hideMirrorButton: $("#hideMirrorButton"),
+  mirrorAnswer: $("#mirrorAnswer"),
+  mirrorCriteria: $("#mirrorCriteria"),
+  mirrorTotal: $("#mirrorTotal"),
   selfEvaluation: $("#selfEvaluation"),
   scoreButtons: $$(".score-buttons button"),
   previousQuestionButton: $("#previousQuestionButton"),
@@ -141,7 +156,7 @@ function registerEvents() {
   elements.trainingBackButton.addEventListener("click", () => navigateTo("questoes"));
 
   elements.resetDemoButton.addEventListener("click", () => {
-    progress = { ...defaultProgress, questionStates: {}, lastAccess: formatDateKey(new Date()), streak: 1 };
+    progress = { ...defaultProgress, questionStates: {}, pendingAttempts: [], lastAccess: formatDateKey(new Date()), streak: 1 };
     saveProgress();
     stopTimer();
     resetTimer();
@@ -164,6 +179,8 @@ function registerEvents() {
   elements.reviewQuestionList.addEventListener("click", handleQuestionCardClick);
   elements.markResolvedButton.addEventListener("click", markCurrentResolved);
   elements.markReviewButton.addEventListener("click", toggleCurrentReview);
+  elements.showMirrorButton.addEventListener("click", handleShowMirror);
+  elements.hideMirrorButton.addEventListener("click", hideMirror);
   elements.scoreButtons.forEach((button) => button.addEventListener("click", () => setSelfScore(Number(button.dataset.score))));
   elements.previousQuestionButton.addEventListener("click", () => moveQuestion(-1));
   elements.nextQuestionButton.addEventListener("click", () => moveQuestion(1));
@@ -332,6 +349,10 @@ function getRecommendedQuestion() {
 
 function openQuestion(questionId) {
   currentQuestionId = questionId;
+  currentMirror = null;
+  mirrorVisible = false;
+  mirrorLoading = false;
+  currentAttemptStartedAt = new Date().toISOString();
   stopTimer();
   resetTimer();
   renderTraining();
@@ -357,6 +378,7 @@ function renderTraining() {
   elements.nextQuestionButton.disabled = index >= questions.length - 1;
 
   applyTrainingStatus(state);
+  renderMirrorState(state);
 }
 
 function applyTrainingStatus(state) {
@@ -364,21 +386,171 @@ function applyTrainingStatus(state) {
   elements.trainingStatus.textContent = label;
   elements.trainingStatus.className = `question-status ${state.status === "resolved" ? "status-resolved" : state.status === "review" ? "status-review" : "status-new"}`;
   elements.markReviewButton.textContent = state.status === "review" ? "✓ Remover da revisão" : "↻ Marcar para revisão";
-  elements.markResolvedButton.textContent = state.status === "new" ? "✓ Concluí minha resposta manuscrita" : "✓ Marcar como resolvida";
-  elements.selfEvaluation.classList.toggle("hidden", state.status === "new");
+  elements.markResolvedButton.textContent = state.status === "new" ? "✓ Concluí minha resposta manuscrita" : "↻ Registrar nova tentativa concluída";
+  elements.selfEvaluation.classList.toggle("hidden", state.status === "new" || !state.mirrorViewedAt);
   elements.scoreButtons.forEach((button) => button.classList.toggle("selected", Number(button.dataset.score) === state.score));
 }
 
-function markCurrentResolved() {
+function renderMirrorState(state) {
+  const completed = state.status !== "new";
+
+  if (!completed) {
+    elements.mirrorGate.classList.add("hidden");
+    elements.mirrorPanel.classList.add("hidden");
+    return;
+  }
+
+  if (mirrorVisible && currentMirror) {
+    elements.mirrorGate.classList.add("hidden");
+    elements.mirrorPanel.classList.remove("hidden");
+    renderMirrorContent(currentMirror);
+    return;
+  }
+
+  elements.mirrorPanel.classList.add("hidden");
+  elements.mirrorGate.classList.remove("hidden");
+
+  if (!currentUser) {
+    elements.mirrorGateText.textContent = "Sua tentativa foi concluída. Entre na sua conta para liberar o padrão oficial de resposta.";
+    elements.showMirrorButton.textContent = "Entrar para conferir espelho";
+    elements.showMirrorButton.disabled = false;
+    return;
+  }
+
+  elements.mirrorGateText.textContent = state.mirrorViewedAt
+    ? "Você já conferiu este espelho. Abra novamente para revisar os critérios oficiais."
+    : "Sua tentativa foi concluída. Agora você pode comparar sua resposta com o padrão oficial.";
+  elements.showMirrorButton.textContent = mirrorLoading ? "Carregando espelho..." : (state.mirrorViewedAt ? "Abrir espelho novamente" : "Conferir espelho FGV");
+  elements.showMirrorButton.disabled = mirrorLoading;
+}
+
+async function handleShowMirror() {
   if (!currentQuestionId) return;
   const state = getQuestionState(currentQuestionId);
-  const firstCompletion = state.status === "new";
-  setQuestionState(currentQuestionId, { status: "resolved", completedAt: new Date().toISOString() });
+  if (state.status === "new") return;
+
+  if (!currentUser) {
+    setAuthNote("Entre para liberar o espelho oficial após concluir a questão.", false);
+    openAuthModal();
+    return;
+  }
+
+  if (currentMirror) {
+    mirrorVisible = true;
+    renderTraining();
+    return;
+  }
+
+  mirrorLoading = true;
+  renderMirrorState(state);
+
+  try {
+    const mirror = await loadQuestionMirror(currentQuestionId);
+    if (!mirror) throw new Error("Espelho não encontrado");
+
+    currentMirror = mirror;
+    mirrorVisible = true;
+    mirrorLoading = false;
+    const viewedAt = new Date().toISOString();
+    setQuestionState(currentQuestionId, { mirrorViewedAt: viewedAt });
+    saveProgress();
+    syncLatestAttemptPatch({ mirrorViewedAt: viewedAt });
+    renderTraining();
+  } catch (error) {
+    console.error(error);
+    mirrorLoading = false;
+    renderMirrorState(state);
+    showToast("Não foi possível carregar o espelho agora.");
+  }
+}
+
+function hideMirror() {
+  mirrorVisible = false;
+  renderTraining();
+}
+
+function renderMirrorContent(mirror) {
+  const answers = Array.isArray(mirror.respostas) ? mirror.respostas : [];
+  const criteria = Array.isArray(mirror.criterios) ? mirror.criterios : [];
+
+  if (answers.length) {
+    elements.mirrorAnswer.innerHTML = answers.map((answer, index) => `
+      <article class="mirror-answer-item">
+        <span>${escapeHtml(answer.letra || String.fromCharCode(65 + index))}</span>
+        <p>${escapeHtml(answer.texto || "")}</p>
+      </article>`).join("");
+  } else {
+    elements.mirrorAnswer.innerHTML = `<article class="mirror-answer-item"><p>${escapeHtml(mirror.gabaritoComentado || mirror.espelhoTexto || "Padrão de resposta indisponível.")}</p></article>`;
+  }
+
+  elements.mirrorCriteria.innerHTML = criteria.length
+    ? criteria.map((criterion, index) => `
+        <article class="mirror-criterion">
+          <span class="mirror-criterion-letter">${escapeHtml(criterion.item || String.fromCharCode(65 + index))}</span>
+          <div class="mirror-criterion-copy">
+            <strong>Critério oficial</strong>
+            <p>${escapeHtml(criterion.descricao || "")}</p>
+          </div>
+          <div class="mirror-criterion-score">
+            <strong>${formatScore(criterion.pontuacaoMaxima)}</strong>
+            <span>${escapeHtml(criterion.escala || "")}</span>
+          </div>
+        </article>`).join("")
+    : `<div class="mirror-loading">A grade detalhada de critérios não está disponível para este item.</div>`;
+
+  elements.mirrorTotal.textContent = formatScore(mirror.pontuacaoTotal ?? 1.25);
+}
+
+function formatScore(value) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—";
+}
+
+async function markCurrentResolved() {
+  if (!currentQuestionId) return;
+  const question = questions.find((item) => item.id === currentQuestionId);
+  if (!question) return;
+
+  stopTimer();
+  const previousState = getQuestionState(currentQuestionId);
+  const firstCompletion = previousState.status === "new";
+  const finishedAt = new Date().toISOString();
+  const startedAt = currentAttemptStartedAt || finishedAt;
+  const attemptId = createAttemptId(currentQuestionId);
+  const elapsedSeconds = Math.max(0, Math.round((Date.parse(finishedAt) - Date.parse(startedAt)) / 1000));
+
+  setQuestionState(currentQuestionId, {
+    status: "resolved",
+    completedAt: previousState.completedAt || finishedAt,
+    lastAttemptAt: finishedAt,
+    latestAttemptId: attemptId
+  });
+
   if (firstCompletion) progress.weeklyDone = (progress.weeklyDone || 0) + 1;
+
+  const attempt = {
+    id: attemptId,
+    questionId: question.id,
+    examNumber: question.exameNumero ?? null,
+    exam: question.exame ?? null,
+    questionNumber: question.numero ?? null,
+    startedAt,
+    finishedAt,
+    durationSeconds: timerSeconds,
+    elapsedSeconds,
+    status: "completed",
+    selfEvaluation: previousState.score || 0,
+    review: false,
+    mirrorViewedAt: null
+  };
+
   saveProgress();
   renderAll();
   renderTraining();
-  showToast("Questão marcada como resolvida.");
+  currentAttemptStartedAt = new Date().toISOString();
+  showToast(firstCompletion ? "Tentativa concluída. O espelho FGV foi liberado." : "Nova tentativa registrada.");
+
+  await persistAttempt(attempt);
 }
 
 function toggleCurrentReview() {
@@ -391,6 +563,7 @@ function toggleCurrentReview() {
   saveProgress();
   renderAll();
   renderTraining();
+  syncLatestAttemptPatch({ review: newStatus === "review" });
   showToast(newStatus === "review" ? "Questão adicionada à revisão." : "Questão removida da revisão.");
 }
 
@@ -402,6 +575,7 @@ function setSelfScore(score) {
   renderQuestionList();
   renderReviewList();
   renderTraining();
+  syncLatestAttemptPatch({ selfEvaluation: score });
   showToast(score === 2 ? "Autoavaliação registrada: boa." : score === 1 ? "Autoavaliação registrada: parcial." : "Autoavaliação limpa.");
 }
 
@@ -410,6 +584,10 @@ function moveQuestion(direction) {
   const next = questions[index + direction];
   if (!next) return;
   currentQuestionId = next.id;
+  currentMirror = null;
+  mirrorVisible = false;
+  mirrorLoading = false;
+  currentAttemptStartedAt = new Date().toISOString();
   stopTimer();
   resetTimer();
   renderTraining();
@@ -417,7 +595,14 @@ function moveQuestion(direction) {
 }
 
 function getQuestionState(questionId) {
-  return { status: "new", score: 0, completedAt: null, ...(progress.questionStates[questionId] || {}) };
+  return {
+    status: "new",
+    score: 0,
+    completedAt: null,
+    latestAttemptId: null,
+    mirrorViewedAt: null,
+    ...(progress.questionStates[questionId] || {})
+  };
 }
 
 function setQuestionState(questionId, patch) {
@@ -487,9 +672,14 @@ function formatDateKey(date) {
 function loadProgress() {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return { ...defaultProgress, ...stored, questionStates: stored?.questionStates || {} };
+    return {
+      ...defaultProgress,
+      ...stored,
+      questionStates: stored?.questionStates || {},
+      pendingAttempts: Array.isArray(stored?.pendingAttempts) ? stored.pendingAttempts : []
+    };
   } catch {
-    return { ...defaultProgress, questionStates: {} };
+    return { ...defaultProgress, questionStates: {}, pendingAttempts: [] };
   }
 }
 
@@ -520,6 +710,89 @@ function saveProgress() {
   scheduleRemoteSync();
 }
 
+function createAttemptId(questionId) {
+  const suffix = globalThis.crypto?.randomUUID
+    ? globalThis.crypto.randomUUID().slice(0, 8)
+    : Math.random().toString(36).slice(2, 10);
+  return `${questionId}-${Date.now()}-${suffix}`;
+}
+
+async function persistAttempt(attempt) {
+  if (!attempt?.id) return;
+
+  if (currentUser && isFirebaseConfigured()) {
+    try {
+      await saveAttempt(currentUser.uid, attempt.id, attempt);
+      return;
+    } catch (error) {
+      console.error("Falha ao salvar tentativa no Firestore; mantendo fila local.", error);
+    }
+  }
+
+  queuePendingAttempt(attempt);
+}
+
+function queuePendingAttempt(attempt) {
+  const pending = Array.isArray(progress.pendingAttempts) ? [...progress.pendingAttempts] : [];
+  const existingIndex = pending.findIndex((item) => item.id === attempt.id);
+  if (existingIndex >= 0) pending[existingIndex] = { ...pending[existingIndex], ...attempt };
+  else pending.push(attempt);
+  progress.pendingAttempts = pending;
+  saveProgress();
+}
+
+async function flushPendingAttempts() {
+  if (!currentUser || !isFirebaseConfigured()) return;
+  const pending = Array.isArray(progress.pendingAttempts) ? [...progress.pendingAttempts] : [];
+  if (!pending.length) return;
+
+  const failed = [];
+  for (const attempt of pending) {
+    try {
+      await saveAttempt(currentUser.uid, attempt.id, attempt);
+    } catch (error) {
+      console.error("Falha ao enviar tentativa pendente.", error);
+      failed.push(attempt);
+    }
+  }
+
+  progress.pendingAttempts = failed;
+  progress.updatedAt = new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+
+function syncLatestAttemptPatch(patch) {
+  if (!currentQuestionId) return;
+  const state = getQuestionState(currentQuestionId);
+  const attemptId = state.latestAttemptId;
+  if (!attemptId) return;
+
+  const pending = Array.isArray(progress.pendingAttempts) ? [...progress.pendingAttempts] : [];
+  const pendingIndex = pending.findIndex((item) => item.id === attemptId);
+  if (pendingIndex >= 0) {
+    pending[pendingIndex] = { ...pending[pendingIndex], ...patch };
+    progress.pendingAttempts = pending;
+    progress.updatedAt = new Date().toISOString();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  }
+
+  if (currentUser && isFirebaseConfigured()) {
+    saveAttempt(currentUser.uid, attemptId, {
+      id: attemptId,
+      questionId: currentQuestionId,
+      ...patch
+    }).catch((error) => {
+      console.error("Falha ao atualizar tentativa; mantendo alteração no progresso local.", error);
+      const latestPending = Array.isArray(progress.pendingAttempts) ? [...progress.pendingAttempts] : [];
+      const index = latestPending.findIndex((item) => item.id === attemptId);
+      if (index >= 0) latestPending[index] = { ...latestPending[index], ...patch };
+      else latestPending.push({ id: attemptId, questionId: currentQuestionId, ...patch });
+      progress.pendingAttempts = latestPending;
+      saveProgress();
+    });
+  }
+}
+
 async function initializeFirebaseSession() {
   if (!isFirebaseConfigured()) {
     setSyncState("local", "Firebase ainda não configurado");
@@ -534,6 +807,9 @@ async function initializeFirebaseSession() {
     updateAccountUI();
 
     if (!user) {
+      currentMirror = null;
+      mirrorVisible = false;
+      renderTraining();
       setSyncState("local", "Somente neste dispositivo");
       return;
     }
@@ -547,7 +823,9 @@ async function initializeFirebaseSession() {
         renderAll();
         renderTraining();
       }
+      await flushPendingAttempts();
       await saveUserProgress(user.uid, progress);
+      renderTraining();
       setSyncState("synced", "Progresso sincronizado");
     } catch (error) {
       console.error(error);
@@ -563,6 +841,7 @@ function scheduleRemoteSync() {
   setSyncState("syncing", "Salvando...");
   remoteSyncTimer = window.setTimeout(async () => {
     try {
+      await flushPendingAttempts();
       await saveUserProgress(currentUser.uid, progress);
       setSyncState("synced", "Progresso sincronizado");
     } catch (error) {
@@ -573,8 +852,18 @@ function scheduleRemoteSync() {
 }
 
 function mergeProgress(localProgress, remoteProgress) {
-  const local = { ...defaultProgress, ...(localProgress || {}), questionStates: localProgress?.questionStates || {} };
-  const remote = { ...defaultProgress, ...(remoteProgress || {}), questionStates: remoteProgress?.questionStates || {} };
+  const local = {
+    ...defaultProgress,
+    ...(localProgress || {}),
+    questionStates: localProgress?.questionStates || {},
+    pendingAttempts: Array.isArray(localProgress?.pendingAttempts) ? localProgress.pendingAttempts : []
+  };
+  const remote = {
+    ...defaultProgress,
+    ...(remoteProgress || {}),
+    questionStates: remoteProgress?.questionStates || {},
+    pendingAttempts: Array.isArray(remoteProgress?.pendingAttempts) ? remoteProgress.pendingAttempts : []
+  };
   const questionIds = new Set([...Object.keys(local.questionStates), ...Object.keys(remote.questionStates)]);
   const questionStates = {};
 
@@ -594,10 +883,14 @@ function mergeProgress(localProgress, remoteProgress) {
   const remoteUpdated = Date.parse(remote.updatedAt || 0) || 0;
   const newest = localUpdated >= remoteUpdated ? local : remote;
 
+  const pendingAttempts = [...local.pendingAttempts, ...remote.pendingAttempts]
+    .filter((attempt, index, array) => attempt?.id && array.findIndex((item) => item?.id === attempt.id) === index);
+
   return {
     ...defaultProgress,
     ...newest,
     questionStates,
+    pendingAttempts,
     weeklyDone: Math.max(local.weeklyDone || 0, remote.weeklyDone || 0),
     streak: Math.max(local.streak || 0, remote.streak || 0),
     lastAccess: [local.lastAccess, remote.lastAccess].filter(Boolean).sort().at(-1) || null,
